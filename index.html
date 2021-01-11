@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="reveal.js/dist/reset.css">
     <link rel="stylesheet" href="reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+    <link rel="stylesheet" href="reveal-a11y/accessibility/helper.css">
     <link rel="stylesheet" href="open-sans/open-sans.css">
     <link rel="stylesheet" href="theme.css" id="theme">
     <link rel="stylesheet" href="slides.css" id="theme">
@@ -26,6 +27,13 @@
     <script src="reveal.js/plugin/highlight/highlight.js"></script>
     <script>
       Reveal.initialize({
+        dependencies: [
+          {
+            async: true,
+            condition: () => !!document.body.classList,
+            src: 'reveal-a11y/accessibility/helper.js',
+          }
+        ],
         hash: true,
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
         transition: 'none'

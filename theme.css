@@ -285,3 +285,14 @@
     background-color: var(--color-base-1);
   }
 }
+
+/*
+ * Plugins
+ */
+
+/* https://github.com/marcysutton/reveal-a11y/issues/7 */
+.reveal.overview .slides section > .accessibilityWrapper {
+  display: block;
+  outline: none;
+  visibility: visible;
+}

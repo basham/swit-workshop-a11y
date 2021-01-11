@@ -261,38 +261,6 @@ A screen reader is a tool that gives you an alternative way to use a computer. A
 
 ## Tech stack
 
-<style>
-.slide-tech-stack {
-  display: grid;
-  font-size: 1.5rem;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(3, auto);
-  margin: 20px auto;
-  width: fit-content;
-}
-.slide-tech-stack .stack {
-  background-color: #222;
-  border-radius: 0.5rem;
-}
-.slide-tech-stack .label {
-  font-size: calc(18rem/16);
-  font-weight: bold;
-  line-height: 2rem;
-  margin: 0;
-  padding: 0.5rem 0.5rem 0;
-}
-.slide-tech-stack .label ~ .label {
-  border-top: 0.25rem solid #111;
-}
-.slide-tech-stack .node {
-  background-color: #333;
-  border-radius: 0.5rem;
-  margin: 0.5rem;
-  padding: 0.75rem 1rem;
-  text-align: left;
-}
-</style>
-
 <div class="slide-tech-stack">
   <div class="stack">
     <h3 class="label">Website</h3>
@@ -391,23 +359,6 @@ Focus. Cursors.
 
 "Blue outline"
 
-<style>
-.slide-focus {
-  background-color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-  box-shadow:
-    0 0 0 2px black,
-    0 0 0 6px deepskyblue;
-  color: #111;
-  font-size: 3rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  margin: 40px auto;
-  width: fit-content;
-}
-</style>
-
 <div class="slide-focus">Save</div>
 
 ---
@@ -415,47 +366,6 @@ Focus. Cursors.
 ## Keyboard cursor
 
 "Blinky pipe"
-
-<style>
-.slide-keyboard-cursor {
-  background-color: #eeeeee;
-  color: #111;
-  max-width: max-content;
-  margin: 40px auto;
-  padding: 1rem;
-  text-align: left;
-}
-.slide-keyboard-cursor .label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-.slide-keyboard-cursor .input {
-  background-color: white;
-  border: 2px solid;
-  font-size: 40px;
-  line-height: 1;
-  padding: 1rem 0.5rem;
-  width: 20rem;
-}
-.slide-keyboard-cursor .input::after {
-  animation: blink-animation 1.5s steps(5, start) infinite;
-  background-color: deepskyblue;
-  border: 2px solid deepskyblue;
-  content: "";
-  margin: 0 0.25rem;
-}
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
-}
-@-webkit-keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
-}
-</style>
 
 <div class="slide-keyboard-cursor">
   <div class="label">Name</div>
@@ -467,24 +377,6 @@ Focus. Cursors.
 ## Screen reader cursor
 
 "Black outline"
-
-<style>
-.slide-sr-cursor {
-  background-color: #eeeeee;
-  color: #666;
-  max-width: max-content;
-  margin: 40px auto;
-  padding: 1rem;
-  text-align: left;
-}
-.slide-sr-cursor .cursor {
-  box-shadow:
-    0 0 0 2px white,
-    0 0 0 6px black,
-    0 0 0 8px white;
-  position: relative;
-}
-</style>
 
 <div class="slide-sr-cursor">
   <ul>
@@ -505,39 +397,6 @@ Rotor. Shortcuts.
 ## Rotor
 
 "Table of contents" for [Statewide IT 2021](https://statewideit.iu.edu)
-
-<style>
-.slide-rotor {
-  margin: 40px auto;
-  min-width: 30rem;
-  width: fit-content;
-}
-.slide-rotor .section {
-  background-color: #222;
-  border: 0.25rem solid #fff;
-  border-radius: 0.5rem;
-  padding: 0.25rem;
-  width: 100%;
-}
-.slide-rotor h3 {
-  font-size: 2rem;
-  margin: 0;
-  padding: 0.5rem 0;
-}
-.slide-rotor ul {
-  display: block;
-  font-size: 1.5rem;
-  list-style-type: none;
-  margin: 0;
-}
-.slide-rotor li {
-  padding: 0.25rem 1rem;
-}
-.slide-rotor li.active {
-  background-color: #fff;
-  color: #111;
-}
-</style>
 
 <div class="slide-rotor r-stack">
   <div class="section">
@@ -694,87 +553,6 @@ Rotor. Shortcuts.
 | Down/Up       | `VO` + `Shift` + `Down/Up Arrow` |
 | Next/Previous | `VO` + `Right/Left Arrow`        | 
 
-<style>
-.slide-tree {
-  background-color: #222;
-  border-radius: 1rem;
-  display: grid;
-  font-size: 2rem;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(5, 3rem);
-  grid-template-rows: repeat(3, 3rem);
-  margin: 20px auto;
-  padding: 1rem;
-  width: fit-content;
-}
-.slide-tree .line {
-  align-self: center;
-  background-color: #666;
-  justify-self: center;
-  height: 100%;
-  width: 0.25rem;
-}
-.slide-tree .line--1 {
-  grid-column: 1 / span 3;
-  grid-row: 1 / span 3;
-  transform: rotate(45deg);
-}
-.slide-tree .line--2 {
-  grid-column: 3 / span 2;
-  grid-row: 1 / span 2;
-  transform: rotate(-45deg);
-}
-.slide-tree .line--3 {
-  grid-column: 2;
-  grid-row: 2 / span 2;
-}
-.slide-tree .line--4 {
-  grid-column: 2 / span 2;
-  grid-row: 2 / span 2;
-  transform: rotate(-45deg);
-}
-.slide-tree .node {
-  align-items: center;
-  background-color: #999;
-  border: 0.25rem solid #222;
-  border-radius: 50%;
-  color: transparent;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  position: relative;
-}
-.slide-tree .node.current-fragment {
-  background-color: #fff;
-  box-shadow: 0 0 0 0.25rem #fff;
-  color: #111;
-}
-.slide-tree .node--1 {
-  grid-column: 3;
-  grid-row: 1;
-}
-.slide-tree .node--2 {
-  grid-column: 2;
-  grid-row: 2;
-}
-.slide-tree .node--3 {
-  grid-column: 1;
-  grid-row: 3;
-}
-.slide-tree .node--4 {
-  grid-column: 2;
-  grid-row: 3;
-}
-.slide-tree .node--5 {
-  grid-column: 3;
-  grid-row: 3;
-}
-.slide-tree .node--6 {
-  grid-column: 4;
-  grid-row: 2;
-}
-</style>
-
 <div class="slide-tree r-stack">
   <div class="line line--1"></div>
   <div class="line line--2"></div>
@@ -853,24 +631,6 @@ role
 | **State**     | "3 items"    |
 | **Operation** | ""           |
 
-<style>
-.slide-list {
-  background-color: #eee;
-  color: #111;
-  max-width: max-content;
-  margin: 40px auto;
-  padding: 1rem;
-  text-align: left;
-}
-.slide-list .cursor {
-  box-shadow:
-    0 0 0 2px white,
-    0 0 0 6px black,
-    0 0 0 8px white;
-  position: relative;
-}
-</style>
-
 <div class="slide-list">
   <ul class="cursor">
     <li>Apple</li>
@@ -932,27 +692,6 @@ role
 | **Identity**  | "I agree to these terms and conditions. Checkbox." |
 | **State**     | "Unchecked."                                       |
 | **Operation** | "Press spacebar to check."                         |
-
-<style>
-.slide-checkbox {
-  background-color: #eee;
-  color: #111;
-  max-width: max-content;
-  margin: 40px auto;
-  padding: 1rem;
-  text-align: left;
-}
-.slide-checkbox input {
-  width: 2rem;
-}
-.slide-checkbox .cursor {
-  box-shadow:
-    0 0 0 2px white,
-    0 0 0 6px black,
-    0 0 0 8px white;
-  position: relative;
-}
-</style>
 
 <div class="slide-checkbox">
   <input id="terms-conditions" type="checkbox" class="cursor">

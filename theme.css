@@ -145,6 +145,7 @@ html {
 }
 
 .reveal pre {
+  background-color: var(--color-base-2);
   display: block;
   font-family: monospace;
   margin: 0 auto 0.5rem;
@@ -160,11 +161,20 @@ html {
 }
 
 .reveal pre code {
+  color: inherit;
   display: block;
   max-height: 10rem;
   overflow: auto;
   padding: 0.5rem;
   word-wrap: normal;
+}
+
+.hljs-tag {
+  color: var(--color-accent);
+}
+
+.hljs-string {
+  color: var(--color-base-9);
 }
 
 .reveal table {

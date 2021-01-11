@@ -277,6 +277,10 @@
   text-align: left;
 }
 
+.slide-list ul {
+  margin-bottom: 0;
+}
+
 .slide-list .cursor {
   box-shadow:
     0 0 0 2px var(--color-base-9),

@@ -80,11 +80,12 @@ Accessibility is addressed too late in the development process.
 
 ## Enterprise Systems
 
-- [Accessibility Bootcamp](https://iu.mediaspace.kaltura.com/channel/Accessibility%2Bbootcamp/165180531) training with Deque&nbsp;University (April 2020)
-- [Accessibility Development Guidelines](https://uisapp2.iu.edu/confluence-prd/display/TAG/Accessibility+Development+Guidelines) (Technology Advisory Group)
+- [Accessibility Bootcamp](https://iu.mediaspace.kaltura.com/channel/Accessibility%2Bbootcamp/165180531) training
+- [Accessibility Development Guidelines](https://uisapp2.iu.edu/confluence-prd/display/TAG/Accessibility+Development+Guidelines)
 - Accessibility shares in dev community of practice
 - Automated accessibility testing
 - Cross-team accessibility committee
+- Partnering with UITS Accessibility Team
 
 ---
 
@@ -110,12 +111,10 @@ Now that we've established where we're going during this workshop, let's start b
 
 ---
 
-## Disability is not a personal health condition *
-
-Human perfection is a myth.
+## Human perfection<br>is a myth
 
 Note:
-First, it is common to think that a disability is something that steals from you, your health, your livelihood. That it makes you less than others. This is not the case. The truth is, there is no perfect human or human condition. We are simply different.
+There is no perfect human or human condition. Everyone has both abilities and disabilities. We are simply different along that spectrum.
 
 ---
 
@@ -124,7 +123,7 @@ First, it is common to think that a disability is something that steals from you
 Environment + Social context + Limitations
 
 Note:
-Rather, we should think of disabilities as a mismatched interaction between a person and the world. This conflict is unique, depending on the environment or social context or limitations of the person.
+We should think of disabilities as a mismatched interaction between a person and the world. This conflict is unique, depending on the environment or social context or limitations of the person.
 
 ---
 
@@ -148,7 +147,7 @@ Secondly, how you behave changes according to if you're alone or with others. An
 
 ## Limitations
 
-Touch. Sight. Hearing. Speech.
+Touch. Sight. Hearing. Speech. Cognition.
 
 Note:
 Thirdly, you may be physically limited in what you can do.
@@ -625,6 +624,18 @@ role
 
 ## List
 
+```html
+<ul aria-label="fruit">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Strawberry</li>
+</ul>
+```
+
+---
+
+## List
+
 |               |              |
 | ------------- | ------------ |
 | **Identity**  | "List fruit" |
@@ -638,14 +649,6 @@ role
     <li>Strawberry</li>
   </ul>
 </div>
-
-```html
-<ul aria-label="fruit">
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Strawberry</li>
-</ul>
-```
 
 ---
 
@@ -697,57 +700,3 @@ role
   <input id="terms-conditions" type="checkbox" class="cursor">
   <label for="terms-conditions">I agree to these terms and conditions<label>
 </div>
-
----
-
-## Screen read
-
-Describe the screen like 
-
-- Message a participant a link to a wireframe. Have them read it out loud like a screen reader, while everyone else sees a blank screen on Zoom. Afterward, reveal the screen.
-- Draw the UI.
-
----
-
-## Exercises
-
-- Human-to-computer role-play (page 4)
-- Design a micro-interaction (page 13)
-- Simulations (page 16)
-
----
-
-## Mistakes and bad examples
-The same wireframe, but implemented in different ways.
-- Inaccessible.
-- Accessible but not usable.
-- Accessible and usable.
-- Accessible, usable, and delightful.
-
----
-
-## Annotate wireframes
-- Examine wireframes, and discuss how screen reader users may or should experience those interfaces
-- Annotate wireframes to communicate accessibility expectations to the product team
-- What does the screen reader say?
-- [HTML Element test file index](https://thepaciellogroup.github.io/AT-browser-tests/)
-
----
-
-## Other
-
-1. How do we design without a designer? Designer is a facilitator of the process. Designers can build prototypes for testing.
-1. Study accessibility features, such as roles, names, focus and cursor handling, tab order, and ARIA
-
----
-
-## Hanek
-
-- Importance of keyboard only functionality. Level 0 of what everything else is built on. Lots of assistive tech relies on keyboard behavior working properly.
-- A11y primer, by Hanek's team
-- macOS: Create a user for testing (need admin priveledges). Reset everything back to defaults.
-- WCAG are things that should be reviewed when annotating.
-- You need context to get feedback. Not just wireframes. Need user journey. Input. What activity is happening? Need this for wireframe review or for passing info to devs for coding. "I don't know what's going on with this?" What is the intention?
-- Add tab order to wireframes, where you expect it to deviate from normal markup.
-- Figma add-in by Microsoft (Focus Orderer, https://www.figma.com/community/plugin/731310036968334777/A11y---Focus-Orderer)
-

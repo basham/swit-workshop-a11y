@@ -6,7 +6,6 @@
     <title>Incorporating Accessibility in the Design Process | Statewide IT 2021 Workshop</title>
     <link rel="stylesheet" href="reveal.js/dist/reset.css">
     <link rel="stylesheet" href="reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
     <link rel="stylesheet" href="reveal-a11y/accessibility/helper.css">
     <link rel="stylesheet" href="open-sans/open-sans.css">
     <link rel="stylesheet" href="theme.css" id="theme">
@@ -35,7 +34,11 @@
           }
         ],
         hash: true,
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes
+        ],
         transition: 'none'
       })
     </script>

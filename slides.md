@@ -1,0 +1,1014 @@
+## Incorporating Accessibility in the Design Process
+
+Statewide IT 2021 Workshop
+
+Chris Basham
+
+---
+
+## Chris Basham
+
+csbasham@iu.edu
+
+UX designer in Enterprise Student Systems.
+
+*Accessibility. Front-end dev. Design systems.*
+
+---
+
+## Outline
+
+| Time | Duration | Description  |
+| ----:| --------:| ------------ |
+| 1:00 |      10m | Introduction |
+| 1:10 |      50m | Lecture      |
+| 2:00 |      10m | Break        |
+| 2:10 |      50m | Exercises    |
+| 3:00 |      10m | Break        |
+| 3:10 |      50m | Exercises    |
+
+---
+
+## Zoom etiquette
+
+- Mute when you're not talking.
+- Use chat.
+- Use annotations, stamps.
+
+---
+
+## Problem
+
+Accessibility is addressed too late in the development process.
+
+---
+
+## Consequences
+
+- Poor or unusable for those with assistive tech.
+- Devs are forced to make design decisions.
+- Bugs, technical debt.
+
+---
+
+## Improve knowledge
+
+- Understand assistive tech.
+- Learn how users use assistive tech.
+- Study WCAG, ARIA, inclusive design.
+- Talk, teach about accessibility.
+- Join Slack channel `iu-uits#topic-accessibility-web`.
+
+---
+
+## Improve process
+
+- Discuss accessibility expectations early.
+- Practice using a screen reader.
+- Enrich design deliverables.
+- Test accessibility before, after development.
+
+---
+
+## Improve feedback
+
+- Get early feedback from assistive tech users.
+- Hire assistive tech users.
+- [Request an accessibility evaluation](https://ux.iu.edu/accessibility/) from the UITS Accessibility Team.
+
+---
+
+## Enterprise Systems
+
+- [Accessibility Bootcamp](https://iu.mediaspace.kaltura.com/channel/Accessibility%2Bbootcamp/165180531) training with [Deque University](https://dequeuniversity.com/) (April 2020)
+- [Accessibility Development Guidelines](https://uisapp2.iu.edu/confluence-prd/display/TAG/Accessibility+Development+Guidelines) (Technology Advisory Group)
+- Accessibility shares in dev community of practice
+- Automated accessibility testing
+- Cross-team accessibility committee
+
+---
+
+## Workshop goals
+
+- Learn how a screen reader works, communicates.
+- Simulate the screen reader experience.
+- Examine, discuss, annotate wireframes.
+
+---
+
+## Out of scope
+
+- Practice using a screen reader.
+- Deep-dive into WCAG Success Criteria.
+
+---
+
+## Overview
+
+Note:
+Now that we've established where we're going during this workshop, let's start by better understanding accessibility and how it fits into what we do.
+
+---
+
+## Disability is not a personal health condition *
+
+Human perfection is a myth.
+
+Note:
+First, it is common to think that a disability is something that steals from you, your health, your livelihood. That it makes you less than others. This is not the case. The truth is, there is no perfect human or human condition. We are simply different.
+
+---
+
+## Disability is a mismatched interaction
+
+Environment + Social context + Limitations
+
+Note:
+Rather, we should think of disabilities as a mismatched interaction between a person and the world. This conflict is unique, depending on the environment or social context or limitations of the person.
+
+---
+
+## Environment
+
+Location. Weather. Time. Objects.
+
+Note:
+The environment surely affects how we interact with the world. Being physical beings, we must be situated in a particular place and time. Maybe that's at home, at work, in the woods, or in a busy city center. Time of day, severity of the weather, and the stuff around you all affects what you can or want to do.
+
+---
+
+## Social context
+
+Alone. Coworkers. Crowd. Friends. Family.
+
+Note:
+Secondly, how you behave changes according to if you're alone or with others. And who those others are and how many of them will continue to affect your choices and behavior. An quiet setting with close friends is much different than a loud setting with strangers.
+
+---
+
+## Limitations
+
+Touch. Sight. Hearing. Speech.
+
+Note:
+Thirdly, you may be physically limited in what you can do.
+
+---
+
+## Everyone has limitations
+
+|           | Permanent  | Temporary     | Situational       |
+| --------- | ---------- | ------------- | ----------------- |
+| **Touch** | One arm    | Arm injury    | New parent        |
+| **See**   | Blind      | Cataract      | Distracted driver |
+| **Hear**  | Deaf       | Ear infection | Bartender         |
+| **Speak** | Non-verbal | Laryngitis    | Heavy accent      |
+
+Note:
+Let's look at some examples. I could be born or become blind, meaning I've permanently lost my sight. But sight could also be affected temporarily. My sight could gradually degrade as I develop cataracts, but then with a procedure, my full sight could be restored. My sight could also be negatively affected by being distracted. I get a text message. I look down and take my eyes of the road, increasing the danger for myself and others.
+
+As another example, I could be mute, or my throat could be raspy because of a sickness, or I travel to a place where my accent is not easily discerned.
+
+As these examples illustrate, we all experience limitations of some form. Sometimes they're obvious. Sometimes they're not.
+
+---
+
+## Mismatches cause exclusion
+
+- Person + Person
+- Person + Environment
+- Person + Object
+
+<footer>
+
+See: [*Microsoft Design Inclusive Toolkits*](https://www.microsoft.com/design/inclusive/)
+
+</footer>
+
+Note:
+When we experience these mismatches, we inevitably experience some form of exclusion. We can't talk to a friend. We can't go where we want to go. We can't use a thing the way we want to.
+
+As a simple example, when I was growing up, my family would often go to amusement parks. I loved going on roller coasters. But one time, after waiting in line for what seemed like hours, I was denied entry. I was too short. By a mere inch. I got mad and angry and threw fits. If the height requirement needed many inches, okay. I could handle that. But an inch was just close enough to be frustrating.
+
+I was excluded from doing what I wanted to do. Granted, for this case, it was on purpose and for my personal safety. But many times, exclusion is not necessary. It becomes a form of cruelty. And not everyone has the power or energy or means to improve their situation.
+
+---
+
+## Tech can help or hinder
+
+- Person + (Tech) + Person
+- Person + (Tech) + Environment
+- Person + (Tech) + Object
+
+Note:
+Technology can be one means of augmenting these interactions, so that these mismatches can be overcome. We are currently using Zoom to communicate across distances. You use a can opener to open a can. You use a hat to shield you from the sun.
+
+But not all technology is great. It can be misused, be abused, be nefarious, or simply be poorly designed. As those who work in technology, it is our obligation to create things that improve the lives of others. That could mean saving them time, energy, and frustration. But more importantly, it could mean empowering them to be included in society in ways previously restricted.
+
+---
+
+## Accessibility
+
+"Can I use this?"
+
+Note:
+Accessibility is inherently about inclusion. It askes the question, "Can I use this thing?" On the surface, the answer is binary. But as we've already learned, what one person is capable of is different than another or even themselves, depending on context and limitations.
+
+---
+
+## Usability
+
+"How well can I use this?"
+
+Note:
+Usability expands on capability and answers the question, "How well can I use this thing?" Does it demand a lot of time and causes frustration? Or does it easily disappear into the background, and the thing becomes a natural extension of myself?
+
+---
+
+## Assistive tech
+
+- Mobility, hearing, cognitive aids
+- Closed captioning
+- Ramps, bars, wide doorways, elevators
+- Hardware, software
+
+Note:
+Technology that is purposefully designed to be highly accessible and usable is known as assistive technology. A crutch is a mobility aid. A sticky note is a cognitive aid. Closed captioning allows the deaf to experience movies and even those with hearing to confirm a phrase spoken softly. Ramps and wide doorways make it easy for those in wheelchairs and those with strollers to move it buildings.
+
+---
+
+## Assistive software
+
+- Keyboard shortcuts
+- Spell check, word prediction
+- Voice recognition, dictation
+- Contrast, color, motion, magnification settings
+- Screen readers
+
+Note:
+And of course, there is assistive software. Shortcuts allows you to make a change, without hunting through menus. Spell check and word predition helps you to type (sometimes). You can adjust screen colors, if you are color blind and can't see red. You can zoom. And you can use a screen reader. That's where we'll spend most of our time during this workshop.
+
+---
+
+## Screen readers
+
+Narrate, navigate, interact with content.
+
+Note:
+A screen reader is a tool that gives you an alternative way to use a computer. A sighted user can experience a 2 or 3 dimensional visual interface, but a bind user cannot. Instead of a mouse, you navigate with a keyboard. Instead of reading with your eyes, you listen with your ears or touch your fingers to a braille device.
+
+---
+
+## Tech stack
+
+<style>
+.slide-tech-stack {
+  display: grid;
+  font-size: 1.5rem;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, auto);
+  margin: 20px auto;
+  width: fit-content;
+}
+.slide-tech-stack .stack {
+  background-color: #222;
+  border-radius: 0.5rem;
+}
+.slide-tech-stack .label {
+  font-size: calc(18rem/16);
+  font-weight: bold;
+  line-height: 2rem;
+  margin: 0;
+  padding: 0.5rem 0.5rem 0;
+}
+.slide-tech-stack .label ~ .label {
+  border-top: 0.25rem solid #111;
+}
+.slide-tech-stack .node {
+  background-color: #333;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+</style>
+
+<div class="slide-tech-stack">
+  <div class="stack">
+    <h3 class="label">Website</h3>
+    <div class="node"><code><></code> HTML</div>
+    <div class="node"><code>{}</code> CSS</div>
+    <div class="node"><code>[]</code> JavaScript</div>
+  </div>
+  <div class="stack">
+    <h3 class="label">Browser</h3>
+    <div class="node">🌲 DOM tree</div>
+    <div class="node fragment">🎄 Accessibility tree</div>
+    <h3 class="label fragment">Operating system</h3>
+    <div class="node fragment">🍎 Accessibility API</div>
+    <div class="node fragment">👁 Screen reader</div>
+  </div>
+  <div class="stack">
+    <h3 class="label">Hardware</h3>
+    <div class="node">📺 Screen</div>
+    <div class="node fragment">🔈 Speakers</div>
+    <div class="node fragment">🔘 Braille</div>
+    <h3 class="label">World</h3>
+    <div class="node">🙂 User</div>
+  </div>
+</div>
+
+<footer>
+
+See: [*The intersection of performance and accessibility*](https://noti.st/ericwbailey/Yfyaxa/the-intersection-of-performance-and-accessibility)
+
+</footer>
+
+Note:
+Let's first look at the technology stack. When you build a website, the user interfaces with it through a browser. That browser interprets HTML, CSS, and JavaScript to render what the user sees. This interpretation is the DOM tree, short for Document Object Model. The user does not directly interact with the HTML. They interact with the DOM.
+
+But the stack is more complicated than that. The accessibility tree prepares the website's content to be used outside of the browser. That gets passed to the operating system's accessibility API, which interfaces with the system's screen reader software.
+
+The screen reader interfaces with speakers, braille keyboards, screens, and other hardware to finally reach the user.
+
+As we can see, there are a lot of layers between the code and what the user experiences. Each layer can interrupt the interaction between the user and the website. The more layers, the more chance of an interruption. In short, screen reader users are much more susceptible to an inaccessible or unusable experience than many others.
+
+---
+
+## Software pairings
+
+|       | Platform | Screen reader | Browser |
+| ----- | -------- | ------------- | ------- |
+| **1** | Windows  | NVDA          | Firefox |
+| **2** | macOS    | VoiceOver     | Safari  |
+| **3** | iOS      | VoiceOver     | Safari  |
+
+<footer>
+
+See: [*Use a screen reader to evaluate a website* (IU Knowledge Base)](https://kb.iu.edu/d/atey)
+
+</footer>
+
+Note:
+When testing websites, we tend to check the site in the major browsers and call that good enough. However, when considering screen readers and the brittleness between the software layers, where do we start? Luckiliy, the IU Knowledge Base provides recommendations. There are certain combinations of software that give the best experence for users, are popular, and free to use. VoiceOver with Safari works best for Apple products. And NVDA is an open source screen reader for Windows that works best with Firefox. For Indiana University students with screen readers, iOS is almost exclusively used, rather than Android. If you test the accessibility of websites with these three pairings, that shoud cover your testing needs.
+
+---
+
+## Other details
+
+- Users tend to only use one screen reader per device.
+- All may behave differently (that's okay).
+- Some are expensive (JAWS is $1,000 per license).
+
+Note:
+NVDA and Firefox will more properly reveal issues with your markup language, faster. Most bang for your buck. They pay tighter attention to standards. JAWS being the Catelac (read in French or Spanish, more $1k). Only because of cost, don't bother with JAWS. After NVDA, the VoiceOver pass will be more of a confirmation. Quality checks. And then with iOS, it is another confirmation. Each SR has its own personality. The browser pairing will modify that personality. The biggest change in personality is VO and how it treats lists. No need to force VO to say exactly what NVDA says.
+
+General public, JAWS and NVDA are the most used by those with no or low vision. iOS has 85% of marketshare.
+
+At IU, there are over a dozen students who use iOS VO.
+
+iOS 85% for students at IUB. Registered through ODSS. 
+
+WebAIM survey. US-centric (English-speaking). Flawed. Largest survey of SR users.
+
+Web devs love Chrome. It is only recently starting to see a jump in Chrome usage for SR users. Almost no one uses ChromeVOX, as it is browser only.
+
+NVDA has Speech Viewer, a text-based output of what it is vocalizing. Use a mouse to hover over and see what it does.
+
+---
+
+## How screen readers work
+
+---
+
+## Orientation
+
+Focus. Cursors.
+
+---
+
+## Focus
+
+"Blue outline"
+
+<style>
+.slide-focus {
+  background-color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow:
+    0 0 0 2px black,
+    0 0 0 6px deepskyblue;
+  color: #111;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin: 40px auto;
+  width: fit-content;
+}
+</style>
+
+<div class="slide-focus">Save</div>
+
+---
+
+## Keyboard cursor
+
+"Blinky pipe"
+
+<style>
+.slide-keyboard-cursor {
+  background-color: #eeeeee;
+  color: #111;
+  max-width: max-content;
+  margin: 40px auto;
+  padding: 1rem;
+  text-align: left;
+}
+.slide-keyboard-cursor .label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.slide-keyboard-cursor .input {
+  background-color: white;
+  border: 2px solid;
+  font-size: 40px;
+  line-height: 1;
+  padding: 1rem 0.5rem;
+  width: 20rem;
+}
+.slide-keyboard-cursor .input::after {
+  animation: blink-animation 1.5s steps(5, start) infinite;
+  background-color: deepskyblue;
+  border: 2px solid deepskyblue;
+  content: "";
+  margin: 0 0.25rem;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+</style>
+
+<div class="slide-keyboard-cursor">
+  <div class="label">Name</div>
+  <div class="input">Chris</div>
+</div>
+
+---
+
+## Screen reader cursor
+
+"Black outline"
+
+<style>
+.slide-sr-cursor {
+  background-color: #eeeeee;
+  color: #666;
+  max-width: max-content;
+  margin: 40px auto;
+  padding: 1rem;
+  text-align: left;
+}
+.slide-sr-cursor .cursor {
+  box-shadow:
+    0 0 0 2px white,
+    0 0 0 6px black,
+    0 0 0 8px white;
+  position: relative;
+}
+</style>
+
+<div class="slide-sr-cursor">
+  <ul>
+    <li>Apple</li>
+    <li class="cursor">Banana</li>
+    <li>Strawberry</li>
+  </ul>
+</div>
+
+---
+
+## Navigation
+
+Rotor. Shortcuts.
+
+---
+
+## Rotor
+
+"Table of contents" for [Statewide IT 2021](https://statewideit.iu.edu)
+
+<style>
+.slide-rotor {
+  margin: 40px auto;
+  min-width: 30rem;
+  width: fit-content;
+}
+.slide-rotor .section {
+  background-color: #222;
+  border: 0.25rem solid #fff;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  width: 100%;
+}
+.slide-rotor h3 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.slide-rotor ul {
+  display: block;
+  font-size: 1.5rem;
+  list-style-type: none;
+  margin: 0;
+}
+.slide-rotor li {
+  padding: 0.25rem 1rem;
+}
+.slide-rotor li.active {
+  background-color: #fff;
+  color: #111;
+}
+</style>
+
+<div class="slide-rotor r-stack">
+  <div class="section">
+    <h3>Landmarks</h3>
+    <ul>
+      <li>Main navigation</li>
+      <li>main</li>
+      <li>contentinfo</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+    </ul>
+  </div>
+  <div class="section fragment">
+    <h3>Landmarks</h3>
+    <ul>
+      <li>Main navigation</li>
+      <li>main</li>
+      <li>contentinfo</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+    </ul>
+  </div>
+  <div class="section fragment">
+    <h3>Links</h3>
+    <ul>
+      <li>Skip to Content</li>
+      <li>Skip to Main Navigation</li>
+      <li>Skip to Search</li>
+      <li>INDIANA UNIVERSITY</li>
+      <li>Open Search</li>
+      <li>Virtual Statewide IT Conference 2021</li>
+      <li>WHAT TO EXPECT</li>
+    </ul>
+  </div>
+  <div class="section fragment">
+    <h3>Headings</h3>
+    <ul>
+      <li>1: Virtual Statewide IT Conference 2021</li>
+      <li>3: Staff kudos form</li>
+      <li>3: Three dynamic keynote events</li>
+      <li>2: Keynote Speakers</li>
+      <li>4: Rob Lowden</li>
+      <li>4: Michael McRobbie</li>
+      <li>4: Stacy Morrone</li>
+    </ul>
+  </div>
+  <div class="section fragment">
+    <h3>Headings</h3>
+    <ul>
+      <li class="active">1: Virtual Statewide IT Conference 2021</li>
+      <li>3: Staff kudos form</li>
+      <li>3: Three dynamic keynote events</li>
+      <li>2: Keynote Speakers</li>
+      <li>4: Rob Lowden</li>
+      <li>4: Michael McRobbie</li>
+      <li>4: Stacy Morrone</li>
+    </ul>
+  </div>
+  <div class="section fragment">
+    <h3>Headings</h3>
+    <ul>
+      <li>1: Virtual Statewide IT Conference 2021</li>
+      <li class="active">3: Staff kudos form</li>
+      <li>3: Three dynamic keynote events</li>
+      <li>2: Keynote Speakers</li>
+      <li>4: Rob Lowden</li>
+      <li>4: Michael McRobbie</li>
+      <li>4: Stacy Morrone</li>
+    </ul>
+  </div>
+  <div class="section fragment">
+    <h3>Headings</h3>
+    <ul>
+      <li>1: Virtual Statewide IT Conference 2021</li>
+      <li>3: Staff kudos form</li>
+      <li class="active">3: Three dynamic keynote events</li>
+      <li>2: Keynote Speakers</li>
+      <li>4: Rob Lowden</li>
+      <li>4: Michael McRobbie</li>
+      <li>4: Stacy Morrone</li>
+    </ul>
+  </div>
+</div>
+
+---
+
+## Rotor content
+
+| Content       | Examples                      |
+| ------------- | ----------------------------- |
+| Landmarks     | `<header>`, `<main>`, `<nav>` |
+| Headings      | `<h1>`…`<h6>`                 |
+| Links         | `<a>`                         |
+| Form controls | `<button>`, `<input>`         |
+| Tables        | `<table>`                     |
+| Articles      | `<article>`                   |
+
+---
+
+## Shortcuts
+
+| Operation              | Command              |
+| ---------------------- | -------------------- |
+| Start / stop VoiceOver | `Command` + `F5`     |
+| VoiceOver keys (VO)    | `Control` + `Option` |
+| Lock / unlock VO keys  | `VO` + `;`           |
+| Open rotor             | `VO` + `U`           |
+
+---
+
+## Go to next focusable element
+
+(`Shift`) + `Tab`
+
+---
+
+## Go to next heading
+
+`VO` + (`Shift`) + `Command` + `H`
+
+---
+
+## Go to next table
+
+`VO` + (`Shift`) + `Command` + `T`
+
+---
+
+## Go to next list
+
+`VO` + (`Shift`) + `Command` + `X`
+
+---
+
+## Go to next element
+
+`VO` + (`Shift`) + `Command` + [element]
+
+- Link (`L`)
+- Visited link (`V`)
+- Form control (`J`)
+- Graphic (`G`)
+
+---
+
+## Move like a tree
+
+| Operation     | Command                          |
+| ------------- | -------------------------------- |
+| Down/Up       | `VO` + `Shift` + `Down/Up Arrow` |
+| Next/Previous | `VO` + `Right/Left Arrow`        | 
+
+<style>
+.slide-tree {
+  background-color: #222;
+  border-radius: 1rem;
+  display: grid;
+  font-size: 2rem;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(5, 3rem);
+  grid-template-rows: repeat(3, 3rem);
+  margin: 20px auto;
+  padding: 1rem;
+  width: fit-content;
+}
+.slide-tree .line {
+  align-self: center;
+  background-color: #666;
+  justify-self: center;
+  height: 100%;
+  width: 0.25rem;
+}
+.slide-tree .line--1 {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 3;
+  transform: rotate(45deg);
+}
+.slide-tree .line--2 {
+  grid-column: 3 / span 2;
+  grid-row: 1 / span 2;
+  transform: rotate(-45deg);
+}
+.slide-tree .line--3 {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+.slide-tree .line--4 {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+  transform: rotate(-45deg);
+}
+.slide-tree .node {
+  align-items: center;
+  background-color: #999;
+  border: 0.25rem solid #222;
+  border-radius: 50%;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  position: relative;
+}
+.slide-tree .node.current-fragment {
+  background-color: #fff;
+  box-shadow: 0 0 0 0.25rem #fff;
+  color: #111;
+}
+.slide-tree .node--1 {
+  grid-column: 3;
+  grid-row: 1;
+}
+.slide-tree .node--2 {
+  grid-column: 2;
+  grid-row: 2;
+}
+.slide-tree .node--3 {
+  grid-column: 1;
+  grid-row: 3;
+}
+.slide-tree .node--4 {
+  grid-column: 2;
+  grid-row: 3;
+}
+.slide-tree .node--5 {
+  grid-column: 3;
+  grid-row: 3;
+}
+.slide-tree .node--6 {
+  grid-column: 4;
+  grid-row: 2;
+}
+</style>
+
+<div class="slide-tree r-stack">
+  <div class="line line--1"></div>
+  <div class="line line--2"></div>
+  <div class="line line--3"></div>
+  <div class="line line--4"></div>
+  <div class="node node--1"></div>
+  <div class="node node--2"></div>
+  <div class="node node--3"></div>
+  <div class="node node--4"></div>
+  <div class="node node--5"></div>
+  <div class="node node--6"></div>
+  <div class="node node--1 fragment">↓</div>
+  <div class="node node--2 fragment">↓</div>
+  <div class="node node--3 fragment">→</div>
+  <div class="node node--4 fragment">↑</div>
+  <div class="node node--2 fragment">→</div>
+  <div class="node node--6 fragment"></div>
+</div>
+
+---
+
+## Summary
+
+- Everyone has limitations.
+- Tech can help make a more inclusive world.
+- Screen reader users navigate with focus, cursors, rotor, shortcuts.
+
+---
+
+## After the break
+
+- What screen readers communicate
+- Exercises
+
+---
+
+## Break (10 min)
+
+Return at 2:10
+
+---
+
+## Exercises
+
+---
+
+## 1. Read the screen
+
+---
+
+## ISO
+
+|               |                                           |
+| ------------- | ----------------------------------------- |
+| **Identity**  | What am I interacting with?               |
+| **State**     | What is the current status of this thing? |
+| **Operation** | How do I use this thing?                  |
+
+<footer>
+
+See: [*How to Describe Complex Designs for Users with Disabilities*](https://medium.com/salesforce-ux/how-to-describe-complex-designs-for-users-with-disabilities-ba05f5224130)
+
+</footer>
+
+Note:
+aria-label
+role
+
+---
+
+## List
+
+|               |              |
+| ------------- | ------------ |
+| **Identity**  | "List fruit" |
+| **State**     | "3 items"    |
+| **Operation** | ""           |
+
+<style>
+.slide-list {
+  background-color: #eee;
+  color: #111;
+  max-width: max-content;
+  margin: 40px auto;
+  padding: 1rem;
+  text-align: left;
+}
+.slide-list .cursor {
+  box-shadow:
+    0 0 0 2px white,
+    0 0 0 6px black,
+    0 0 0 8px white;
+  position: relative;
+}
+</style>
+
+<div class="slide-list">
+  <ul class="cursor">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Strawberry</li>
+  </ul>
+</div>
+
+```html
+<ul aria-label="fruit">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Strawberry</li>
+</ul>
+```
+
+---
+
+## List
+
+|               |          |
+| ------------- | ---------|
+| **Identity**  | "Apple"  |
+| **State**     | "1 of 3" |
+| **Operation** | ""       |
+
+<div class="slide-list">
+  <ul aria-label="Fruit">
+    <li class="cursor">Apple</li>
+    <li>Banana</li>
+    <li>Strawberry</li>
+  </ul>
+</div>
+
+---
+
+## List
+
+|               |          |
+| ------------- | -------- |
+| **Identity**  | "Banana" |
+| **State**     | "2 of 3" |
+| **Operation** | ""       |
+
+<div class="slide-list">
+  <ul>
+    <li>Apple</li>
+    <li class="cursor">Banana</li>
+    <li>Strawberry</li>
+  </ul>
+</div>
+
+---
+
+## Checkbox
+
+|               |                                                    |
+| ------------- | -------------------------------------------------- |
+| **Identity**  | "I agree to these terms and conditions. Checkbox." |
+| **State**     | "Unchecked."                                       |
+| **Operation** | "Press spacebar to check."                         |
+
+<style>
+.slide-checkbox {
+  background-color: #eee;
+  color: #111;
+  max-width: max-content;
+  margin: 40px auto;
+  padding: 1rem;
+  text-align: left;
+}
+.slide-checkbox input {
+  width: 2rem;
+}
+.slide-checkbox .cursor {
+  box-shadow:
+    0 0 0 2px white,
+    0 0 0 6px black,
+    0 0 0 8px white;
+  position: relative;
+}
+</style>
+
+<div class="slide-checkbox">
+  <input id="terms-conditions" type="checkbox" class="cursor">
+  <label for="terms-conditions">I agree to these terms and conditions<label>
+</div>
+
+---
+
+## Screen read
+
+Describe the screen like 
+
+- Message a participant a link to a wireframe. Have them read it out loud like a screen reader, while everyone else sees a blank screen on Zoom. Afterward, reveal the screen.
+- Draw the UI.
+
+---
+
+## Exercises
+
+- Human-to-computer role-play (page 4)
+- Design a micro-interaction (page 13)
+- Simulations (page 16)
+
+---
+
+## Mistakes and bad examples
+The same wireframe, but implemented in different ways.
+- Inaccessible.
+- Accessible but not usable.
+- Accessible and usable.
+- Accessible, usable, and delightful.
+
+---
+
+## Annotate wireframes
+- Examine wireframes, and discuss how screen reader users may or should experience those interfaces
+- Annotate wireframes to communicate accessibility expectations to the product team
+- What does the screen reader say?
+- [HTML Element test file index](https://thepaciellogroup.github.io/AT-browser-tests/)
+
+---
+
+## Other
+
+1. How do we design without a designer? Designer is a facilitator of the process. Designers can build prototypes for testing.
+1. Study accessibility features, such as roles, names, focus and cursor handling, tab order, and ARIA
+
+---
+
+## Hanek
+
+- Importance of keyboard only functionality. Level 0 of what everything else is built on. Lots of assistive tech relies on keyboard behavior working properly.
+- A11y primer, by Hanek's team
+- macOS: Create a user for testing (need admin priveledges). Reset everything back to defaults.
+- WCAG are things that should be reviewed when annotating.
+- You need context to get feedback. Not just wireframes. Need user journey. Input. What activity is happening? Need this for wireframe review or for passing info to devs for coding. "I don't know what's going on with this?" What is the intention?
+- Add tab order to wireframes, where you expect it to deviate from normal markup.
+- Figma add-in by Microsoft (Focus Orderer, https://www.figma.com/community/plugin/731310036968334777/A11y---Focus-Orderer)
+

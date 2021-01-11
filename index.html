@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Incorporating Accessibility in the Design Process | Statewide IT 2021 Workshop</title>
+    <link rel="stylesheet" href="reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="night-fork.css" id="theme">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="slides.md"
+          data-separator="^---">
+        </section>
+      </div>
+    </div>
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+        transition: 'none'
+      })
+      const messages = {
+        '35-0': 'Landmarks menu.',
+        '35-1': 'Links menu.',
+        '35-2': 'Headings menu.',
+        '35-3': 'Heading level 1. Virtual Statewide IT Conference 2021.',
+        '35-4': 'Heading level 3. Staff kudos form.',
+        '35-5': 'Heading level 3. Three dynamic keynote events.',
+        '50': 'List fruit. 3 items.',
+        '51': 'Apple. 1 of 3.',
+        '52': 'Banana. 2 of 3.'
+      }
+      Reveal.on('slidechanged', (event) => {
+        speak(event.indexh)
+      })
+      Reveal.on('fragmentshown', (event) => {
+        const { fragmentIndex } = event.fragment.dataset
+        const { indexh } = Reveal.getState()
+        const id = `${indexh}-${fragmentIndex}`
+        speak(id)
+      })
+      function speak (messageId) {
+        const text = messages[String(messageId)]
+        if (!text) {
+          return
+        }
+        const msg = new SpeechSynthesisUtterance(text)
+        msg.rate = 1.5
+        const synth = window.speechSynthesis
+        synth.cancel()
+        synth.speak(msg)
+      }
+    </script>
+  </body>
+</html>

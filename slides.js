@@ -20,6 +20,7 @@ Reveal.on('fragmentshown', (event) => {
   const id = `${indexh}-${fragmentIndex}`
   speak(id)
 })
+
 function speak (messageId) {
   const text = messages[String(messageId)]
   if (!text) {

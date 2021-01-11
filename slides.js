@@ -1,9 +1,3 @@
-Reveal.initialize({
-  hash: true,
-  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-  transition: 'none'
-})
-
 const messages = {
   '35-0': 'Landmarks menu.',
   '35-1': 'Links menu.',

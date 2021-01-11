@@ -1,4 +1,4 @@
-## Incorporating Accessibility in the Design Process
+# Incorporating Accessibility in the Design Process
 
 Statewide IT 2021 Workshop
 
@@ -74,13 +74,13 @@ Accessibility is addressed too late in the development process.
 
 - Get early feedback from assistive tech users.
 - Hire assistive tech users.
-- [Request an accessibility evaluation](https://ux.iu.edu/accessibility/) from the UITS Accessibility Team.
+- [Request an accessibility evaluation](https://ux.iu.edu/accessibility/) from the UITS&nbsp;Accessibility&nbsp;Team.
 
 ---
 
 ## Enterprise Systems
 
-- [Accessibility Bootcamp](https://iu.mediaspace.kaltura.com/channel/Accessibility%2Bbootcamp/165180531) training with [Deque University](https://dequeuniversity.com/) (April 2020)
+- [Accessibility Bootcamp](https://iu.mediaspace.kaltura.com/channel/Accessibility%2Bbootcamp/165180531) training with Deque&nbsp;University (April 2020)
 - [Accessibility Development Guidelines](https://uisapp2.iu.edu/confluence-prd/display/TAG/Accessibility+Development+Guidelines) (Technology Advisory Group)
 - Accessibility shares in dev community of practice
 - Automated accessibility testing
@@ -155,7 +155,7 @@ Thirdly, you may be physically limited in what you can do.
 
 ---
 
-## Everyone has limitations
+## Limitations
 
 |           | Permanent  | Temporary     | Situational       |
 | --------- | ---------- | ------------- | ----------------- |
@@ -313,7 +313,7 @@ As we can see, there are a lot of layers between the code and what the user expe
 
 <footer>
 
-See: [*Use a screen reader to evaluate a website* (IU Knowledge Base)](https://kb.iu.edu/d/atey)
+See: [*Use a screen reader to evaluate a website* (IU&nbsp;Knowledge&nbsp;Base)](https://kb.iu.edu/d/atey)
 
 </footer>
 
@@ -578,7 +578,7 @@ Rotor. Shortcuts.
 
 - Everyone has limitations.
 - Tech can help make a more inclusive world.
-- Screen reader users navigate with focus, cursors, rotor, shortcuts.
+- Screen reader users navigate with <br> focus, cursors, rotor, shortcuts.
 
 ---
 

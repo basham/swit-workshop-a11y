@@ -17,18 +17,21 @@
   --color-base-8: #eee;
   --color-base-9: #fff;
   --color-blue: deepskyblue;
+  --fs-0: calc(32rem/40);
+  --fs-1: 1rem;
+  --fs-2: 2rem;
+  --fs-3: 3rem;
+}
+
+html {
+  font-size: 40px;
 }
 
 .reveal-viewport {
-  background: var(--color-base-1);
   background-color: var(--color-base-1);
-}
-
-.reveal {
   color: var(--color-base-8);
   font-family: "Open Sans", sans-serif;
-  font-size: 40px;
-  font-weight: normal;
+  line-height: 1.2;
 }
 
 .reveal ::selection {
@@ -36,52 +39,38 @@
   color: var(--color-base-9);
 }
 
-.reveal .slides section,
-.reveal .slides section > section {
-  font-weight: inherit;
-  line-height: 1.3;
+.reveal .controls,
+.reveal .progress {
+  color: var(--color-accent);
 }
 
 /*
- * Headers
+ * Content
  */
 .reveal h1,
 .reveal h2 {
-  color: var(--color-base-8);
   font-weight: bold;
-  line-height: 1.2;
-  margin: 0 0 20px 0;
+  margin: 0 0 0.5rem;
   word-wrap: break-word;
 }
 
 .reveal h1 {
-  font-size: 3.77em;
+  font-size: 2.5rem;
 }
 
 .reveal h2 {
-  font-size: 2.11em;
+  font-size: 2rem;
 }
 
-/*
- * Other
- */
 .reveal p {
-  line-height: 1.3;
-  margin: 20px 0;
+  margin: 0 0 0.5rem;
 }
 
-/* Remove trailing margins after titles */
-.reveal h1:last-child,
-.reveal h2:last-child {
-  margin-bottom: 0;
-}
-
-/* Ensure certain elements are never larger than the slide itself */
+.reveal iframe,
 .reveal img,
-.reveal video,
-.reveal iframe {
-  max-width: 95%;
+.reveal video {
   max-height: 95%;
+  max-width: 95%;
 }
 
 .reveal strong,
@@ -97,7 +86,7 @@
 .reveal dl,
 .reveal ul {
   display: inline-block;
-  margin: 0 0 0 1em;
+  margin: 0 0 0.5rem 1rem;
   text-align: left;
 }
 
@@ -122,7 +111,11 @@
 .reveal ol ol,
 .reveal ol ul {
   display: block;
-  margin-left: 40px;
+  margin-left: 1rem;
+}
+
+.reveal li + li {
+  margin-top: 0.5rem;
 }
 
 .reveal dt {
@@ -130,15 +123,14 @@
 }
 
 .reveal dd {
-  margin-left: 40px;
+  margin-left: 1rem;
 }
 
 .reveal blockquote {
   background: var(--color-base-2);
   display: block;
   font-style: italic;
-  margin: 20px auto;
-  padding: 5px;
+  margin: 0 auto 0.5rem;
   position: relative;
   width: 70%;
 }
@@ -155,9 +147,7 @@
 .reveal pre {
   display: block;
   font-family: monospace;
-  font-size: 0.55em;
-  line-height: 1.2em;
-  margin: 20px auto;
+  margin: 0 auto 0.5rem;
   position: relative;
   text-align: left;
   width: 90%;
@@ -171,16 +161,16 @@
 
 .reveal pre code {
   display: block;
-  max-height: 400px;
+  max-height: 10rem;
   overflow: auto;
-  padding: 5px;
+  padding: 0.5rem;
   word-wrap: normal;
 }
 
 .reveal table {
   border-collapse: collapse;
   border-spacing: 0;
-  margin: 20px auto;
+  margin: 0 auto 0.5rem;
 }
 
 .reveal table th {
@@ -190,7 +180,7 @@
 .reveal table th,
 .reveal table td {
   border-bottom: 1px solid;
-  padding: 0.2em 0.5em 0.2em 0.5em;
+  padding: 0.25rem 0.5rem;
   text-align: left;
 }
 
@@ -204,85 +194,32 @@
   text-align: right;
 }
 
-.reveal sup {
-  font-size: smaller;
-  vertical-align: super;
-}
-
-.reveal sub {
-  font-size: smaller;
-  vertical-align: sub;
-}
-
-.reveal small {
-  display: inline-block;
-  font-size: 0.6em;
-  line-height: 1.2em;
-  vertical-align: top;
-}
-
-.reveal small * {
-  vertical-align: top;
-}
-
 .reveal img {
-  margin: 20px 0;
+  margin: 0 0 0.5rem;
 }
 
 .reveal footer {
-  font-size: 24px;
+  font-size: var(--fs-0);
+  margin-top: 1rem;
 }
 
-/*
- * Links
- */
 .reveal a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-.reveal a:hover {
-  text-decoration: underline;
+  color: inherit;
+  text-decoration-color: var(--color-accent);
 }
 
 /*
- * Frame helper
+ * Print
  */
-.reveal .r-frame {
-  border: 4px solid var(--color-base-8);
-  box-shadow: 0 0 10px var(--color-base-9);
-}
 
-.reveal a .r-frame {
-  transition: all .15s linear;
-}
-
-.reveal a:hover .r-frame {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 20px var(--color-base-9);
-}
-
-/*
- * Navigation controls
- */
-.reveal .controls {
-  color: var(--color-accent);
-}
-
-/*
- * Progress bar
- */
-.reveal .progress {
-  color: var(--color-accent);
-}
-
-/*
- * Print background
- */
 @media print {
 
-  .backgrounds {
-    background-color: var(--color-base-1);
+  .reveal-viewport {
+    background-color: var(--color-base-9);
+  }
+  
+  .reveal {
+    color: var(--color-base-0);
   }
 }
 

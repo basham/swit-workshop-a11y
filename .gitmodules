@@ -1,3 +1,6 @@
 [submodule "reveal.js"]
 	path = reveal.js
 	url = https://github.com/hakimel/reveal.js.git
+[submodule "open-sans"]
+	path = open-sans
+	url = https://github.com/FontFaceKit/open-sans

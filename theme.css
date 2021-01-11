@@ -1,10 +1,9 @@
-/**
+/*
  * Forked from the Night theme.
  */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
 
 /*
- * GLOBAL STYLES
+ * Global styles
  */
 :root {
   --color-accent: sandybrown;
@@ -44,7 +43,7 @@
 }
 
 /*
- * HEADERS
+ * Headers
  */
 .reveal h1,
 .reveal h2 {
@@ -64,7 +63,7 @@
 }
 
 /*
- * OTHER
+ * Other
  */
 .reveal p {
   line-height: 1.3;
@@ -235,7 +234,7 @@
 }
 
 /*
- * LINKS
+ * Links
  */
 .reveal a {
   color: var(--color-accent);
@@ -264,21 +263,21 @@
 }
 
 /*
- * NAVIGATION CONTROLS
+ * Navigation controls
  */
 .reveal .controls {
   color: var(--color-accent);
 }
 
 /*
- * PROGRESS BAR
+ * Progress bar
  */
 .reveal .progress {
   color: var(--color-accent);
 }
 
 /*
- * PRINT BACKGROUND
+ * Print background
  */
 @media print {
 

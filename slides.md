@@ -588,17 +588,21 @@ Rotor. Shortcuts.
 
 ---
 
-## Break (10 min)
+# Break
+
+10 minutes
 
 Return at 2:10
 
 ---
 
-## Exercises
+# Exercises
 
 ---
 
-## 1. Read the screen
+## Read the screen
+
+Exercise 1
 
 ---
 

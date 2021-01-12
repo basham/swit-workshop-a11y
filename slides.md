@@ -66,7 +66,7 @@ There's a number of issues that result from this. When devs aren't given proper 
 - Join Slack channels.
 
 Note:
-There are a lot of ways we address this problem. First, you can improve your knowledge. Research how assistive technology is used. Study the WCAG and ARIA documentation to better understand the vastness of the specs. Especially if you're a designer, investigate inclusive design practices. The IU Knowledge Base provides a lot of guideance, especially tailored for the work we do. You can talk and teach about accessibility, both within your team and among the teams you work with. There are a number of forums in which you talk about accessibility. The #topic-accessibility-web channel being of them on the iu-uits Slack workspace.
+There are a lot of ways we address this problem. First, you can improve your knowledge. Research how assistive technology is used. Study the WCAG and ARIA documentation to better understand the vastness of the specs. Especially if you're a designer, investigate inclusive design practices. The IU Knowledge Base provides a lot of guidance, especially tailored for the work we do. You can talk and teach about accessibility, both within your team and among the teams you work with. There are a number of forums in which you talk about accessibility. The #topic-accessibility-web channel being of them on the iu-uits Slack workspace.
 
 
 
@@ -79,7 +79,7 @@ There are a lot of ways we address this problem. First, you can improve your kno
 - Test accessibility before, after development.
 
 Note:
-Second, you can improve your process. Everyone needs to be involved, including management, product owners, business analysists, quality assurance, developers, and designers. Teams should discuss accessibility expectations early in the process. Document those expectations alongside acceptance criteria, testing notes, and design deliverables. Include accessibility notes in wireframes. Put aside the mouse and test your software using a keyboard only. Practice using a screen reader, on both desktop and mobile device. Evaluate the accessibility of a design direction before development, and then test it again once implemented. Make accessibility reviews part of your team's process.
+Second, you can improve your process. Everyone needs to be involved, including management, product owners, business analysts, quality assurance, developers, and designers. Teams should discuss accessibility expectations early in the process. Document those expectations alongside acceptance criteria, testing notes, and design deliverables. Include accessibility notes in wireframes. Put aside the mouse and test your software using a keyboard only. Practice using a screen reader, on both desktop and mobile device. Evaluate the accessibility of a design direction before development, and then test it again once implemented. Make accessibility reviews part of your team's process.
 
 
 
@@ -122,7 +122,7 @@ The Digital Accessibility Office lead by Greg Hanek has been pushing to have acc
 - Partnering with Digital Accessibility Office
 
 Note:
-The Enterprise Systems division, which I am part of, has been doing a lot to improve our practices. In April, experts at Deque University conducated a multiday bootcamp training for us. That content is now available for anyone at IU through Kaltura. Our developer leads have published accessibility guidelines for teams to follow. Developers will share various accessibility implementations and what they've learned, with the community of practice. Developers have incorporated automated accessibility testing tools, so we identify issues before features are manually tested. We have meetings to address accessibility issues across teams. And we've started to partner with the Digital Accessibility Office to evaluate some of our products.
+The Enterprise Systems division, which I am part of, has been doing a lot to improve our practices. In April, experts at Deque University conducted a multi-day bootcamp training for us. That content is now available for anyone at IU through Kaltura. Our developer leads have published accessibility guidelines for teams to follow. Developers will share various accessibility implementations and what they've learned, with the community of practice. Developers have incorporated automated accessibility testing tools, so we identify issues before features are manually tested. We have meetings to address accessibility issues across teams. And we've started to partner with the Digital Accessibility Office to evaluate some of our products.
 
 
 
@@ -194,10 +194,10 @@ Permanent. Temporary. Situational.
 
 Vision. Hearing. Mobility. Cognitive. Speech.
 
-Noticable. Invisible.
+Noticeable. Invisible.
 
 Note:
-Thirdly, you may be physically impaired in what you can do. Those impairments could be permanent, temporary, or situational. And those impairments can cover a range of physical and mental contexts. And those impairments may be noticable by others or may be invisible to others.
+Thirdly, you may be physically impaired in what you can do. Those impairments could be permanent, temporary, or situational. And those impairments can cover a range of physical and mental contexts. And those impairments may be noticeable by others or may be invisible to others.
 
 
 
@@ -257,7 +257,7 @@ But not all technology is great. It can be misused, be abused, be nefarious, or 
 "Can I use this?"
 
 Note:
-Accessibility is inherently about inclusion. It askes the question, "Can I use this thing?" On the surface, the answer is binary. But as we've already learned, what one person is capable of is different than another or even themselves, depending on context and limitations.
+Accessibility is inherently about inclusion. It asks the question, "Can I use this thing?" On the surface, the answer is binary. But as we've already learned, what one person is capable of is different than another or even themselves, depending on context and limitations.
 
 
 
@@ -291,7 +291,7 @@ Technology that is purposefully designed to be highly accessible and usable is k
 - Screen readers
 
 Note:
-And of course, there is assistive software. Shortcuts allows you to make a change, without hunting through menus. Spell check and word predition helps you to type (sometimes). You can adjust screen colors, if you are color blind and can't see red. You can zoom. And you can use a screen reader. That's where we'll spend most of our time during this workshop.
+And of course, there is assistive software. Shortcuts allows you to make a change, without hunting through menus. Spell check and word prediction helps you to type (sometimes). You can adjust screen colors, if you are color blind and can't see red. You can zoom. And you can use a screen reader. That's where we'll spend most of our time during this workshop.
 
 
 
@@ -384,7 +384,7 @@ See: [*Use a screen reader to evaluate a website* (IU&nbsp;Knowledge&nbsp;Base)]
 </footer>
 
 Note:
-When testing websites, we tend to check the site in the major browsers and call that good enough. However, when considering screen readers and the brittleness between the software layers, where do we start? Luckiliy, the IU Knowledge Base provides recommendations. There are certain combinations of software that give the best experence for users, are popular, and free to use.
+When testing websites, we tend to check the site in the major browsers and call that good enough. However, when considering screen readers and the brittleness between the software layers, where do we start? Luckily, the IU Knowledge Base provides recommendations. There are certain combinations of software that give the best experience for users, are popular, and free to use.
 
 NVDA and Firefox will most quickly reveal issues with your markup. They pay the most attention to accessibility standards. Then use VoiceOver on macOS and iOS as a secondary quality check.
 
@@ -402,7 +402,7 @@ Each screen reader has its own personality. The browser pairing will modify that
 Note:
 In the general public, JAWS and NVDA are the most used by those with no or low vision. JAWS is the most robust screen reader, but don't bother with it, because of its cost, at $1,000 per license.
 
-iOS has 85% of marketshare of assistive tech users, in both the general public and Indiana University Bloomington students.
+iOS has 85% of market share of assistive tech users, in both the general public and Indiana University Bloomington students.
 
 Web developers love Chrome, but it is not the best paired with screen readers. Almost no one uses ChromeVOX, as it is browser only.
 

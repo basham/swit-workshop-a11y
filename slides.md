@@ -111,7 +111,7 @@ Now that we've established where we're going during this workshop, let's start b
 
 
 
-## Human perfection<br>is a myth
+## Human perfection is&nbsp;a&nbsp;myth
 
 Note:
 There is no perfect human or human condition. Everyone has both abilities and disabilities. We are simply different along that spectrum.
@@ -153,8 +153,6 @@ Note:
 Thirdly, you may be physically limited in what you can do.
 
 
-
-## Limitations
 
 |           | Permanent  | Temporary     | Situational       |
 | --------- | ---------- | ------------- | ----------------- |
@@ -240,7 +238,7 @@ Technology that is purposefully designed to be highly accessible and usable is k
 
 - Keyboard shortcuts
 - Spell check, word prediction
-- Voice recognition, dictation
+- Voice control, dictation
 - Contrast, color, motion, magnification settings
 - Screen readers
 
@@ -254,51 +252,71 @@ And of course, there is assistive software. Shortcuts allows you to make a chang
 Narrate, navigate, interact with content.
 
 Note:
-A screen reader is a tool that gives you an alternative way to use a computer. A sighted user can experience a 2 or 3 dimensional visual interface, but a bind user cannot. Instead of a mouse, you navigate with a keyboard. Instead of reading with your eyes, you listen with your ears or touch your fingers to a braille device.
+A screen reader is a tool that gives you an alternative way to use a computer. A sighted user can experience a 2 or 3 dimensional visual interface, but a bind user cannot.
+
+
+
+## Keyboard is required
+
+Assistive tech relies on proper keyboard behavior.
+
+Note:
+Instead of a mouse, you navigate with a keyboard. Instead of reading with your eyes, you listen with your ears or touch your fingers to a braille device. Getting keyboard behavior working well is the foundational step to making the software compatible with assistive tech.
 
 
 
 ## Tech stack
 
-<div class="slide-tech-stack">
-  <div class="stack">
-    <h3 class="label">Website</h3>
-    <div class="node"><code><></code> HTML</div>
-    <div class="node"><code>{}</code> CSS</div>
-    <div class="node"><code>[]</code> JavaScript</div>
+<dl class="slide-tech-stack">
+  <div class="stack stack--span">
+    <dt class="label"><code><></code> Website</dt>
   </div>
   <div class="stack">
-    <h3 class="label">Browser</h3>
-    <div class="node">🌲 DOM tree</div>
-    <div class="node fragment">🎄 Accessibility tree</div>
-    <h3 class="label fragment">Operating system</h3>
-    <div class="node fragment">🍎 Accessibility API</div>
-    <div class="node fragment">👁 Screen reader</div>
+    <dt class="label">Software</dt>
+    <dd class="node">🌲 DOM tree</dd>
+    <dd class="node fragment">🎄 Accessibility tree</dd>
+    <dd class="node fragment">🍎 Operating system</dd>
+    <dd class="node fragment">👁 Screen reader</dd>
   </div>
   <div class="stack">
-    <h3 class="label">Hardware</h3>
-    <div class="node">📺 Screen</div>
-    <div class="node fragment">🔈 Speakers</div>
-    <div class="node fragment">🔘 Braille</div>
-    <h3 class="label">World</h3>
-    <div class="node">🙂 User</div>
+    <dt class="label">Hardware</dt>
+    <dd class="node">📺 Monitor</dd>
+    <dd class="node fragment">🔈 Speakers</dd>
+    <dd class="node fragment">🎹 Keyboard</dd>
+    <dd class="node fragment">🔘 Braille</dd>
   </div>
-</div>
+  <div class="stack stack--span">
+    <dt class="label">🙂 User</dt>
+  </div>
+</dl>
 
-<footer>
+Note:
+Let's first look at the technology stack. When you build a website, the user interfaces with it through a browser. That browser interprets HTML, CSS, and JavaScript to render what the user sees, the visual user interface (UI). This interpretation is the DOM tree, short for Document Object Model. The user does not directly interact with the HTML. They interact with the DOM. This DOM can differ from browser to browser.
+
+But the stack is more complicated than that for assistive technology. The accessibility tree prepares the DOM to be used outside of the browser. That gets passed to the operating system's accessibility API, which interfaces with screen reader software and other hardware.
+
+As we can see, there are a lot of layers between the code and what the user experiences. Each layer can interrupt the interaction between the user and the website. The more layers, the more chance of an interruption. In short, screen reader users are much more susceptible to an inaccessible or unusable experience than many others.
 
 See: [*The intersection of performance and accessibility*](https://noti.st/ericwbailey/Yfyaxa/the-intersection-of-performance-and-accessibility)
 
-</footer>
+
+
+## You can't control:
+
+- Browser, operating system
+- Assistive tech
+- User settings, skill level
+
+
+
+## You control your code
+
+- Semantic HTML
+- Design for mobile
+- Usable with keyboard
 
 Note:
-Let's first look at the technology stack. When you build a website, the user interfaces with it through a browser. That browser interprets HTML, CSS, and JavaScript to render what the user sees. This interpretation is the DOM tree, short for Document Object Model. The user does not directly interact with the HTML. They interact with the DOM.
-
-But the stack is more complicated than that. The accessibility tree prepares the website's content to be used outside of the browser. That gets passed to the operating system's accessibility API, which interfaces with the system's screen reader software.
-
-The screen reader interfaces with speakers, braille keyboards, screens, and other hardware to finally reach the user.
-
-As we can see, there are a lot of layers between the code and what the user experiences. Each layer can interrupt the interaction between the user and the website. The more layers, the more chance of an interruption. In short, screen reader users are much more susceptible to an inaccessible or unusable experience than many others.
+You can control your code. Semantic code will more cleanly translate into the accessibility tree. Designing for mobile devices will help keep the content clean. Making all functionality usable with a keyboard means assistive tech can likely use it.
 
 
 
@@ -323,7 +341,7 @@ When testing websites, we tend to check the site in the major browsers and call 
 
 ## Other details
 
-- Users tend to only use one screen reader per device.
+- Users tend to only use one screen reader per&nbsp;device.
 - All may behave differently (that's okay).
 - Some are expensive (JAWS is $1,000 per license).
 
@@ -464,18 +482,6 @@ Rotor. Shortcuts.
       <li>1: Virtual Statewide IT Conference 2021</li>
       <li class="active">3: Staff kudos form</li>
       <li>3: Three dynamic keynote events</li>
-      <li>2: Keynote Speakers</li>
-      <li>4: Rob Lowden</li>
-      <li>4: Michael McRobbie</li>
-      <li>4: Stacy Morrone</li>
-    </ul>
-  </div>
-  <div class="section fragment">
-    <h3>Headings</h3>
-    <ul>
-      <li>1: Virtual Statewide IT Conference 2021</li>
-      <li>3: Staff kudos form</li>
-      <li class="active">3: Three dynamic keynote events</li>
       <li>2: Keynote Speakers</li>
       <li>4: Rob Lowden</li>
       <li>4: Michael McRobbie</li>

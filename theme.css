@@ -83,7 +83,6 @@ html {
 }
 
 .reveal ol,
-.reveal dl,
 .reveal ul {
   display: inline-block;
   margin: 0 0 0.5rem 1rem;
@@ -116,14 +115,6 @@ html {
 
 .reveal li + li {
   margin-top: 0.5rem;
-}
-
-.reveal dt {
-  font-weight: bold;
-}
-
-.reveal dd {
-  margin-left: 1rem;
 }
 
 .reveal blockquote {

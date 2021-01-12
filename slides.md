@@ -4,7 +4,7 @@ Statewide IT 2021 Workshop
 
 Chris Basham
 
----
+
 
 ## Chris Basham
 
@@ -14,7 +14,7 @@ UX designer in Enterprise Student Systems.
 
 *Accessibility. Front-end dev. Design systems.*
 
----
+
 
 ## Outline
 
@@ -27,7 +27,7 @@ UX designer in Enterprise Student Systems.
 | 3:00 |      10m | Break        |
 | 3:10 |      50m | Exercises    |
 
----
+
 
 ## Zoom etiquette
 
@@ -35,13 +35,13 @@ UX designer in Enterprise Student Systems.
 - Use chat.
 - Use annotations, stamps.
 
----
+
 
 ## Problem
 
 Accessibility is addressed too late in the development process.
 
----
+
 
 ## Consequences
 
@@ -49,7 +49,7 @@ Accessibility is addressed too late in the development process.
 - Devs are forced to make design decisions.
 - Bugs, technical debt.
 
----
+
 
 ## Improve knowledge
 
@@ -59,7 +59,7 @@ Accessibility is addressed too late in the development process.
 - Talk, teach about accessibility.
 - Join Slack channel `iu-uits#topic-accessibility-web`.
 
----
+
 
 ## Improve process
 
@@ -68,7 +68,7 @@ Accessibility is addressed too late in the development process.
 - Enrich design deliverables.
 - Test accessibility before, after development.
 
----
+
 
 ## Improve feedback
 
@@ -76,7 +76,7 @@ Accessibility is addressed too late in the development process.
 - Hire assistive tech users.
 - [Request an accessibility evaluation](https://ux.iu.edu/accessibility/) from the UITS&nbsp;Accessibility&nbsp;Team.
 
----
+
 
 ## Enterprise Systems
 
@@ -87,7 +87,7 @@ Accessibility is addressed too late in the development process.
 - Cross-team accessibility committee
 - Partnering with UITS Accessibility Team
 
----
+
 
 ## Workshop goals
 
@@ -95,28 +95,28 @@ Accessibility is addressed too late in the development process.
 - Simulate the screen reader experience.
 - Examine, discuss, annotate wireframes.
 
----
+
 
 ## Out of scope
 
 - Practice using a screen reader.
 - Deep-dive into WCAG Success Criteria.
 
----
+
 
 ## Overview
 
 Note:
 Now that we've established where we're going during this workshop, let's start by better understanding accessibility and how it fits into what we do.
 
----
+
 
 ## Human perfection<br>is a myth
 
 Note:
 There is no perfect human or human condition. Everyone has both abilities and disabilities. We are simply different along that spectrum.
 
----
+
 
 ## Disability is a mismatched interaction
 
@@ -125,7 +125,7 @@ Environment + Social context + Limitations
 Note:
 We should think of disabilities as a mismatched interaction between a person and the world. This conflict is unique, depending on the environment or social context or limitations of the person.
 
----
+
 
 ## Environment
 
@@ -134,7 +134,7 @@ Location. Weather. Time. Objects.
 Note:
 The environment surely affects how we interact with the world. Being physical beings, we must be situated in a particular place and time. Maybe that's at home, at work, in the woods, or in a busy city center. Time of day, severity of the weather, and the stuff around you all affects what you can or want to do.
 
----
+
 
 ## Social context
 
@@ -143,7 +143,7 @@ Alone. Coworkers. Crowd. Friends. Family.
 Note:
 Secondly, how you behave changes according to if you're alone or with others. And who those others are and how many of them will continue to affect your choices and behavior. An quiet setting with close friends is much different than a loud setting with strangers.
 
----
+
 
 ## Limitations
 
@@ -152,7 +152,7 @@ Touch. Sight. Hearing. Speech. Cognition.
 Note:
 Thirdly, you may be physically limited in what you can do.
 
----
+
 
 ## Limitations
 
@@ -170,7 +170,7 @@ As another example, I could be mute, or my throat could be raspy because of a si
 
 As these examples illustrate, we all experience limitations of some form. Sometimes they're obvious. Sometimes they're not.
 
----
+
 
 ## Mismatches cause exclusion
 
@@ -191,7 +191,7 @@ As a simple example, when I was growing up, my family would often go to amusemen
 
 I was excluded from doing what I wanted to do. Granted, for this case, it was on purpose and for my personal safety. But many times, exclusion is not necessary. It becomes a form of cruelty. And not everyone has the power or energy or means to improve their situation.
 
----
+
 
 ## Tech can help or hinder
 
@@ -204,7 +204,7 @@ Technology can be one means of augmenting these interactions, so that these mism
 
 But not all technology is great. It can be misused, be abused, be nefarious, or simply be poorly designed. As those who work in technology, it is our obligation to create things that improve the lives of others. That could mean saving them time, energy, and frustration. But more importantly, it could mean empowering them to be included in society in ways previously restricted.
 
----
+
 
 ## Accessibility
 
@@ -213,7 +213,7 @@ But not all technology is great. It can be misused, be abused, be nefarious, or 
 Note:
 Accessibility is inherently about inclusion. It askes the question, "Can I use this thing?" On the surface, the answer is binary. But as we've already learned, what one person is capable of is different than another or even themselves, depending on context and limitations.
 
----
+
 
 ## Usability
 
@@ -222,7 +222,7 @@ Accessibility is inherently about inclusion. It askes the question, "Can I use t
 Note:
 Usability expands on capability and answers the question, "How well can I use this thing?" Does it demand a lot of time and causes frustration? Or does it easily disappear into the background, and the thing becomes a natural extension of myself?
 
----
+
 
 ## Assistive tech
 
@@ -234,7 +234,7 @@ Usability expands on capability and answers the question, "How well can I use th
 Note:
 Technology that is purposefully designed to be highly accessible and usable is known as assistive technology. A crutch is a mobility aid. A sticky note is a cognitive aid. Closed captioning allows the deaf to experience movies and even those with hearing to confirm a phrase spoken softly. Ramps and wide doorways make it easy for those in wheelchairs and those with strollers to move it buildings.
 
----
+
 
 ## Assistive software
 
@@ -247,7 +247,7 @@ Technology that is purposefully designed to be highly accessible and usable is k
 Note:
 And of course, there is assistive software. Shortcuts allows you to make a change, without hunting through menus. Spell check and word predition helps you to type (sometimes). You can adjust screen colors, if you are color blind and can't see red. You can zoom. And you can use a screen reader. That's where we'll spend most of our time during this workshop.
 
----
+
 
 ## Screen readers
 
@@ -256,7 +256,7 @@ Narrate, navigate, interact with content.
 Note:
 A screen reader is a tool that gives you an alternative way to use a computer. A sighted user can experience a 2 or 3 dimensional visual interface, but a bind user cannot. Instead of a mouse, you navigate with a keyboard. Instead of reading with your eyes, you listen with your ears or touch your fingers to a braille device.
 
----
+
 
 ## Tech stack
 
@@ -300,7 +300,7 @@ The screen reader interfaces with speakers, braille keyboards, screens, and othe
 
 As we can see, there are a lot of layers between the code and what the user experiences. Each layer can interrupt the interaction between the user and the website. The more layers, the more chance of an interruption. In short, screen reader users are much more susceptible to an inaccessible or unusable experience than many others.
 
----
+
 
 ## Software pairings
 
@@ -319,7 +319,7 @@ See: [*Use a screen reader to evaluate a website* (IU&nbsp;Knowledge&nbsp;Base)]
 Note:
 When testing websites, we tend to check the site in the major browsers and call that good enough. However, when considering screen readers and the brittleness between the software layers, where do we start? Luckiliy, the IU Knowledge Base provides recommendations. There are certain combinations of software that give the best experence for users, are popular, and free to use. VoiceOver with Safari works best for Apple products. And NVDA is an open source screen reader for Windows that works best with Firefox. For Indiana University students with screen readers, iOS is almost exclusively used, rather than Android. If you test the accessibility of websites with these three pairings, that shoud cover your testing needs.
 
----
+
 
 ## Other details
 
@@ -342,17 +342,17 @@ Web devs love Chrome. It is only recently starting to see a jump in Chrome usage
 
 NVDA has Speech Viewer, a text-based output of what it is vocalizing. Use a mouse to hover over and see what it does.
 
----
+
 
 ## How screen readers work
 
----
+
 
 ## Orientation
 
 Focus. Cursors.
 
----
+
 
 ## Focus
 
@@ -360,7 +360,7 @@ Focus. Cursors.
 
 <div class="slide-focus">Save</div>
 
----
+
 
 ## Keyboard cursor
 
@@ -371,7 +371,7 @@ Focus. Cursors.
   <div class="input">Chris</div>
 </div>
 
----
+
 
 ## Screen reader cursor
 
@@ -385,13 +385,13 @@ Focus. Cursors.
   </ul>
 </div>
 
----
+
 
 ## Navigation
 
 Rotor. Shortcuts.
 
----
+
 
 ## Rotor
 
@@ -484,7 +484,7 @@ Rotor. Shortcuts.
   </div>
 </div>
 
----
+
 
 ## Rotor content
 
@@ -497,7 +497,7 @@ Rotor. Shortcuts.
 | Tables        | `<table>`                     |
 | Articles      | `<article>`                   |
 
----
+
 
 ## Shortcuts
 
@@ -508,31 +508,31 @@ Rotor. Shortcuts.
 | Lock / unlock VO keys  | `VO` + `;`           |
 | Open rotor             | `VO` + `U`           |
 
----
+
 
 ## Go to next focusable element
 
 (`Shift`) + `Tab`
 
----
+
 
 ## Go to next heading
 
 `VO` + (`Shift`) + `Command` + `H`
 
----
+
 
 ## Go to next table
 
 `VO` + (`Shift`) + `Command` + `T`
 
----
+
 
 ## Go to next list
 
 `VO` + (`Shift`) + `Command` + `X`
 
----
+
 
 ## Go to next element
 
@@ -543,7 +543,7 @@ Rotor. Shortcuts.
 - Form control (`J`)
 - Graphic (`G`)
 
----
+
 
 ## Move like a tree
 
@@ -571,7 +571,7 @@ Rotor. Shortcuts.
   <div class="node node--6 fragment"></div>
 </div>
 
----
+
 
 ## Summary
 
@@ -579,14 +579,14 @@ Rotor. Shortcuts.
 - Tech can help make a more inclusive world.
 - Screen reader users navigate with <br> focus, cursors, rotor, shortcuts.
 
----
+
 
 ## After the break
 
 - What screen readers communicate
 - Exercises
 
----
+
 
 # Break
 
@@ -594,17 +594,17 @@ Rotor. Shortcuts.
 
 Return at 2:10
 
----
+
 
 # Exercises
 
----
+
 
 ## Read the screen
 
 Exercise 1
 
----
+
 
 ## ISO
 
@@ -624,7 +624,7 @@ Note:
 aria-label
 role
 
----
+
 
 ## List
 
@@ -636,7 +636,7 @@ role
 </ul>
 ```
 
----
+
 
 ## List
 
@@ -654,7 +654,7 @@ role
   </ul>
 </div>
 
----
+
 
 ## List
 
@@ -672,7 +672,7 @@ role
   </ul>
 </div>
 
----
+
 
 ## List
 
@@ -690,7 +690,7 @@ role
   </ul>
 </div>
 
----
+
 
 ## Checkbox
 

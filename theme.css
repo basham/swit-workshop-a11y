@@ -181,7 +181,7 @@ html {
 .reveal table th,
 .reveal table td {
   border-bottom: 1px solid;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem;
   text-align: left;
 }
 

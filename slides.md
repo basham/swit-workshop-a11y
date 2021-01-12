@@ -37,44 +37,78 @@ UX designer in Enterprise Student Systems.
 
 
 
-## Problem
+# Problem
 
 Accessibility is addressed too late in the development process.
+
+Note:
+The problem we're addressing with this workshop today is that accessibility is often addressed too late in the development process.
 
 
 
 ## Consequences
 
-- Poor or unusable for those with assistive tech.
 - Devs are forced to make design decisions.
+- Poor or unusable for those with assistive tech.
 - Bugs, technical debt.
+
+Note:
+There's a number of issues that result from this. When devs aren't given proper direction, they are forced to make decisions, the best they can. Because accessibility is not designed upfront, the experience for those using assistive technologies with the product is unknown. It could be fine, but likely it is poor or unusable in certain ways. Reworking is inevitable, resulting in bugs, ever growing technical debt, a lower quality product, high costs, and a slow process.
 
 
 
 ## Improve knowledge
 
-- Understand assistive tech.
-- Learn how users use assistive tech.
+- Learn how assistive tech is used.
 - Study WCAG, ARIA, inclusive design.
+- Review IU Knowledge Base articles.
 - Talk, teach about accessibility.
-- Join Slack channel `iu-uits#topic-accessibility-web`.
+- Join Slack channels.
+
+Note:
+There are a lot of ways we address this problem. First, you can improve your knowledge. Research how assistive technology is used. Study the WCAG and ARIA documentation to better understand the vastness of the specs. Especially if you're a designer, investigate inclusive design practices. The IU Knowledge Base provides a lot of guideance, especially tailored for the work we do. You can talk and teach about accessibility, both within your team and among the teams you work with. There are a number of forums in which you talk about accessibility. The #topic-accessibility-web channel being of them on the iu-uits Slack workspace.
 
 
 
 ## Improve process
 
+- Involve everyone.
 - Discuss accessibility expectations early.
-- Practice using a screen reader.
 - Enrich design deliverables.
+- Practice using keyboard, screen reader.
 - Test accessibility before, after development.
+
+Note:
+Second, you can improve your process. Everyone needs to be involved, including management, product owners, business analysists, quality assurance, developers, and designers. Teams should discuss accessibility expectations early in the process. Document those expectations alongside acceptance criteria, testing notes, and design deliverables. Include accessibility notes in wireframes. Put aside the mouse and test your software using a keyboard only. Practice using a screen reader, on both desktop and mobile device. Evaluate the accessibility of a design direction before development, and then test it again once implemented. Make accessibility reviews part of your team's process.
 
 
 
 ## Improve feedback
 
-- Get early feedback from assistive tech users.
+- Get early feedback
+- Seek assistive tech users, experts, communities of practice, Digital&nbsp;Accessibility&nbsp;Office.
 - Hire assistive tech users.
-- [Request an accessibility evaluation](https://ux.iu.edu/accessibility/) from the UITS&nbsp;Accessibility&nbsp;Team.
+
+Note:
+Third, you should seek feedback from others. Get feedback from those who use assistive technologies. Seek accessibility experts from within your division or outside. Get involved in the various web development and design communities of practice. Reach out to the Digital Accessibility Office. And if you hire people who use assistive technologies, you'll have even a more direct means of feedback.
+
+
+
+## Accessibility at IU
+
+Note:
+Now, let's talk about some examples of accessibility initiatives at Indiana University.
+
+
+
+## Digital Accessibility Office
+
+- [IU.edu](https://www.iu.edu/)
+- [IUPUI.edu](https://www.iupui.edu/)
+- [IU Mobile](https://www.iu.edu/mobile-app/)
+
+Note:
+The Digital Accessibility Office lead by Greg Hanek has been pushing to have accessibility addressed in the planning and design stages. They've recently worked on the IU site, IUPUI site, and the IU Mobile app. Involving them early has made a huge difference in the quality of those projects.
 
 
 
@@ -85,7 +119,10 @@ Accessibility is addressed too late in the development process.
 - Accessibility shares in dev community of practice
 - Automated accessibility testing
 - Cross-team accessibility committee
-- Partnering with UITS Accessibility Team
+- Partnering with Digital Accessibility Office
+
+Note:
+The Enterprise Systems division, which I am part of, has been doing a lot to improve our practices. In April, experts at Deque University conducated a multiday bootcamp training for us. That content is now available for anyone at IU through Kaltura. Our developer leads have published accessibility guidelines for teams to follow. Developers will share various accessibility implementations and what they've learned, with the community of practice. Developers have incorporated automated accessibility testing tools, so we identify issues before features are manually tested. We have meetings to address accessibility issues across teams. And we've started to partner with the Digital Accessibility Office to evaluate some of our products.
 
 
 
@@ -95,6 +132,9 @@ Accessibility is addressed too late in the development process.
 - Simulate the screen reader experience.
 - Examine, discuss, annotate wireframes.
 
+Note:
+For the remainder of this workshop, we will focus on a few core things. We will learn how a screen reader works and communicates. Then we will conduct a number of exercises to help you better understand the experience of those using screen readers. Then we will explore how we can enrich design deliverables like wireframes to better articulate accessibility expectations.
+
 
 
 ## Out of scope
@@ -102,9 +142,12 @@ Accessibility is addressed too late in the development process.
 - Practice using a screen reader.
 - Deep-dive into WCAG Success Criteria.
 
+Note:
+Given time constraints, we won't devote time during this workshop to practice using a screen reader. Also, we won't dive into the details of accessibility documentation. Those are good things for you to do at your own pace.
 
 
-## Overview
+
+# Overview
 
 Note:
 Now that we've established where we're going during this workshop, let's start by better understanding accessibility and how it fits into what we do.
@@ -120,10 +163,10 @@ There is no perfect human or human condition. Everyone has both abilities and di
 
 ## Disability is a mismatched interaction
 
-Environment + Social context + Limitations
+Environment + Social context + Impairments
 
 Note:
-We should think of disabilities as a mismatched interaction between a person and the world. This conflict is unique, depending on the environment or social context or limitations of the person.
+We should think of disabilities as a mismatched interaction between a person and the world. This conflict is unique, depending on the environment, social context, or ways in which the person is impaired.
 
 
 
@@ -145,28 +188,33 @@ Secondly, how you behave changes according to if you're alone or with others. An
 
 
 
-## Limitations
+## Impairments
 
-Touch. Sight. Hearing. Speech. Cognition.
+Permanent. Temporary. Situational.
 
-Note:
-Thirdly, you may be physically limited in what you can do.
+Vision. Hearing. Mobility. Cognitive. Speech.
 
-
-
-|           | Permanent  | Temporary     | Situational       |
-| --------- | ---------- | ------------- | ----------------- |
-| **Touch** | One arm    | Arm injury    | New parent        |
-| **See**   | Blind      | Cataract      | Distracted driver |
-| **Hear**  | Deaf       | Ear infection | Bartender         |
-| **Speak** | Non-verbal | Laryngitis    | Heavy accent      |
+Noticable. Invisible.
 
 Note:
-Let's look at some examples. I could be born or become blind, meaning I've permanently lost my sight. But sight could also be affected temporarily. My sight could gradually degrade as I develop cataracts, but then with a procedure, my full sight could be restored. My sight could also be negatively affected by being distracted. I get a text message. I look down and take my eyes of the road, increasing the danger for myself and others.
+Thirdly, you may be physically impaired in what you can do. Those impairments could be permanent, temporary, or situational. And those impairments can cover a range of physical and mental contexts. And those impairments may be noticable by others or may be invisible to others.
 
-As another example, I could be mute, or my throat could be raspy because of a sickness, or I travel to a place where my accent is not easily discerned.
 
-As these examples illustrate, we all experience limitations of some form. Sometimes they're obvious. Sometimes they're not.
+
+|               | Permanent  | Temporary     | Situational  |
+| ------------- | ---------- | ------------- | ------------ |
+| **Vision**    | Blind      | Eye injury    | Bright room  |
+| **Hearing**   | Deaf       | Ear infection | Noisy room   |
+| **Mobility**  | Paralyzed  | Broken arm    | Carrying box |
+| **Cognitive** | Dyslexia   | Concussion    | Distracted   |
+| **Speech**    | Non-verbal | Laryngitis    | Heavy accent |
+
+Note:
+Let's look at some examples. I could be born or become blind. Or maybe my sight could degrade because of an injury or cataracts. Then with a procedure, full sight could be restored. My sight could also be negatively affected by being in a bright room. If I'm driving, I could get distracted by a text message. My throat could be raspy because of a sickness. I travel to a place where my accent is not easily discerned. As these examples illustrate, we all experience impairments of some form.
+
+See: [*Types of impairment*](https://kb.iu.edu/d/ayuj) (IU Knowledge Base)
+
+See: [*Types of disabilities*](https://kb.iu.edu/d/atpo) (IU Knowledge Base)
 
 
 
@@ -230,7 +278,7 @@ Usability expands on capability and answers the question, "How well can I use th
 - Hardware, software
 
 Note:
-Technology that is purposefully designed to be highly accessible and usable is known as assistive technology. A crutch is a mobility aid. A sticky note is a cognitive aid. Closed captioning allows the deaf to experience movies and even those with hearing to confirm a phrase spoken softly. Ramps and wide doorways make it easy for those in wheelchairs and those with strollers to move it buildings.
+Technology that is purposefully designed to be highly accessible and usable is known as assistive technology. Depending on your needs, you may use various combinations of assistive tech. A crutch is a mobility aid. A sticky note is a cognitive aid. Closed captioning allows the deaf to experience movies and even those with hearing to confirm a phrase spoken softly. Ramps and wide doorways make it easy for those in wheelchairs and those with strollers to move it buildings.
 
 
 
@@ -295,8 +343,6 @@ Let's first look at the technology stack. When you build a website, the user int
 
 But the stack is more complicated than that for assistive technology. The accessibility tree prepares the DOM to be used outside of the browser. That gets passed to the operating system's accessibility API, which interfaces with screen reader software and other hardware.
 
-As we can see, there are a lot of layers between the code and what the user experiences. Each layer can interrupt the interaction between the user and the website. The more layers, the more chance of an interruption. In short, screen reader users are much more susceptible to an inaccessible or unusable experience than many others.
-
 See: [*The intersection of performance and accessibility*](https://noti.st/ericwbailey/Yfyaxa/the-intersection-of-performance-and-accessibility)
 
 
@@ -307,6 +353,9 @@ See: [*The intersection of performance and accessibility*](https://noti.st/ericw
 - Assistive tech
 - User settings, skill level
 
+Note:
+As we can see, there are a lot of layers between the code and what the user experiences. You can't control a lot of it. Nor can you control each person's skill level with whatever they're using. Each layer can interrupt the interaction between the user and the website. The more layers, the more chance of an inaccessible or unusable experience.
+
 
 
 ## You control your code
@@ -316,7 +365,7 @@ See: [*The intersection of performance and accessibility*](https://noti.st/ericw
 - Usable with keyboard
 
 Note:
-You can control your code. Semantic code will more cleanly translate into the accessibility tree. Designing for mobile devices will help keep the content clean. Making all functionality usable with a keyboard means assistive tech can likely use it.
+However, you can control your code. Semantic code will more cleanly translate into the accessibility tree. Designing for mobile devices will help keep the content clean. Making all functionality usable with a keyboard means assistive tech can likely use it.
 
 
 
@@ -649,7 +698,7 @@ role
 | ------------- | ------------ |
 | **Identity**  | "List fruit" |
 | **State**     | "3 items"    |
-| **Operation** | ""           |
+| **Operation** | —            |
 
 <div class="slide-list">
   <ul class="cursor">
@@ -667,7 +716,7 @@ role
 | ------------- | ---------|
 | **Identity**  | "Apple"  |
 | **State**     | "1 of 3" |
-| **Operation** | ""       |
+| **Operation** | —        |
 
 <div class="slide-list">
   <ul aria-label="Fruit">
@@ -685,7 +734,7 @@ role
 | ------------- | -------- |
 | **Identity**  | "Banana" |
 | **State**     | "2 of 3" |
-| **Operation** | ""       |
+| **Operation** | —        |
 
 <div class="slide-list">
   <ul>

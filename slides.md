@@ -335,30 +335,29 @@ See: [*Use a screen reader to evaluate a website* (IU&nbsp;Knowledge&nbsp;Base)]
 </footer>
 
 Note:
-When testing websites, we tend to check the site in the major browsers and call that good enough. However, when considering screen readers and the brittleness between the software layers, where do we start? Luckiliy, the IU Knowledge Base provides recommendations. There are certain combinations of software that give the best experence for users, are popular, and free to use. VoiceOver with Safari works best for Apple products. And NVDA is an open source screen reader for Windows that works best with Firefox. For Indiana University students with screen readers, iOS is almost exclusively used, rather than Android. If you test the accessibility of websites with these three pairings, that shoud cover your testing needs.
+When testing websites, we tend to check the site in the major browsers and call that good enough. However, when considering screen readers and the brittleness between the software layers, where do we start? Luckiliy, the IU Knowledge Base provides recommendations. There are certain combinations of software that give the best experence for users, are popular, and free to use.
+
+NVDA and Firefox will most quickly reveal issues with your markup. They pay the most attention to accessibility standards. Then use VoiceOver on macOS and iOS as a secondary quality check.
+
+Each screen reader has its own personality. The browser pairing will modify that personality. No need to force one screen reader to say what other says.
 
 
 
-## Other details
+## General usage
 
-- Users tend to only use one screen reader per&nbsp;device.
-- All may behave differently (that's okay).
-- Some are expensive (JAWS is $1,000 per license).
+- JAWS, NVDA are most popular for desktop.
+- 85% use iOS VoiceOver.
+- ChromeVOX is barely used.
+- Users use one screen reader per device.
 
 Note:
-NVDA and Firefox will more properly reveal issues with your markup language, faster. Most bang for your buck. They pay tighter attention to standards. JAWS being the Catelac (read in French or Spanish, more $1k). Only because of cost, don't bother with JAWS. After NVDA, the VoiceOver pass will be more of a confirmation. Quality checks. And then with iOS, it is another confirmation. Each SR has its own personality. The browser pairing will modify that personality. The biggest change in personality is VO and how it treats lists. No need to force VO to say exactly what NVDA says.
+In the general public, JAWS and NVDA are the most used by those with no or low vision. JAWS is the most robust screen reader, but don't bother with it, because of its cost, at $1,000 per license.
 
-General public, JAWS and NVDA are the most used by those with no or low vision. iOS has 85% of marketshare.
+iOS has 85% of marketshare of assistive tech users, in both the general public and Indiana University Bloomington students.
 
-At IU, there are over a dozen students who use iOS VO.
+Web developers love Chrome, but it is not the best paired with screen readers. Almost no one uses ChromeVOX, as it is browser only.
 
-iOS 85% for students at IUB. Registered through ODSS. 
-
-WebAIM survey. US-centric (English-speaking). Flawed. Largest survey of SR users.
-
-Web devs love Chrome. It is only recently starting to see a jump in Chrome usage for SR users. Almost no one uses ChromeVOX, as it is browser only.
-
-NVDA has Speech Viewer, a text-based output of what it is vocalizing. Use a mouse to hover over and see what it does.
+While we may test multiple screen readers, users will tend to only use one screen reader per device.
 
 
 

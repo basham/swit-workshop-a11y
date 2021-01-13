@@ -324,28 +324,31 @@ Instead of a mouse, you navigate with a keyboard. Instead of reading with your e
 
 ## Tech stack
 
-<dl class="slide-tech-stack">
-  <div class="stack stack--span">
-    <dt class="label"><code><></code> Website</dt>
-  </div>
-  <div class="stack">
-    <dt class="label">Software</dt>
-    <dd class="node">🌲 DOM tree</dd>
-    <dd class="node fragment">🎄 Accessibility tree</dd>
-    <dd class="node fragment">🍎 Operating system</dd>
-    <dd class="node fragment">👁 Screen reader</dd>
-  </div>
-  <div class="stack">
-    <dt class="label">Hardware</dt>
-    <dd class="node">📺 Monitor</dd>
-    <dd class="node fragment">🔈 Speakers</dd>
-    <dd class="node fragment">🎹 Keyboard</dd>
-    <dd class="node fragment">🔘 Braille</dd>
-  </div>
-  <div class="stack stack--span">
-    <dt class="label">🙂 User</dt>
-  </div>
-</dl>
+<figure>
+  <dl class="fig-tech-stack">
+    <div class="stack stack--span">
+      <dt class="label"><code><></code> Website</dt>
+    </div>
+    <div class="stack">
+      <dt class="label">Software</dt>
+      <dd class="node">🌲 DOM tree</dd>
+      <dd class="node fragment">🎄 Accessibility tree</dd>
+      <dd class="node fragment">🍎 Operating system</dd>
+      <dd class="node fragment">👁 Screen reader</dd>
+    </div>
+    <div class="stack">
+      <dt class="label">Hardware</dt>
+      <dd class="node">📺 Monitor</dd>
+      <dd class="node fragment">🔈 Speakers</dd>
+      <dd class="node fragment">🎹 Keyboard</dd>
+      <dd class="node fragment">🔘 Braille</dd>
+    </div>
+    <div class="stack stack--span">
+      <dt class="label">🙂 User</dt>
+    </div>
+  </dl>
+  <figcaption>Numerous software and hardware technologies integrate together as the interface between the website and the user. This includes the DOM tree, Accessibility tree, operating system, screen reader, monitor, speakers, keyboard, and other assistive hardware like braille keyboards.</figcaption>
+</figure>
 
 Notes:
 Let's first look at the technology stack. When you build a website, the user interfaces with it through a browser. That browser interprets HTML, CSS, and JavaScript to render what the user sees, the visual user interface (UI). This interpretation is the DOM tree, short for Document Object Model. The user does not directly interact with the HTML. They interact with the DOM. This DOM can differ from browser to browser.
@@ -439,8 +442,10 @@ First, there are a few ways you can get oriented in an interface.
 
 "Blue outline"
 
-<div aria-hidden="true" class="slide-focus">Save</div>
-<div>
+<figure>
+  <div class="fig-focus">Save</div>
+  <figcaption>By default, a blue ring outlines interactive objects, such as this Save button, when in focus.</figcaption>
+<figure>
 
 Notes:
 A focus ring around an interactive object tells you where keyboard focus is. By default in most browsers, it is a blue outline. Never remove a focus style. But you may replace the style with something more aesthetically suitable.
@@ -451,10 +456,13 @@ A focus ring around an interactive object tells you where keyboard focus is. By 
 
 "Blinky pipe"
 
-<div aria-hidden="true" class="slide-keyboard-cursor">
-  <div class="label">Name</div>
-  <div class="input">Chris</div>
-</div>
+<figure>
+  <div class="fig-keyboard-cursor">
+    <div class="label">Name</div>
+    <div class="input">Chris</div>
+  </div>
+  <figcaption>When a text box is in focus, a vertical pipe blinks, indicating the cursor position. In this example, the cursor is positioned after the value "Chris" in the "Name" text box.</figcaption>
+</figure>
 
 Notes:
 The blinky pipe in a text box is the keyboard cursor. It informs you
@@ -465,13 +473,16 @@ The blinky pipe in a text box is the keyboard cursor. It informs you
 
 "Black outline"
 
-<div class="slide-sr-cursor">
-  <ul>
-    <li>Apple</li>
-    <li class="cursor">Banana</li>
-    <li>Strawberry</li>
-  </ul>
-</div>
+<figure>
+  <div class="fig-sr-cursor">
+    <ul>
+      <li>Apple</li>
+      <li class="cursor">Banana</li>
+      <li>Strawberry</li>
+    </ul>
+  </div>
+  <figcaption>VoiceOver's screen reader cursor is a black outline. In this example, the cursor encompasses the text "Banana", which is the second of three items in a list of fruits.</figcaption>
+</figure>
 
 
 
@@ -485,80 +496,71 @@ Rotor. Shortcuts.
 
 "Table of contents" for [Statewide IT 2021](https://statewideit.iu.edu)
 
-<div class="slide-rotor r-stack">
-  <div class="section">
-    <h3>Landmarks</h3>
-    <ul>
-      <li>Main navigation</li>
-      <li>main</li>
-      <li>contentinfo</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-    </ul>
+<figure>
+  <div class="fig-rotor r-stack">
+    <dl class="section">
+      <dt>Landmarks</dt>
+      <dd>Main navigation</dd>
+      <dd>main</dd>
+      <dd>contentinfo</dd>
+      <dd>&nbsp;</dd>
+      <dd>&nbsp;</dd>
+      <dd>&nbsp;</dd>
+      <dd>&nbsp;</dd>
+    </dl>
+    <dl class="section fragment">
+      <dt>Landmarks</dt>
+      <dd>Main navigation</dd>
+      <dd>main</dd>
+      <dd>contentinfo</dd>
+      <dd>&nbsp;</dd>
+      <dd>&nbsp;</dd>
+      <dd>&nbsp;</dd>
+      <dd>&nbsp;</dd>
+    </dl>
+    <dl class="section fragment">
+      <dt>Links</dt>
+      <dd>Skip to Content</dd>
+      <dd>Skip to Main Navigation</dd>
+      <dd>Skip to Search</dd>
+      <dd>INDIANA UNIVERSITY</dd>
+      <dd>Open Search</dd>
+      <dd>Virtual Statewide IT Conference 2021</dd>
+      <dd>WHAT TO EXPECT</dd>
+    </dl>
+    <dl class="section fragment">
+      <dt>Headings</dt>
+      <dd>1: Virtual Statewide IT Conference 2021</dd>
+      <dd>3: Staff kudos form</dd>
+      <dd>3: Three dynamic keynote events</dd>
+      <dd>2: Keynote Speakers</dd>
+      <dd>4: Rob Lowden</dd>
+      <dd>4: Michael McRobbie</dd>
+      <dd>4: Stacy Morrone</dd>
+    </dl>
+    <dl class="section fragment">
+      <dt>Headings</dt>
+      <dd class="active">1: Virtual Statewide IT Conference 2021</dd>
+      <dd>3: Staff kudos form</dd>
+      <dd>3: Three dynamic keynote events</dd>
+      <dd>2: Keynote Speakers</dd>
+      <dd>4: Rob Lowden</dd>
+      <dd>4: Michael McRobbie</dd>
+      <dd>4: Stacy Morrone</dd>
+    </dl>
+    <dl class="section fragment">
+      <dt>Headings</dt>
+      <dd>1: Virtual Statewide IT Conference 2021</dd>
+      <dd class="active">3: Staff kudos form</dd>
+      <dd>3: Three dynamic keynote events</dd>
+      <dd>2: Keynote Speakers</dd>
+      <dd>4: Rob Lowden</dd>
+      <dd>4: Michael McRobbie</dd>
+      <dd>4: Stacy Morrone</dd>
+    </dl>
   </div>
-  <div class="section fragment">
-    <h3>Landmarks</h3>
-    <ul>
-      <li>Main navigation</li>
-      <li>main</li>
-      <li>contentinfo</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-    </ul>
-  </div>
-  <div class="section fragment">
-    <h3>Links</h3>
-    <ul>
-      <li>Skip to Content</li>
-      <li>Skip to Main Navigation</li>
-      <li>Skip to Search</li>
-      <li>INDIANA UNIVERSITY</li>
-      <li>Open Search</li>
-      <li>Virtual Statewide IT Conference 2021</li>
-      <li>WHAT TO EXPECT</li>
-    </ul>
-  </div>
-  <div class="section fragment">
-    <h3>Headings</h3>
-    <ul>
-      <li>1: Virtual Statewide IT Conference 2021</li>
-      <li>3: Staff kudos form</li>
-      <li>3: Three dynamic keynote events</li>
-      <li>2: Keynote Speakers</li>
-      <li>4: Rob Lowden</li>
-      <li>4: Michael McRobbie</li>
-      <li>4: Stacy Morrone</li>
-    </ul>
-  </div>
-  <div class="section fragment">
-    <h3>Headings</h3>
-    <ul>
-      <li class="active">1: Virtual Statewide IT Conference 2021</li>
-      <li>3: Staff kudos form</li>
-      <li>3: Three dynamic keynote events</li>
-      <li>2: Keynote Speakers</li>
-      <li>4: Rob Lowden</li>
-      <li>4: Michael McRobbie</li>
-      <li>4: Stacy Morrone</li>
-    </ul>
-  </div>
-  <div class="section fragment">
-    <h3>Headings</h3>
-    <ul>
-      <li>1: Virtual Statewide IT Conference 2021</li>
-      <li class="active">3: Staff kudos form</li>
-      <li>3: Three dynamic keynote events</li>
-      <li>2: Keynote Speakers</li>
-      <li>4: Rob Lowden</li>
-      <li>4: Michael McRobbie</li>
-      <li>4: Stacy Morrone</li>
-    </ul>
-  </div>
-</div>
+  <figcaption>The rotor acts as a table of contents. In this example, the rotor opens to the Landmarks menu, then the Links menu, then Headings menu. Then the top two headings are put in focus, to demonstrate what the screen reader says.</figcaption>
+</figure>
 
 
 
@@ -628,24 +630,27 @@ Rotor. Shortcuts.
 | Down/Up       | `VO` + `Shift` + `Down/Up Arrow` |
 | Next/Previous | `VO` + `Right/Left Arrow`        | 
 
-<div class="slide-tree r-stack">
-  <div class="line line--1"></div>
-  <div class="line line--2"></div>
-  <div class="line line--3"></div>
-  <div class="line line--4"></div>
-  <div class="node node--1"></div>
-  <div class="node node--2"></div>
-  <div class="node node--3"></div>
-  <div class="node node--4"></div>
-  <div class="node node--5"></div>
-  <div class="node node--6"></div>
-  <div class="node node--1 fragment">↓</div>
-  <div class="node node--2 fragment">↓</div>
-  <div class="node node--3 fragment">→</div>
-  <div class="node node--4 fragment">↑</div>
-  <div class="node node--2 fragment">→</div>
-  <div class="node node--6 fragment"></div>
-</div>
+<figure>
+  <div class="fig-tree r-stack">
+    <div class="line line--1"></div>
+    <div class="line line--2"></div>
+    <div class="line line--3"></div>
+    <div class="line line--4"></div>
+    <div class="node node--1"></div>
+    <div class="node node--2"></div>
+    <div class="node node--3"></div>
+    <div class="node node--4"></div>
+    <div class="node node--5"></div>
+    <div class="node node--6"></div>
+    <div class="node node--1 fragment">↓</div>
+    <div class="node node--2 fragment">↓</div>
+    <div class="node node--3 fragment">→</div>
+    <div class="node node--4 fragment">↑</div>
+    <div class="node node--2 fragment">→</div>
+    <div class="node node--6 fragment"></div>
+  </div>
+  <figcaption>Circles representing nodes are linked together with lines. They're arranged with the root node on top. That links to two child nodes. The first child node links to three more child nodes. Using a keyboard, you an navigate down, up, left, and right through the tree. This is how you navigate through objects with a screen reader.</figcaption>
+</figure>
 
 
 
@@ -722,7 +727,7 @@ role
 | **State**     | "3 items"    |
 | **Operation** | —            |
 
-<div class="slide-list">
+<div class="fig-list">
   <ul class="cursor">
     <li>Apple</li>
     <li>Banana</li>
@@ -740,7 +745,7 @@ role
 | **State**     | "1 of 3" |
 | **Operation** | —        |
 
-<div class="slide-list">
+<div class="fig-list">
   <ul aria-label="Fruit">
     <li class="cursor">Apple</li>
     <li>Banana</li>
@@ -758,7 +763,7 @@ role
 | **State**     | "2 of 3" |
 | **Operation** | —        |
 
-<div class="slide-list">
+<div class="fig-list">
   <ul>
     <li>Apple</li>
     <li class="cursor">Banana</li>
@@ -776,7 +781,7 @@ role
 | **State**     | "Unchecked."                                       |
 | **Operation** | "Press spacebar to check."                         |
 
-<div class="slide-checkbox">
+<div class="fig-checkbox">
   <input id="terms-conditions" type="checkbox" class="cursor">
   <label for="terms-conditions">I agree to these terms and conditions<label>
 </div>

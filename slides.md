@@ -841,13 +841,32 @@ role
 
 ## Checkbox
 
+|               |                          |
+| ------------- | ------------------------ |
+| **Identity**  | "I agree. Checkbox."     |
+| **State**     | "Unchecked."             |
+| **Operation** | "Press Space to select." |
+
+<figure>
+  <div class="fig-checkbox">
+    <input id="fig-agree-1" type="checkbox" class="sr-only">
+    <label for="fig-agree-1" class="cursor">I agree</label>
+  </div>
+</figure>
+
+
+
+## Checkbox
+
 |               |                            |
 | ------------- | -------------------------- |
 | **Identity**  | "I agree. Checkbox."       |
-| **State**     | "Unchecked."               |
-| **Operation** | "Press spacebar to check." |
+| **State**     | "Checked."                 |
+| **Operation** | "Press Space to deselect." |
 
-<div class="fig-checkbox">
-  <input id="terms-conditions" type="checkbox" class="cursor">
-  <label for="terms-conditions">I agree<label>
-</div>
+<figure>
+  <div class="fig-checkbox">
+    <input id="fig-agree-2" type="checkbox" class="sr-only" checked>
+    <label for="fig-agree-2" class="cursor">I agree</label>
+  </div>
+</figure>

@@ -4,6 +4,9 @@ Statewide IT 2021 Workshop
 
 Chris Basham
 
+Notes:
+Welcome everyone to this workshop. Today, we'll learn how to incorporate accessibility in the design process. First, let's start with some background and logistics.
+
 
 
 ## Chris Basham
@@ -13,6 +16,9 @@ csbasham@iu.edu
 UX designer in Enterprise Student Systems.
 
 *Accessibility. Front-end dev. Design systems.*
+
+Notes:
+I'm Chris Basham. I've worked at Indiana University since 2012, as a UX designer and front-end developer, working on various web software products. Over recent years, I've dived deeper into the topic of accessibility, and I want to share with you what I've learned regarding the intersection of these topics.
 
 
 
@@ -27,14 +33,29 @@ UX designer in Enterprise Student Systems.
 | 3:00 |      10m | Break        |
 | 3:10 |      50m | Exercises    |
 
+Notes:
+The workshop today is split into 3 major sections, over the course of 3 hours. The first will be a lecture, followed later by exercises. Each section will be divided by 10 minute breaks.
+
 
 
 ## Zoom etiquette
 
-- Mute when you're not talking.
 - Submit questions in chat.
 - Questions will be answered after the break.
+- Mute when you're not talking.
 - Use annotations, stamps.
+
+Notes:
+Because there's a lot to cover in this first section, I request you to submit any questions you have in the Zoom chat and keep yourself muted. I will then follow up with those questions after the break. Once we transition to exercises, I will encourage more engagement. And we'll use some of Zoom's annotation features, so everyone can collaborate, in a bigger way.
+
+
+
+## Resources
+
+https://github.com/basham/swit-workshop-a11y
+
+Notes:
+All resources for this workshop, including slides, slide notes, exercises, and links, are located on GitHub. Visit github.com/basham/swit-workshop-a11y. This link is posted in the Zoom chat.
 
 
 
@@ -448,7 +469,7 @@ First, there are a few ways you can get oriented in an interface.
 <figure>
 
 Notes:
-A focus ring around an interactive object tells you where keyboard focus is. By default in most browsers, it is a blue outline. Never remove a focus style. But you may replace the style with something more aesthetically suitable.
+A focus ring around an interactive object tells you where keyboard focus is. By default in most browsers, it is a blue outline. Never remove a focus style, as sighted users using keyboards won't know where they are. But you may replace the style with something more aesthetically suitable for your website, as long as there's enough distinction for a low vision person to see it.
 
 
 
@@ -465,7 +486,7 @@ A focus ring around an interactive object tells you where keyboard focus is. By 
 </figure>
 
 Notes:
-The blinky pipe in a text box is the keyboard cursor. It informs you
+The blinky pipe in a text box is the keyboard cursor. It informs you where you are positioned within a piece of text.
 
 
 
@@ -484,11 +505,17 @@ The blinky pipe in a text box is the keyboard cursor. It informs you
   <figcaption>VoiceOver's screen reader cursor is a black outline. In this example, the cursor encompasses the text "Banana", which is the second of three items in a list of fruits.</figcaption>
 </figure>
 
+Notes:
+A screen reader overlays another type of cursor on the screen. In VoiceOver, it is a black outline around the current piece of content. Whenever this cursor changes position, the screen reader announces information about the new content. Depending on the screen reader settings, this cursor can follow focus, meaning that they outline the same piece of content. However, they don't have to follow each other. You can rest keyboard focus on a form element with the Tab key, while using the screen reader cursor to read surrounding context with other keyboard shortcuts.
+
 
 
 ## Navigation
 
 Rotor. Shortcuts.
+
+Notes:
+Now that you know how to get oriented, there are a couple ways in which you can navigate.
 
 
 
@@ -562,18 +589,24 @@ Rotor. Shortcuts.
   <figcaption>The rotor acts as a table of contents. In this example, the rotor opens to the Landmarks menu, then the Links menu, then Headings menu. Then the top two headings are put in focus, to demonstrate what the screen reader says.</figcaption>
 </figure>
 
+Notes:
+First, the rotor is a tool that dynamically builds a table of contents for the website. Right now we're looking at a Landmarks menu for the Statewide IT conference website. You rotate through these different menus with the right and left arrow keys. Next is the Links menu. This demonstrates why it is important to ensure that the link name itself is sufficiently self-explanatory. If there are a bunch of "read more" or "click here" links in this menu, you have no idea where they would go, because there is no surrounding context. Lastly, we'll look at the Headings menu. The heading level is positioned before the heading name. This demonstrates why you should care about the order of headings. It can be confusing if headings skip. In this case, the level 2, 3, and 4 headings could use some clean up. Pressing the Down and Up arrow keys selects a heading. And pressing Enter will close the rotor; scroll so that the selected heading is visible within the viewport; and highlight the heading with the screen reader cursor.
+
 
 
 ## Rotor content
 
-| Content       | Examples                      |
-| ------------- | ----------------------------- |
-| Landmarks     | `<header>`, `<main>`, `<nav>` |
-| Headings      | `<h1>`…`<h6>`                 |
-| Links         | `<a>`                         |
-| Form controls | `<button>`, `<input>`         |
-| Tables        | `<table>`                     |
-| Articles      | `<article>`                   |
+| Content       | Examples                        |
+| ------------- | ------------------------------- |
+| Landmarks     | `<header>`, `<main>`, `<nav>`   |
+| Headings      | `<h1>`…`<h6>`, `role="heading"` |
+| Links         | `<a>`                           |
+| Form controls | `<button>`, `<input>`           |
+| Tables        | `<table>`                       |
+| Articles      | `<article>`                     |
+
+Notes:
+Here's a bigger, yet abbreviated, list of content the rotor will scrape. It will dig through HTML to find certain elements. It could be based on an element's tag name, like "h1". It could be based on an element's role, such as "heading".
 
 
 
@@ -586,11 +619,17 @@ Rotor. Shortcuts.
 | Lock / unlock VO keys  | `VO` + `;`           |
 | Open rotor             | `VO` + `U`           |
 
+Notes:
+You operate a screen reader with keyboard shortcuts. To reduce conflict with shortcuts in other apps, screen reader commands usually are prefixed with additional keys. In VoiceOver, these keys are abbreviated "VO", but they stand for holding down both the Control and Option keys at the same time. You can lock the VO keys down so you don't need to press them every time. This is just like if you activate Caps Lock, to avoid holding down Shift to capitalize a sequence of letters.
+
 
 
 ## Go to next focusable element
 
 (`Shift`) + `Tab`
+
+Notes:
+As you're likely already familiar, pressing Tab will advance focus to the next focusable element. This is likely a link, button, or other form control. Pressing Shift at the same time will go backwards instead of forwards. This same Shift-to-go-back pattern is employed for most other commands.
 
 
 
@@ -598,17 +637,26 @@ Rotor. Shortcuts.
 
 `VO` + (`Shift`) + `Command` + `H`
 
+Notes:
+You can also go to the next or previous heading.
+
 
 
 ## Go to next table
 
 `VO` + (`Shift`) + `Command` + `T`
 
+Notes:
+Go to the next or previous table.
+
 
 
 ## Go to next list
 
 `VO` + (`Shift`) + `Command` + `X`
+
+Notes:
+Go to the next or previous list.
 
 
 
@@ -620,6 +668,9 @@ Rotor. Shortcuts.
 - Visited link (`V`)
 - Form control (`J`)
 - Graphic (`G`)
+
+Notes:
+And do the same for links, visited links, form controls, and graphics.
 
 
 
@@ -652,13 +703,19 @@ Rotor. Shortcuts.
   <figcaption>Circles representing nodes are linked together with lines. They're arranged with the root node on top. That links to two child nodes. The first child node links to three more child nodes. Using a keyboard, you an navigate down, up, left, and right through the tree. This is how you navigate through objects with a screen reader.</figcaption>
 </figure>
 
+Notes:
+Some content is more complicated. Content can be nested inside of content. This nesting is important. When you go to this content, you don't want all of it announced at once, like a blob of raw content. It would be like removing all formatting in a book. The only context given to you is that one sentence follows another. Instead, you want organization and meaning. Organization is defined by hierarchy. A root node has child and grandchild nodes. Meaning is defined by attributes, which labels and links content. When a screen reader encounters one of these objects, it tells information about the object itself. Then you navigate down, up, next, or previous through this tree of content to explore. This is similar to navigating through a directory of files on your computer.
+
 
 
 ## Summary
 
-- Everyone has limitations.
+- Everyone experiences impairments.
 - Tech can help make a more inclusive world.
 - Screen reader users navigate with <br> focus, cursors, rotor, shortcuts.
+
+Notes:
+In summary, everyone experiences impairments. The severity of those impairments and surrounding context can exclude people from doing what they want to do. If properly designed, technology can intervene and make the world more inclusive. And in examining the screen reader, as one example of assistive software, we illustrate that there is no technical reason why anyone should be excluded from using the websites we build. We must be intentional about including others. That intention should manifest in how we think, how we work, and what we create.
 
 
 
@@ -667,6 +724,9 @@ Rotor. Shortcuts.
 - What screen readers communicate
 - Exercises
 
+Notes:
+After the break, we'll transition into some exercises. As a reminder, please submit any questions you have so far in the chat. I'll address them once we return. Thank you, and see you in 10 minutes.
+
 
 
 # Break
@@ -674,6 +734,10 @@ Rotor. Shortcuts.
 10 minutes
 
 Return at 2:10
+
+
+
+# Questions
 
 
 

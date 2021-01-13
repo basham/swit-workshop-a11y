@@ -1,12 +1,12 @@
 const messages = {
-  '40-0': 'Landmarks menu.',
-  '40-1': 'Links menu.',
-  '40-2': 'Headings menu.',
-  '40-3': 'Heading level 1. Virtual Statewide IT Conference 2021.',
-  '40-4': 'Heading level 3. Staff kudos form.',
-  '56': 'List fruit. 3 items.',
-  '57': 'Apple. 1 of 3.',
-  '58': 'Banana. 2 of 3.'
+  '41-0': 'Landmarks menu.',
+  '41-1': 'Links menu.',
+  '41-2': 'Headings menu.',
+  '41-3': 'Heading level 1. Virtual Statewide IT Conference 2021.',
+  '41-4': 'Heading level 3. Staff kudos form.',
+  '57': 'List fruit. 3 items.',
+  '58': 'Apple. 1 of 3.',
+  '59': 'Banana. 2 of 3.'
 }
 
 Reveal.on('slidechanged', (event) => {

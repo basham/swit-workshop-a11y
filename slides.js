@@ -21,6 +21,10 @@ Reveal.on('fragmentshown', (event) => {
 })
 
 function speak (messageId) {
+  // Do not speak if in an iframe (speaker notes).
+  if (window !== top) {
+    return
+  }
   const synth = window.speechSynthesis
   synth.cancel()
   const text = messages[String(messageId)]

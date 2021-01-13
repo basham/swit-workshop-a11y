@@ -330,7 +330,7 @@ And of course, there is assistive software. Shortcuts allows you to make a chang
 Narrate, navigate, interact with content.
 
 Notes:
-A screen reader is a tool that gives you an alternative way to use a computer. A sighted user can experience a 2 or 3 dimensional visual interface, but a bind user cannot.
+A screen reader is a tool that gives you an alternative way to use a computer. A sighted user can experience a 2 or 3 dimensional visual interface, but a blind user cannot.
 
 
 
@@ -433,13 +433,15 @@ Each screen reader has its own personality. The browser pairing will modify that
 - Users use one screen reader per device.
 
 Notes:
+Now a few notes about the general usage of screen readers.
+
 In the general public, JAWS and NVDA are the most used by those with no or low vision. JAWS is the most robust screen reader, but don't bother with it, because of its cost, at $1,000 per license.
 
 iOS has 85% of market share of assistive tech users, in both the general public and Indiana University Bloomington students.
 
-Web developers love Chrome, but it is not the best paired with screen readers. Almost no one uses ChromeVOX, as it is browser only.
+Web developers love Chrome, but it is not the best paired with screen readers. Almost no one uses the ChromeVOX plugin, as it is browser only.
 
-While we may test multiple screen readers, users will tend to only use one screen reader per device.
+While quality assurance may test with multiple screen readers, users will tend to only use one screen reader per device.
 
 
 
@@ -475,7 +477,7 @@ A focus ring around an interactive object tells you where keyboard focus is. By 
 
 ## Keyboard cursor
 
-"Blinky pipe"
+"Blinking pipe"
 
 <figure>
   <div class="fig-keyboard-cursor">
@@ -486,7 +488,7 @@ A focus ring around an interactive object tells you where keyboard focus is. By 
 </figure>
 
 Notes:
-The blinky pipe in a text box is the keyboard cursor. It informs you where you are positioned within a piece of text.
+The blinking pipe in a text box is the keyboard cursor. It informs you where you are positioned within a piece of text.
 
 
 

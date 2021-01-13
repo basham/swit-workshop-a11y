@@ -793,13 +793,15 @@ role
 | **State**     | "3 items"    |
 | **Operation** | —            |
 
-<div class="fig-list">
-  <ul class="cursor">
-    <li>Apple</li>
-    <li>Banana</li>
-    <li>Strawberry</li>
-  </ul>
-</div>
+<figure>
+  <div class="fig-list">
+    <ul class="cursor">
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Strawberry</li>
+    </ul>
+  </div>
+</figure>
 
 
 
@@ -811,13 +813,15 @@ role
 | **State**     | "1 of 3" |
 | **Operation** | —        |
 
-<div class="fig-list">
-  <ul aria-label="Fruit">
-    <li class="cursor">Apple</li>
-    <li>Banana</li>
-    <li>Strawberry</li>
-  </ul>
-</div>
+<figure>
+  <div class="fig-list">
+    <ul aria-label="Fruit">
+      <li class="cursor">Apple</li>
+      <li>Banana</li>
+      <li>Strawberry</li>
+    </ul>
+  </div>
+</figure>
 
 
 
@@ -829,13 +833,15 @@ role
 | **State**     | "2 of 3" |
 | **Operation** | —        |
 
-<div class="fig-list">
-  <ul>
-    <li>Apple</li>
-    <li class="cursor">Banana</li>
-    <li>Strawberry</li>
-  </ul>
-</div>
+<figure>
+  <div class="fig-list">
+    <ul>
+      <li>Apple</li>
+      <li class="cursor">Banana</li>
+      <li>Strawberry</li>
+    </ul>
+  </div>
+</figure>
 
 
 

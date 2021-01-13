@@ -841,13 +841,13 @@ role
 
 ## Checkbox
 
-|               |                                                    |
-| ------------- | -------------------------------------------------- |
-| **Identity**  | "I agree to these terms and conditions. Checkbox." |
-| **State**     | "Unchecked."                                       |
-| **Operation** | "Press spacebar to check."                         |
+|               |                            |
+| ------------- | -------------------------- |
+| **Identity**  | "I agree. Checkbox."       |
+| **State**     | "Unchecked."               |
+| **Operation** | "Press spacebar to check." |
 
 <div class="fig-checkbox">
   <input id="terms-conditions" type="checkbox" class="cursor">
-  <label for="terms-conditions">I agree to these terms and conditions<label>
+  <label for="terms-conditions">I agree<label>
 </div>

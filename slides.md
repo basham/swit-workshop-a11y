@@ -32,7 +32,8 @@ UX designer in Enterprise Student Systems.
 ## Zoom etiquette
 
 - Mute when you're not talking.
-- Use chat.
+- Submit questions in chat.
+- Questions will be answered after the break.
 - Use annotations, stamps.
 
 
@@ -41,7 +42,7 @@ UX designer in Enterprise Student Systems.
 
 Accessibility is addressed too late in the development process.
 
-Note:
+Notes:
 The problem we're addressing with this workshop today is that accessibility is often addressed too late in the development process.
 
 
@@ -52,7 +53,7 @@ The problem we're addressing with this workshop today is that accessibility is o
 - Poor or unusable for those with assistive tech.
 - Bugs, technical debt.
 
-Note:
+Notes:
 There's a number of issues that result from this. When devs aren't given proper direction, they are forced to make decisions, the best they can. Because accessibility is not designed upfront, the experience for those using assistive technologies with the product is unknown. It could be fine, but likely it is poor or unusable in certain ways. Reworking is inevitable, resulting in bugs, ever growing technical debt, a lower quality product, high costs, and a slow process.
 
 
@@ -65,7 +66,7 @@ There's a number of issues that result from this. When devs aren't given proper 
 - Talk, teach about accessibility.
 - Join Slack channels.
 
-Note:
+Notes:
 There are a lot of ways we address this problem. First, you can improve your knowledge. Research how assistive technology is used. Study the WCAG and ARIA documentation to better understand the vastness of the specs. Especially if you're a designer, investigate inclusive design practices. The IU Knowledge Base provides a lot of guidance, especially tailored for the work we do. You can talk and teach about accessibility, both within your team and among the teams you work with. There are a number of forums in which you talk about accessibility. The #topic-accessibility-web channel being of them on the iu-uits Slack workspace.
 
 
@@ -78,7 +79,7 @@ There are a lot of ways we address this problem. First, you can improve your kno
 - Practice using keyboard, screen reader.
 - Test accessibility before, after development.
 
-Note:
+Notes:
 Second, you can improve your process. Everyone needs to be involved, including management, product owners, business analysts, quality assurance, developers, and designers. Teams should discuss accessibility expectations early in the process. Document those expectations alongside acceptance criteria, testing notes, and design deliverables. Include accessibility notes in wireframes. Put aside the mouse and test your software using a keyboard only. Practice using a screen reader, on both desktop and mobile device. Evaluate the accessibility of a design direction before development, and then test it again once implemented. Make accessibility reviews part of your team's process.
 
 
@@ -89,14 +90,14 @@ Second, you can improve your process. Everyone needs to be involved, including m
 - Seek assistive tech users, experts, communities of practice, Digital&nbsp;Accessibility&nbsp;Office.
 - Hire assistive tech users.
 
-Note:
+Notes:
 Third, you should seek feedback from others. Get feedback from those who use assistive technologies. Seek accessibility experts from within your division or outside. Get involved in the various web development and design communities of practice. Reach out to the Digital Accessibility Office. And if you hire people who use assistive technologies, you'll have even a more direct means of feedback.
 
 
 
 ## Accessibility at IU
 
-Note:
+Notes:
 Now, let's talk about some examples of accessibility initiatives at Indiana University.
 
 
@@ -107,7 +108,7 @@ Now, let's talk about some examples of accessibility initiatives at Indiana Univ
 - [IUPUI.edu](https://www.iupui.edu/)
 - [IU Mobile](https://www.iu.edu/mobile-app/)
 
-Note:
+Notes:
 The Digital Accessibility Office lead by Greg Hanek has been pushing to have accessibility addressed in the planning and design stages. They've recently worked on the IU site, IUPUI site, and the IU Mobile app. Involving them early has made a huge difference in the quality of those projects.
 
 
@@ -121,7 +122,7 @@ The Digital Accessibility Office lead by Greg Hanek has been pushing to have acc
 - Cross-team accessibility committee
 - Partnering with Digital Accessibility Office
 
-Note:
+Notes:
 The Enterprise Systems division, which I am part of, has been doing a lot to improve our practices. In April, experts at Deque University conducted a multi-day bootcamp training for us. That content is now available for anyone at IU through Kaltura. Our developer leads have published accessibility guidelines for teams to follow. Developers will share various accessibility implementations and what they've learned, with the community of practice. Developers have incorporated automated accessibility testing tools, so we identify issues before features are manually tested. We have meetings to address accessibility issues across teams. And we've started to partner with the Digital Accessibility Office to evaluate some of our products.
 
 
@@ -132,7 +133,7 @@ The Enterprise Systems division, which I am part of, has been doing a lot to imp
 - Simulate the screen reader experience.
 - Examine, discuss, annotate wireframes.
 
-Note:
+Notes:
 For the remainder of this workshop, we will focus on a few core things. We will learn how a screen reader works and communicates. Then we will conduct a number of exercises to help you better understand the experience of those using screen readers. Then we will explore how we can enrich design deliverables like wireframes to better articulate accessibility expectations.
 
 
@@ -142,21 +143,21 @@ For the remainder of this workshop, we will focus on a few core things. We will 
 - Practice using a screen reader.
 - Deep-dive into WCAG Success Criteria.
 
-Note:
+Notes:
 Given time constraints, we won't devote time during this workshop to practice using a screen reader. Also, we won't dive into the details of accessibility documentation. Those are good things for you to do at your own pace.
 
 
 
 # Overview
 
-Note:
+Notes:
 Now that we've established where we're going during this workshop, let's start by better understanding accessibility and how it fits into what we do.
 
 
 
 ## Human perfection is&nbsp;a&nbsp;myth
 
-Note:
+Notes:
 There is no perfect human or human condition. Everyone has both abilities and disabilities. We are simply different along that spectrum.
 
 
@@ -165,7 +166,13 @@ There is no perfect human or human condition. Everyone has both abilities and di
 
 Environment + Social context + Impairments
 
-Note:
+<footer>
+
+See: [*Types of disabilities*](https://kb.iu.edu/d/atpo) (IU Knowledge Base)
+
+</footer>
+
+Notes:
 We should think of disabilities as a mismatched interaction between a person and the world. This conflict is unique, depending on the environment, social context, or ways in which the person is impaired.
 
 
@@ -174,7 +181,7 @@ We should think of disabilities as a mismatched interaction between a person and
 
 Location. Weather. Time. Objects.
 
-Note:
+Notes:
 The environment surely affects how we interact with the world. Being physical beings, we must be situated in a particular place and time. Maybe that's at home, at work, in the woods, or in a busy city center. Time of day, severity of the weather, and the stuff around you all affects what you can or want to do.
 
 
@@ -183,7 +190,7 @@ The environment surely affects how we interact with the world. Being physical be
 
 Alone. Coworkers. Crowd. Friends. Family.
 
-Note:
+Notes:
 Secondly, how you behave changes according to if you're alone or with others. And who those others are and how many of them will continue to affect your choices and behavior. An quiet setting with close friends is much different than a loud setting with strangers.
 
 
@@ -196,7 +203,7 @@ Vision. Hearing. Mobility. Cognitive. Speech.
 
 Noticeable. Invisible.
 
-Note:
+Notes:
 Thirdly, you may be physically impaired in what you can do. Those impairments could be permanent, temporary, or situational. And those impairments can cover a range of physical and mental contexts. And those impairments may be noticeable by others or may be invisible to others.
 
 
@@ -209,12 +216,14 @@ Thirdly, you may be physically impaired in what you can do. Those impairments co
 | **Cognitive** | Dyslexia   | Concussion    | Distracted   |
 | **Speech**    | Non-verbal | Laryngitis    | Heavy accent |
 
-Note:
+<footer>
+
+See: [*Types of impairments*](https://kb.iu.edu/d/ayuj) (IU Knowledge Base)
+
+</footer>
+
+Notes:
 Let's look at some examples. I could be born or become blind. Or maybe my sight could degrade because of an injury or cataracts. Then with a procedure, full sight could be restored. My sight could also be negatively affected by being in a bright room. If I'm driving, I could get distracted by a text message. My throat could be raspy because of a sickness. I travel to a place where my accent is not easily discerned. As these examples illustrate, we all experience impairments of some form.
-
-See: [*Types of impairment*](https://kb.iu.edu/d/ayuj) (IU Knowledge Base)
-
-See: [*Types of disabilities*](https://kb.iu.edu/d/atpo) (IU Knowledge Base)
 
 
 
@@ -230,7 +239,7 @@ See: [*Microsoft Design Inclusive Toolkits*](https://www.microsoft.com/design/in
 
 </footer>
 
-Note:
+Notes:
 When we experience these mismatches, we inevitably experience some form of exclusion. We can't talk to a friend. We can't go where we want to go. We can't use a thing the way we want to.
 
 As a simple example, when I was growing up, my family would often go to amusement parks. I loved going on roller coasters. But one time, after waiting in line for what seemed like hours, I was denied entry. I was too short. By a mere inch. I got mad and angry and threw fits. If the height requirement needed many inches, okay. I could handle that. But an inch was just close enough to be frustrating.
@@ -245,7 +254,7 @@ I was excluded from doing what I wanted to do. Granted, for this case, it was on
 - Person + (Tech) + Environment
 - Person + (Tech) + Object
 
-Note:
+Notes:
 Technology can be one means of augmenting these interactions, so that these mismatches can be overcome. We are currently using Zoom to communicate across distances. You use a can opener to open a can. You use a hat to shield you from the sun.
 
 But not all technology is great. It can be misused, be abused, be nefarious, or simply be poorly designed. As those who work in technology, it is our obligation to create things that improve the lives of others. That could mean saving them time, energy, and frustration. But more importantly, it could mean empowering them to be included in society in ways previously restricted.
@@ -256,7 +265,7 @@ But not all technology is great. It can be misused, be abused, be nefarious, or 
 
 "Can I use this?"
 
-Note:
+Notes:
 Accessibility is inherently about inclusion. It asks the question, "Can I use this thing?" On the surface, the answer is binary. But as we've already learned, what one person is capable of is different than another or even themselves, depending on context and limitations.
 
 
@@ -265,7 +274,7 @@ Accessibility is inherently about inclusion. It asks the question, "Can I use th
 
 "How well can I use this?"
 
-Note:
+Notes:
 Usability expands on capability and answers the question, "How well can I use this thing?" Does it demand a lot of time and causes frustration? Or does it easily disappear into the background, and the thing becomes a natural extension of myself?
 
 
@@ -277,7 +286,7 @@ Usability expands on capability and answers the question, "How well can I use th
 - Ramps, bars, wide doorways, elevators
 - Hardware, software
 
-Note:
+Notes:
 Technology that is purposefully designed to be highly accessible and usable is known as assistive technology. Depending on your needs, you may use various combinations of assistive tech. A crutch is a mobility aid. A sticky note is a cognitive aid. Closed captioning allows the deaf to experience movies and even those with hearing to confirm a phrase spoken softly. Ramps and wide doorways make it easy for those in wheelchairs and those with strollers to move it buildings.
 
 
@@ -290,7 +299,7 @@ Technology that is purposefully designed to be highly accessible and usable is k
 - Contrast, color, motion, magnification settings
 - Screen readers
 
-Note:
+Notes:
 And of course, there is assistive software. Shortcuts allows you to make a change, without hunting through menus. Spell check and word prediction helps you to type (sometimes). You can adjust screen colors, if you are color blind and can't see red. You can zoom. And you can use a screen reader. That's where we'll spend most of our time during this workshop.
 
 
@@ -299,7 +308,7 @@ And of course, there is assistive software. Shortcuts allows you to make a chang
 
 Narrate, navigate, interact with content.
 
-Note:
+Notes:
 A screen reader is a tool that gives you an alternative way to use a computer. A sighted user can experience a 2 or 3 dimensional visual interface, but a bind user cannot.
 
 
@@ -308,7 +317,7 @@ A screen reader is a tool that gives you an alternative way to use a computer. A
 
 Assistive tech relies on proper keyboard behavior.
 
-Note:
+Notes:
 Instead of a mouse, you navigate with a keyboard. Instead of reading with your eyes, you listen with your ears or touch your fingers to a braille device. Getting keyboard behavior working well is the foundational step to making the software compatible with assistive tech.
 
 
@@ -338,7 +347,7 @@ Instead of a mouse, you navigate with a keyboard. Instead of reading with your e
   </div>
 </dl>
 
-Note:
+Notes:
 Let's first look at the technology stack. When you build a website, the user interfaces with it through a browser. That browser interprets HTML, CSS, and JavaScript to render what the user sees, the visual user interface (UI). This interpretation is the DOM tree, short for Document Object Model. The user does not directly interact with the HTML. They interact with the DOM. This DOM can differ from browser to browser.
 
 But the stack is more complicated than that for assistive technology. The accessibility tree prepares the DOM to be used outside of the browser. That gets passed to the operating system's accessibility API, which interfaces with screen reader software and other hardware.
@@ -353,7 +362,7 @@ See: [*The intersection of performance and accessibility*](https://noti.st/ericw
 - Assistive tech
 - User settings, skill level
 
-Note:
+Notes:
 As we can see, there are a lot of layers between the code and what the user experiences. You can't control a lot of it. Nor can you control each person's skill level with whatever they're using. Each layer can interrupt the interaction between the user and the website. The more layers, the more chance of an inaccessible or unusable experience.
 
 
@@ -364,7 +373,7 @@ As we can see, there are a lot of layers between the code and what the user expe
 - Design for mobile
 - Usable with keyboard
 
-Note:
+Notes:
 However, you can control your code. Semantic code will more cleanly translate into the accessibility tree. Designing for mobile devices will help keep the content clean. Making all functionality usable with a keyboard means assistive tech can likely use it.
 
 
@@ -383,7 +392,7 @@ See: [*Use a screen reader to evaluate a website* (IU&nbsp;Knowledge&nbsp;Base)]
 
 </footer>
 
-Note:
+Notes:
 When testing websites, we tend to check the site in the major browsers and call that good enough. However, when considering screen readers and the brittleness between the software layers, where do we start? Luckily, the IU Knowledge Base provides recommendations. There are certain combinations of software that give the best experience for users, are popular, and free to use.
 
 NVDA and Firefox will most quickly reveal issues with your markup. They pay the most attention to accessibility standards. Then use VoiceOver on macOS and iOS as a secondary quality check.
@@ -399,7 +408,7 @@ Each screen reader has its own personality. The browser pairing will modify that
 - ChromeVOX is barely used.
 - Users use one screen reader per device.
 
-Note:
+Notes:
 In the general public, JAWS and NVDA are the most used by those with no or low vision. JAWS is the most robust screen reader, but don't bother with it, because of its cost, at $1,000 per license.
 
 iOS has 85% of market share of assistive tech users, in both the general public and Indiana University Bloomington students.
@@ -412,11 +421,17 @@ While we may test multiple screen readers, users will tend to only use one scree
 
 ## How screen readers work
 
+Notes:
+Now let's look at how screen readers work and how they're used.
+
 
 
 ## Orientation
 
 Focus. Cursors.
+
+Notes:
+First, there are a few ways you can get oriented in an interface.
 
 
 
@@ -424,7 +439,11 @@ Focus. Cursors.
 
 "Blue outline"
 
-<div class="slide-focus">Save</div>
+<div aria-hidden="true" class="slide-focus">Save</div>
+<div>
+
+Notes:
+A focus ring around an interactive object tells you where keyboard focus is. By default in most browsers, it is a blue outline. Never remove a focus style. But you may replace the style with something more aesthetically suitable.
 
 
 
@@ -432,10 +451,13 @@ Focus. Cursors.
 
 "Blinky pipe"
 
-<div class="slide-keyboard-cursor">
+<div aria-hidden="true" class="slide-keyboard-cursor">
   <div class="label">Name</div>
   <div class="input">Chris</div>
 </div>
+
+Notes:
+The blinky pipe in a text box is the keyboard cursor. It informs you
 
 
 
@@ -674,7 +696,7 @@ See: [*How to Describe Complex Designs for Users with Disabilities*](https://med
 
 </footer>
 
-Note:
+Notes:
 aria-label
 role
 

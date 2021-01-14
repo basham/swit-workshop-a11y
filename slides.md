@@ -710,6 +710,15 @@ Some content is more complicated. Content can be nested inside of content. This 
 
 
 
+## VoiceOver demo
+
+https://www.iu.edu
+
+Notes:
+Let's see this in action. I'm going to open IU.edu and navigate around with VoiceOver.
+
+
+
 ## Summary
 
 - Everyone experiences impairments.
@@ -743,13 +752,225 @@ Return at 2:10
 
 
 
-# Exercises
+# Reading content
+
+Notes:
+Let's look at a some examples of how a screen reader reads specific content.
 
 
 
-## Read the screen
+## List
 
-Exercise 1
+```html
+<ul>
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Blueberry</li>
+</ul>
+```
+
+Notes:
+This is a list. It is static, with no interaction.
+
+
+
+"List. 3 items."
+
+<figure>
+  <div class="fig-list">
+    <ul class="cursor">
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Blueberry</li>
+    </ul>
+  </div>
+</figure>
+
+Notes:
+When you land on it, the screen reader announces the identity. In this case, it is a "list". And it tells how many items there are in the list. Let's go to the first item.
+
+
+
+"Bullet. Apple. 1 of 3."
+
+<figure>
+  <div class="fig-list">
+    <ul>
+      <li class="cursor">Apple</li>
+      <li>Banana</li>
+      <li>Blueberry</li>
+    </ul>
+  </div>
+</figure>
+
+Notes:
+Now, the cursor is on the first item. It says the name and the position of the item in the list. Now to the next one.
+
+
+
+"Bullet. Banana. 2 of 3."
+
+<figure>
+  <div class="fig-list">
+    <ul>
+      <li>Apple</li>
+      <li class="cursor">Banana</li>
+      <li>Blueberry</li>
+    </ul>
+  </div>
+</figure>
+
+Notes:
+And you can continue as needed.
+
+
+
+## Explicit label
+
+"List Fruit. 3 items."
+
+```html
+<ul aria-label="Fruit">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Blueberry</li>
+</ul>
+```
+
+Notes:
+This list is so far has no name. You can give it a name by using the aria-label attribute. Instead of saying "List", it will now say "List Fruit". But this label is not accessible to visual users.
+
+
+
+## Double labels
+
+```html
+<div>
+  Fruit
+</div>
+<ul aria-label="Fruit">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Blueberry</li>
+</ul>
+```
+
+Notes:
+We could add a visual label. But now, we're maintaining two pieces of text for the same thing.
+
+
+
+## Linked label
+
+```html
+<div id="fruit-label">
+  Fruit
+</div>
+<ul aria-labelledby="fruit-label">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Blueberry</li>
+</ul>
+```
+
+Notes:
+We could instead use aria-labelledby to make an explicit link between the list and the div.
+
+
+
+## Unlinked heading label
+
+```html
+<h3>
+  Fruit
+</h3>
+<ul>
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Blueberry</li>
+</ul>
+```
+
+Notes:
+Another way to create a connection is with headings. It is still not explicit, but this is could be better than just a static piece of text.
+
+
+
+## Linked heading label
+
+```html
+<h3 id="fruit-label">
+  Fruit
+</h3>
+<ul aria-labelledby="fruit-label">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Blueberry</li>
+</ul>
+```
+
+Notes:
+But you could do both. The heading helps you to go to the section. And the heading acts as the explicit label for the list.
+
+
+
+## Item position
+
+1–3 of 8
+
+```html
+<ul>
+  <li
+    aria-posinset="1"
+    aria-setsize="8">
+    Apple
+  </li>
+  <li
+    aria-posinset="2"
+    aria-setsize="8">
+    Banana
+  </li>
+  <li
+    aria-posinset="3"
+    aria-setsize="8">
+    Blueberry
+  </li>
+</ul>
+```
+
+Notes:
+Let's say this is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. The apple is now item 1 of 8. Banana is 2 of 8. Blueberry is 3 of 8.
+
+See: https://www.w3.org/TR/wai-aria-1.1/#listitem
+
+
+
+## Item position
+
+4–6 of 8
+
+```html
+<ul>
+  <li
+    aria-posinset="4"
+    aria-setsize="8">
+    Cherry
+  </li>
+  <li
+    aria-posinset="5"
+    aria-setsize="8">
+    Mango
+  </li>
+  <li
+    aria-posinset="6"
+    aria-setsize="8">
+    Strawberry
+  </li>
+</ul>
+```
+
+Notes:
+If we render a different subset of the list, now we reveal: Cherry, item 4 of 8. Mango, item 5 of 8. Strawberry, item 6 of 8.
 
 
 
@@ -768,90 +989,26 @@ See: [*How to Describe Complex Designs for Users with Disabilities*](https://med
 </footer>
 
 Notes:
-aria-label
-role
-
-
-
-## List
-
-```html
-<ul aria-label="fruit">
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Strawberry</li>
-</ul>
-```
-
-
-
-## List
-
-|               |              |
-| ------------- | ------------ |
-| **Identity**  | "List fruit" |
-| **State**     | "3 items"    |
-| **Operation** | —            |
-
-<figure>
-  <div class="fig-list">
-    <ul class="cursor">
-      <li>Apple</li>
-      <li>Banana</li>
-      <li>Strawberry</li>
-    </ul>
-  </div>
-</figure>
-
-
-
-## List
-
-|               |          |
-| ------------- | ---------|
-| **Identity**  | "Apple"  |
-| **State**     | "1 of 3" |
-| **Operation** | —        |
-
-<figure>
-  <div class="fig-list">
-    <ul aria-label="Fruit">
-      <li class="cursor">Apple</li>
-      <li>Banana</li>
-      <li>Strawberry</li>
-    </ul>
-  </div>
-</figure>
-
-
-
-## List
-
-|               |          |
-| ------------- | -------- |
-| **Identity**  | "Banana" |
-| **State**     | "2 of 3" |
-| **Operation** | —        |
-
-<figure>
-  <div class="fig-list">
-    <ul>
-      <li>Apple</li>
-      <li class="cursor">Banana</li>
-      <li>Strawberry</li>
-    </ul>
-  </div>
-</figure>
+There are three pieces of information that needs to be communicated through a screen reader: identity, state, and operation. Or, ISO, for short. Identity answers, "What am I interacting with?" This is the name or label of the thing. State answers, "What is the current status of this thing?" Is it active, current, pressed, checked, or selected? What is the placement of the thing within its context. What are other details about the thing that would be helpful to know? Operation answers, "How do I use this thing?" What keys do I press to change its state?
 
 
 
 ## Checkbox
 
-|               |                          |
-| ------------- | ------------------------ |
-| **Identity**  | "I agree. Checkbox."     |
-| **State**     | "Unchecked."             |
-| **Operation** | "Press Space to select." |
+```html
+<input
+  id="agreement"
+  type="checkbox">
+<label for="agreement">
+  I agree
+</label>
+```
+
+
+
+"I agree. Unchecked checkbox."
+
+"Press Space to select."
 
 <figure>
   <div class="fig-checkbox">
@@ -862,13 +1019,9 @@ role
 
 
 
-## Checkbox
+"Check. I agree. Checkbox."
 
-|               |                            |
-| ------------- | -------------------------- |
-| **Identity**  | "I agree. Checkbox."       |
-| **State**     | "Checked."                 |
-| **Operation** | "Press Space to deselect." |
+&nbsp;
 
 <figure>
   <div class="fig-checkbox">
@@ -876,3 +1029,34 @@ role
     <label for="fig-agree-2" class="cursor">I agree</label>
   </div>
 </figure>
+
+
+
+"I agree. Checked checkbox."
+
+"Press Space to deselect."
+
+<figure>
+  <div class="fig-checkbox">
+    <input id="fig-agree-3" type="checkbox" class="sr-only" checked>
+    <label for="fig-agree-3" class="cursor">I agree</label>
+  </div>
+</figure>
+
+
+
+## Semantics
+
+```html
+<div role="heading" aria-level="3" id="fruit-label">
+  Fruit
+</div>
+<div role="list" aria-labelledby="fruit-label">
+  <div role="listitem">Apple</div>
+  <div role="listitem">Banana</div>
+  <div role="listitem">Strawberry</div>
+</div>
+```
+
+Notes:
+Div and span elements are some of the only Lists can also be generated You can also achieve the same effect by using 

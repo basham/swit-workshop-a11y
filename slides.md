@@ -842,7 +842,7 @@ This list is so far has no name. You can give it a name by using the aria-label 
 
 
 
-## Double labels
+## Visible label
 
 ```html
 <div>
@@ -878,7 +878,7 @@ We could instead use aria-labelledby to make an explicit link between the list a
 
 
 
-## Unlinked heading label
+## Unlinked heading
 
 ```html
 <h3>
@@ -896,7 +896,7 @@ Another way to create a connection is with headings. It is still not explicit, b
 
 
 
-## Linked heading label
+## Linked heading
 
 ```html
 <h3 id="fruit-label">
@@ -914,9 +914,7 @@ But you could do both. The heading helps you to go to the section. And the headi
 
 
 
-## Item position
-
-1–3 of 8
+## 1–3 of 8
 
 ```html
 <ul>
@@ -939,15 +937,13 @@ But you could do both. The heading helps you to go to the section. And the headi
 ```
 
 Notes:
-Let's say this is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. The apple is now item 1 of 8. Banana is 2 of 8. Blueberry is 3 of 8.
+Let's say this is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. The apple is now item 1 of 8. Banana is 2 of 8. Blueberry is 3 of 8. If the size of the set is unknown, use -1 for that value. These attributes can be useful when you return a paginated list of search results.
 
-See: https://www.w3.org/TR/wai-aria-1.1/#listitem
+See: https://www.w3.org/TR/wai-aria/#listitem
 
 
 
-## Item position
-
-4–6 of 8
+## 4–6 of 8
 
 ```html
 <ul>
@@ -971,6 +967,132 @@ See: https://www.w3.org/TR/wai-aria-1.1/#listitem
 
 Notes:
 If we render a different subset of the list, now we reveal: Cherry, item 4 of 8. Mango, item 5 of 8. Strawberry, item 6 of 8.
+
+
+
+## Div to list
+
+"List. 3 items."
+
+```html
+<div role="list">
+  <div role="listitem">Apple</div>
+  <div role="listitem">Banana</div>
+  <div role="listitem">Blueberry</div>
+</div>
+```
+
+Notes:
+When a screen reader finds an element, it maps the tag name to find its inherit role. The role is what defines the identity of the content and how it should operate. You can explicitly set or override an element's role by using the role attribute. That means you could essentially write the same list using div or span elements or something completely different.
+
+
+
+## List to div
+
+"Apple Banana Blueberry"
+
+```html
+<ul role="presentation">
+  <li role="presentation">Apple</li>
+  <li role="presentation">Banana</li>
+  <li role="presentation">Blueberry</li>
+</ul>
+```
+
+Notes:
+Let's say you start with some HTML and you want to remove native semantics. You can use the "presentation" role to make it essentially a div or span. It now reads like a set of words. You rarely want to do something like this, but it's important to know that you can reverse a role if needed.
+
+
+
+## Still operational
+
+```html
+<button role="presentation">
+  Save
+</button>
+```
+
+Notes:
+But keep in mind, the presentation role does not remove the native functionality from an element. A button with this role is still focusable and clickable. But the screen reader will not communicate that it is a button, nor how to operate it. Depending on the element, you may have a lot of work to do.
+
+
+
+## Implicit roles
+
+| Element | Role |
+| --- | --- |
+| `<a>` | link |
+| `<button>` | button |
+| `<h1>`…`<h6>` | heading |
+| `<header>` | banner |
+| `<nav>` | navigation |
+| — | alert |
+
+Notes:
+There are dozens HTML elements and dozens of roles. Some elements have implicit roles, some don't. Some roles, like alert, are not assigned to any native element, and they need to explicitly set to ever be used.
+
+
+
+## Attributes
+
+| Role | Attributes (`aria-*`) |
+| --- | --- |
+| button | `expanded`, `pressed` |
+| checkbox | `checked`, `readonly` |
+| heading | `level` |
+| listitem | `posinset`, `setsize` |
+| tab | `selected`, `posinset`, `setsize`, `expanded` |
+
+Notes:
+As we've already seen, certain attributes are paired with certain roles. Position-in-set and set-size are paired with list item. But those attributes are also valid for the tab role. If an invalid attribute is paired with a given role, it is ignored.
+
+
+
+## Default attributes
+
+| Role | Attributes (`aria-*`) |
+| --- | --- |
+| alert | `live="assertive"`, `atomic="true"` |
+| checkbox | `checked="false"` |
+| combobox | `expanded="false"`, `haspopup="listbox"` |
+| listbox | `orientation="vertical"` |
+| status | `live="polite"`, `atomic="true"` |
+
+Notes:
+Many roles have default attributes. These can be overridden. Or, the behavior of the role could essentially be rebuilt by using the right attributes.
+
+
+
+## Global attributes
+
+- `aria-describedby`
+- `aria-disabled`
+- `aria-label`
+- `aria-labelledby`
+- `aria-live`
+
+Notes:
+Some attributes can be used on any element. We've already demonstrated aria-label and aria-labelled by. Described-by can be used to provide a fuller information about a piece of content. This gets read out after the label. And 
+
+
+
+## ARIA
+
+*Accessible Rich Internet Applications*
+
+- Enhances HTML.
+- Use attributes as CSS selectors.
+- Prefer native semantics over ARIA.
+- Screen readers have different levels of support.
+
+<footer>
+
+See: https://www.w3.org/TR/html-aria/
+
+</footer>
+
+Notes:
+We've talked a lot about ARIA. It stands for "Accessible Rich Internet Applications". By these roles and other attributes, we can enhance native HTML, so it provides more information than it would otherwise. Because this is implemented as attributes, you can use them to style the markup. Just use attribute selectors. No need to manually add or remove class names. Just update the attribute value to see a style change. But in general, don't overuse it. If there is a way to accomplish what you need to do without using ARIA and with just native HTML, then do that. That will make the solution more robust. Just like how not every browser conforms perfectly to the HTML, CSS, or JavaScript specifications, not every screen reader conforms perfectly to the ARIA specification. The lower level solution, the more of a chance it will work for everyone.
 
 
 
@@ -1043,20 +1165,3 @@ There are three pieces of information that needs to be communicated through a sc
   </div>
 </figure>
 
-
-
-## Semantics
-
-```html
-<div role="heading" aria-level="3" id="fruit-label">
-  Fruit
-</div>
-<div role="list" aria-labelledby="fruit-label">
-  <div role="listitem">Apple</div>
-  <div role="listitem">Banana</div>
-  <div role="listitem">Strawberry</div>
-</div>
-```
-
-Notes:
-Div and span elements are some of the only Lists can also be generated You can also achieve the same effect by using 

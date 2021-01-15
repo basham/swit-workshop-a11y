@@ -787,7 +787,7 @@ This is a list. It is static, with no interaction.
 </figure>
 
 Notes:
-When you land on it, the screen reader announces the identity. In this case, it is a "list". And it tells how many items there are in the list. Let's go to the first item.
+When you land on it, the screen reader announces the type of content. In this case, it is a "list". And it tells how many items there are in the list. Let's go to the first item.
 
 
 
@@ -821,7 +821,7 @@ Now, the cursor is on the first item. It says the name and the position of the i
 </figure>
 
 Notes:
-And you can continue as needed.
+And you can continue as needed. In order to provide more clarity about the purpose of this list, we can give it a name, such as "fruit".
 
 
 
@@ -838,7 +838,7 @@ And you can continue as needed.
 ```
 
 Notes:
-This list is so far has no name. You can give it a name by using the aria-label attribute. Instead of saying "List", it will now say "List Fruit". But this label is not accessible to visual users.
+The aria-label attribute is one way of doing this. Instead of saying "List", it will now say "List Fruit". But this label is not accessible to visual users.
 
 
 
@@ -968,6 +968,8 @@ See: https://www.w3.org/TR/wai-aria/#listitem
 Notes:
 If we render a different subset of the list, now we reveal: Cherry, item 4 of 8. Mango, item 5 of 8. Strawberry, item 6 of 8.
 
+Keep in mind, this doesn't actually work in VoiceOver, even though it is declared in the spec. These attributes are simply ignored.
+
 
 
 ## Div to list
@@ -1072,7 +1074,7 @@ Many roles have default attributes. These can be overridden. Or, the behavior of
 - `aria-live`
 
 Notes:
-Some attributes can be used on any element. We've already demonstrated aria-label and aria-labelled by. Described-by can be used to provide a fuller information about a piece of content. This gets read out after the label. And 
+Some attributes can be used on any element. We've already demonstrated aria-label and aria-labelled by. Described-by can be used to provide a fuller information about a piece of content. This gets read out after the label. And aria-live can be used to announce something regardless of the cursor positions.
 
 
 
@@ -1092,7 +1094,7 @@ See: https://www.w3.org/TR/html-aria/
 </footer>
 
 Notes:
-We've talked a lot about ARIA. It stands for "Accessible Rich Internet Applications". By these roles and other attributes, we can enhance native HTML, so it provides more information than it would otherwise. Because this is implemented as attributes, you can use them to style the markup. Just use attribute selectors. No need to manually add or remove class names. Just update the attribute value to see a style change. But in general, don't overuse it. If there is a way to accomplish what you need to do without using ARIA and with just native HTML, then do that. That will make the solution more robust. Just like how not every browser conforms perfectly to the HTML, CSS, or JavaScript specifications, not every screen reader conforms perfectly to the ARIA specification. The lower level solution, the more of a chance it will work for everyone.
+We've talked a lot about ARIA. It stands for "Accessible Rich Internet Applications". By these roles and other attributes, we can enhance native HTML, so it provides more information than it would otherwise. Because this is implemented as attributes, you can use them to style the markup. Just use attribute selectors. No need to manually add or remove class names. Just update the attribute value to see a style change. But in general, don't overuse ARIA. If there is a way to accomplish what you need to do without using ARIA and with just native HTML, then do that. That will make the solution more robust. Just like how not every browser conforms perfectly to the HTML, CSS, or JavaScript specifications, not every screen reader conforms perfectly to the ARIA specification. The position-in-set and set-size attributes in VoiceOver are just one such example. The lower level solution, the more of a chance it will work for everyone.
 
 
 

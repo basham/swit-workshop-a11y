@@ -1074,7 +1074,7 @@ Many roles have default attributes. These can be overridden. Or, the behavior of
 - `aria-live`
 
 Notes:
-Some attributes can be used on any element. We've already demonstrated aria-label and aria-labelled by. Described-by can be used to provide a fuller information about a piece of content. This gets read out after the label. And aria-live can be used to announce something regardless of the cursor positions.
+Some attributes can be used on any element. We've already demonstrated aria-label and aria-labelled by. Described-by can be used to provide fuller information about a piece of content. This gets read out after the label. And aria-live can be used to announce something regardless of the cursor positions.
 
 
 
@@ -1094,7 +1094,7 @@ See: https://www.w3.org/TR/html-aria/
 </footer>
 
 Notes:
-We've talked a lot about ARIA. It stands for "Accessible Rich Internet Applications". By these roles and other attributes, we can enhance native HTML, so it provides more information than it would otherwise. Because this is implemented as attributes, you can use them to style the markup. Just use attribute selectors. No need to manually add or remove class names. Just update the attribute value to see a style change. But in general, don't overuse ARIA. If there is a way to accomplish what you need to do without using ARIA and with just native HTML, then do that. That will make the solution more robust. Just like how not every browser conforms perfectly to the HTML, CSS, or JavaScript specifications, not every screen reader conforms perfectly to the ARIA specification. The position-in-set and set-size attributes in VoiceOver are just one such example. The lower level solution, the more of a chance it will work for everyone.
+We've talked a lot about ARIA. It stands for "Accessible Rich Internet Applications". By these roles and other attributes, we can enhance native HTML, so it provides more information than it would otherwise. Because this is implemented as attributes, you can use them to style the markup. Just use attribute selectors. No need to manually add or remove class names. Just update the attribute value to see a style change. But in general, don't overuse ARIA. If there is a way to accomplish what you need to do without using ARIA and with just native HTML, then do that. That will make the solution more robust. Just like how not every browser conforms perfectly to the HTML, CSS, or JavaScript specifications, not every browser or screen reader conforms perfectly to the ARIA specification. The position-in-set and set-size attributes in VoiceOver are just one such example. The lower level solution, the more of a chance it will work for everyone.
 
 
 

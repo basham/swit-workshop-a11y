@@ -195,10 +195,6 @@ html {
   text-align: right;
 }
 
-.reveal img {
-  margin: 0 0 0.5rem;
-}
-
 .reveal footer {
   font-size: var(--fs-0);
   margin-top: 1.5rem;

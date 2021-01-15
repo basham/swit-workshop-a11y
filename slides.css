@@ -249,6 +249,42 @@
 }
 
 /*
+ * Breadcrumbs
+ */
+
+.fig-breadcrumbs {
+  background-color: var(--color-base-8);
+  color: var(--color-base-1);
+  padding: 0.5rem;
+}
+
+.fig-breadcrumbs ol {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+}
+
+.fig-breadcrumbs li {
+  display: flex;
+  margin: 0.25rem !important;
+}
+
+.fig-breadcrumbs li:not(:last-child)::after {
+  color: var(--color-base-6);
+  content: '/';
+  padding-left: 0.5rem;
+}
+
+.fig-breadcrumbs li[aria-current] {
+  color: var(--color-base-6);
+}
+
+.fig-breadcrumbs a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*
  * Checkbox
  */
 

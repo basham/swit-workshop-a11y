@@ -38,24 +38,54 @@ The workshop today is split into 3 major sections, over the course of 3 hours. T
 
 
 
-## Zoom etiquette
-
-- Submit questions in chat.
-- Questions will be answered after the break.
-- Mute when you're not talking.
-- Use annotations, stamps.
-
-Notes:
-Because there's a lot to cover in this first section, I request you to submit any questions you have in the Zoom chat and keep yourself muted. I will then follow up with those questions after the break. Once we transition to exercises, I will encourage more engagement. And we'll use some of Zoom's annotation features, so everyone can collaborate, in a bigger way.
-
-
-
 ## Resources
 
 https://github.com/basham/swit-workshop-a11y
 
 Notes:
 All resources for this workshop, including slides, slide notes, exercises, and links, are located on GitHub. Visit github.com/basham/swit-workshop-a11y. This link is posted in the Zoom chat.
+
+
+
+## Zoom etiquette
+
+- Submit questions in chat.
+- Questions will be answered periodically.
+- Mute when you're not talking.
+
+Notes:
+Because there's a lot to cover in this first section, I request you to submit any questions you have in the Zoom chat and keep yourself muted. I will then follow up with those questions periodically, between sections or after breaks.
+
+
+
+## Annotate
+
+Zoom → Toolbar → Annotate
+
+<figure>
+
+![Zoom annotation toolbar](assets/zoom-annotation-toolbar.png)
+
+  <figcaption>Experiment with the various Zoom annotation tools.</figcaption>
+</figure>
+
+<footer>
+
+See: [*Accessing and Using Annotation Tools in Zoom: Mac/Win*](https://help.lsit.ucsb.edu/hc/en-us/articles/360043613171-Accessing-and-Using-Annotation-Tools-in-Zoom-Mac-Win)
+
+</footer>
+
+Notes:
+Throughout the workshop, we'll use Zoom's annotation tools. So, let's get familiar with it. Look for the toolbar, that hovers over the screen. Click on the "Annotate" button to bring up annotation tools.
+
+
+
+## What comes to mind?
+
+"Accessibility"
+
+Notes:
+Using Zoom's annotation tools, write down a word or phrase that comes to mind, when you hear the word "accessibility". Feel free to use stamps next to the response of someone else if you wish. Play around with a few settings, so you get a good sense for the tools.
 
 
 
@@ -726,7 +756,9 @@ Let's see this in action. I'm going to open IU.edu and navigate around with Voic
 - Screen reader users navigate with <br> focus, cursors, rotor, shortcuts.
 
 Notes:
-In summary, everyone experiences impairments. The severity of those impairments and surrounding context can exclude people from doing what they want to do. If properly designed, technology can intervene and make the world more inclusive. And in examining the screen reader, as one example of assistive software, we illustrate that there is no technical reason why anyone should be excluded from using the websites we build. We must be intentional about including others. That intention should manifest in how we think, how we work, and what we create.
+In summary, everyone experiences impairments. The severity of those impairments and surrounding context can exclude people from doing what they want to do. If properly designed, technology can intervene and make the world more inclusive. When we design something to be more inclusive for one population, that ends up benefiting everyone.
+
+And in examining the screen reader, as one example of assistive software, we illustrate that there is no technical reason why anyone should be excluded from using the websites we build. We must be intentional about including others. That intention should manifest in how we think, how we work, and what we create.
 
 
 
@@ -752,10 +784,10 @@ Return at 2:10
 
 
 
-# Reading content
+# Static content
 
 Notes:
-Let's look at a some examples of how a screen reader reads specific content.
+Let's look at a some examples of how a screen reader reads content. We'll start with static content. Then we'll examine interactive content.
 
 
 
@@ -1086,6 +1118,7 @@ Some attributes can be used on any element. We've already demonstrated aria-labe
 - Use attributes as CSS selectors.
 - Prefer native semantics over ARIA.
 - Screen readers have different levels of support.
+- Start small.
 
 <footer>
 
@@ -1094,7 +1127,65 @@ See: https://www.w3.org/TR/html-aria/
 </footer>
 
 Notes:
-We've talked a lot about ARIA. It stands for "Accessible Rich Internet Applications". By these roles and other attributes, we can enhance native HTML, so it provides more information than it would otherwise. Because this is implemented as attributes, you can use them to style the markup. Just use attribute selectors. No need to manually add or remove class names. Just update the attribute value to see a style change. But in general, don't overuse ARIA. If there is a way to accomplish what you need to do without using ARIA and with just native HTML, then do that. That will make the solution more robust. Just like how not every browser conforms perfectly to the HTML, CSS, or JavaScript specifications, not every browser or screen reader conforms perfectly to the ARIA specification. The position-in-set and set-size attributes in VoiceOver are just one such example. The lower level solution, the more of a chance it will work for everyone.
+We've talked a lot about ARIA. It stands for "Accessible Rich Internet Applications". By these roles and other attributes, we can enhance native HTML, so it provides more information than it would otherwise.
+
+Because this is implemented as attributes, you can use them to style the markup. Just use attribute selectors. No need to manually add or remove class names. Just update the attribute value to see a style change.
+
+But in general, don't overuse ARIA. If there is a way to accomplish what you need to do without using ARIA and with just native HTML, then do that. That will make the solution more robust.
+
+Just like how not every browser conforms perfectly to the HTML, CSS, or JavaScript specifications, not every browser or screen reader conforms perfectly to the ARIA specification. The position-in-set and set-size attributes in VoiceOver are just one such example. The lower level solution, the more of a chance it will work for everyone.
+
+ARIA is a huge specification. There's a lot to learn. Just start where you are. If you have a small component that you're working on, start there. Gradually build up your knowledge, as you're problem solving.
+
+
+
+# Questions
+
+
+
+# Breadcrumbs
+
+Exercise 1
+
+<figure>
+  <div class="fig-breadcrumbs">
+    <nav aria-label="Breadcrumbs">
+      <ol>
+        <li><a>Conference</a></li>
+        <li><a>Workshop</a></li>
+        <li aria-current="page">Slides</li>
+      </ol>
+    </nav>
+  </div>
+</figure>
+
+Notes:
+Look at a mockup. Read it out. Reveal markup. Demo.
+
+
+
+```html
+<nav aria-label="Breadcrumbs">
+  <ol>
+    <li><a href="#">Conference</a></li>
+    <li><a href="#">Workshop</a></li>
+    <li aria-current="page">Slides</li>
+  </ol>
+</nav>
+```
+
+
+
+# Pagination
+
+Exercise 2
+
+Notes:
+Look at a mockup. Read it out. Reveal markup. Demo.
+
+
+
+# Interactive content
 
 
 

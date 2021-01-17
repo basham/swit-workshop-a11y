@@ -24,14 +24,14 @@ I'm Chris Basham. I've worked at Indiana University since 2012, as a UX designer
 
 ## Outline
 
-| Time | Duration | Description  |
-| ----:| --------:| ------------ |
-| 1:00 |      10m | Introduction |
-| 1:10 |      50m | Lecture      |
-| 2:00 |      10m | Break        |
-| 2:10 |      50m | Exercises    |
-| 3:00 |      10m | Break        |
-| 3:10 |      50m | Exercises    |
+| Time  | Duration | Description  |
+| -----:| --------:| ------------ |
+| 9:00  |      10m | Introduction |
+| 9:10  |      50m | Part 1       |
+| 10:00 |      10m | Break        |
+| 10:10 |      50m | Part 2       |
+| 11:00 |      10m | Break        |
+| 11:10 |      50m | Part 3       |
 
 Notes:
 The workshop today is split into 3 major sections, over the course of 3 hours. The first will be a lecture, followed later by exercises. Each section will be divided by 10 minute breaks.
@@ -762,24 +762,6 @@ And in examining the screen reader, as one example of assistive software, we ill
 
 
 
-## After the break
-
-- What screen readers communicate
-- Exercises
-
-Notes:
-After the break, we'll transition into some exercises. As a reminder, please submit any questions you have so far in the chat. I'll address them once we return. Thank you, and see you in 10 minutes.
-
-
-
-# Break
-
-10 minutes
-
-Return at 2:10
-
-
-
 # Questions
 
 
@@ -1017,7 +999,7 @@ Keep in mind, this doesn't actually work in VoiceOver, even though it is declare
 ```
 
 Notes:
-When a screen reader finds an element, it maps the tag name to find its inherit role. The role is what defines the identity of the content and how it should operate. You can explicitly set or override an element's role by using the role attribute. That means you could essentially write the same list using div or span elements or something completely different.
+When a screen reader finds an element, it maps the tag name to find its inherit role. The role is what defines the type of the content and how it should operate. You can explicitly set or override an element's role by using the role attribute. That means you could essentially write the same list using div or span elements or something completely different.
 
 
 
@@ -1143,10 +1125,31 @@ ARIA is a huge specification. There's a lot to learn. Just start where you are. 
 
 
 
+## After the break
+
+- What screen readers communicate
+- Exercises
+
+Notes:
+After the break, we'll transition into some exercises. As a reminder, please submit any questions you have so far in the chat. I'll address them once we return. Thank you, and see you in 10 minutes.
+
+
+
+# Break
+
+10 minutes
+
+Return at 10:10 AM
+
+
+
 # Breadcrumbs
 
-Exercise 1
+Exercise
 
+
+
+<!-- .slide: data-background-color="var(--color-base-8)" -->
 <figure>
   <div class="fig-breadcrumbs">
     <nav aria-label="Breadcrumbs">
@@ -1160,7 +1163,10 @@ Exercise 1
 </figure>
 
 Notes:
-Look at a mockup. Read it out. Reveal markup. Demo.
+1. Ask for a volunteer. Have them describe the mockup.
+2. Everyone, use annotations to write down things you think are important.
+3. Ask the volunteer to describe it again.
+4. Is there a difference?
 
 
 
@@ -1174,14 +1180,14 @@ Look at a mockup. Read it out. Reveal markup. Demo.
 </nav>
 ```
 
+Notes:
+How does the description change, if we include markup?
+
 
 
 # Pagination
 
-Exercise 2
-
-Notes:
-Look at a mockup. Read it out. Reveal markup. Demo.
+Exercise
 
 
 

@@ -1279,6 +1279,7 @@ Responsibilities of the designer
 
 - Accessible text. Visual text.
 - SR only. Visual only. `<button aria-label="foo">bar</button>`
+- Image alt text. Decorative images.
 
 
 

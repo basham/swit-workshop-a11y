@@ -1264,3 +1264,172 @@ There are three pieces of information that needs to be communicated through a sc
   </div>
 </figure>
 
+
+
+# Besides the wireframe
+
+Responsibilities of the designer
+
+- Designers are most responsible for the accessibility of a product
+- They control the bulk of the work.
+
+
+
+## Text
+
+- Accessible text. Visual text.
+- SR only. Visual only. `<button aria-label="foo">bar</button>`
+
+
+
+## Content order
+
+- Mobile first.
+- What comes before another thing.
+
+
+
+## Headings
+
+- `<h1>` should be the unique page title.
+- Page level error alert could be the first (conditional) `<h1>`.
+- Keep all heading levels in order.
+
+
+
+## Landmarks
+
+- navigation, banner
+
+
+
+## Tab order
+
+- `tabindex="0"` almost always
+- `tabindex="-1"` if using changing focus with JavaScript.
+- Avoid other values
+- Tab order follows the content order.
+- Make note if this deviates.
+
+
+
+## Keyboard traps
+
+- Must explicitly Escape or complete an action to exit. Dialog.
+- Pressing Tab 50 times to leave a section is effectively a trap.
+- A widget has one tabbable area. Once entered, use arrow keys to navigate to sub content.
+
+
+
+## Context switching
+
+- Focus redirection
+- Open and focus on a modal.
+- Delete an item in a list. Where does focus go?
+- Following a link is a context switch. Window title gets announced first. Skip navigation is a quick way to jump back into the document.
+
+
+
+## Name things
+
+- Lists. Nav. Tables.
+- Helps SR users distinguish something.
+- Helps devs write code faster. Naming things is hard.
+- Especially important if there's more than one of that thing on the page. Or if the purpose of the thing is not obvious by the headings or landmarks.
+
+
+
+## States
+
+- Empty. 1. Many. Lots. Success. Pending. Error. Default.
+- How are these states communicated? `aria-live` or focus redirection? Alerts?
+
+
+
+## Content
+
+- Be concise. Be unambiguous. Lower the reading level. Avoid terms that disadvantage certain users (spatial awareness, color).
+
+
+
+## Design system
+
+- Use, improve Rivet
+- Colors. Patterns.
+- Link to specific components that are used in a wireframe.
+- Designers, devs, users all appreciate similarity. Build one implementation of a component and reuse it everywhere. Date picker. Different implementations of the same thing are difficult to maintain, odd to users. Don't make users have to relearn the same thing.
+- https://rivet.iu.edu/
+
+
+
+## Content system
+
+- https://rivet.iu.edu/content-guide/
+- The foundation is content.
+- This needs a lot of work.
+
+
+
+## Content first
+
+- Start with text. Visuals later.
+
+
+
+## Sketching with text
+
+- Should be as easy to work on as a pencil and paper.
+- HTML. Attributes (roles, aria). Text (all, SR, Vis). Focus. Focusable. Interactive. Landmarks. Headings. Reference to wireframe image. Components. Dev notes.
+- Markdown? Inline links, to simile focus redirection? Link to text sketch of a component?
+- Ensure your team can effectively interpret the sketch. Adapt as needed.
+- Techniques will change over time.
+- Reference ARIA, WCAG
+
+
+
+## Annotation
+
+- Don't overdue annotation in the wireframe itself.
+- May be difficult to change or for a SR user to use.
+- Better to start with text and reference from text to wireframes.
+- Text is easier to change and collaborate. This is the foundation.
+- Be less reliant on specialized tools (Figma, Sketch, Axure).
+- But how to keep the wireframes and annotations in sync?
+- Document should be the single source of truth.
+- Document can be collaborated on (non-designers, in and outside of team).
+
+
+
+## App feedback
+
+- SR announce when there's something new. Press a key. It announces.
+- Current state. Trigger. New state.
+- Micro interaction
+- Form controls
+
+
+
+## Getting feedback
+
+- Context. User journey. Intention. What is expected to happen.
+- Text is easy to share (including SR users)
+
+
+
+## Next steps
+
+- Start where you're at. Gradually build up.
+- Start with a single problem. Reference ARIA and other resources for that problem. Don't rathole and read the entire document.
+
+
+
+# Question to devs:
+
+What would you like a designer to provide you?
+
+
+
+# Component exercises
+
+- Card
+- Pagination

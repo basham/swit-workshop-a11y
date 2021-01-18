@@ -1,6 +1,33 @@
-# Incorporating Accessibility in the Design Process (Statewide IT 2021 Workshop)
+# Incorporating Accessibility in the Design Process
+
+Workshop for [Statewide IT Conference](https://statewideit.iu.edu/) at Indiana University
+
+January 21, 2021
+
+## Description
+
+Product features implemented without accessibility considered upfront is prone to uncertainty, rework, and a poor or hopeless experience for those who use assistive technology. In contrast, teams release higher quality features in less time when accessibility is part of the design process. Go beyond validating WCAG success criteria. Improve the development process, and design a better experience for your users.
+
+During this workshop, participants will:
+
+1. Learn how a screen reader works and how it is used
+2. Study accessibility features, such as roles, names, focus and cursor handling, tab order, and ARIA
+3. Examine wireframes, and discuss how screen reader users may or should experience those interfaces
+4. Annotate wireframes to communicate accessibility expectations to the product team
+
+Chris Basham is a user experience designer in Enterprise Student Systems, specializing in accessibility, front-end development, and design systems.
 
 ## Slides
+
+### View
+
+[View slides](https://basham.github.io/swit-workshop-a11y/)
+
+- Press `S` for speaker notes.
+- Press arrow keys to advance slides.
+- Press `?` for more options.
+
+### Edit
 
 Powered by [reveal.js](https://revealjs.com/).
 

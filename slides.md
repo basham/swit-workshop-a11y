@@ -475,7 +475,7 @@ While quality assurance may test with multiple screen readers, users will tend t
 
 
 
-## How screen readers work
+# How screen readers work
 
 Notes:
 Now let's look at how screen readers work and how they're used.
@@ -763,6 +763,266 @@ And in examining the screen reader, as one example of assistive software, we ill
 
 
 # Questions
+
+
+
+# Responsibility
+
+80% of [WCAG 2.0](https://www.w3.org/TR/WCAG20/) success criteria are design&nbsp;decisions.
+
+Notes:
+80% of the decisions that go into making content accessible occur during the design process. This means that designers are responsible for the bulk of this work.
+
+
+
+## WCAG
+
+"Web Content Accessibility Guidelines"
+
+Principles → Guidelines → Success Criteria
+
+Notes:
+WCAG stands for "Web Content Accessibility Guidelines". It is a document that defines dozens of success criteria, which helps you to test if a piece of content is accessible or not. These criteria are grouped into guidelines. Those guidelines are grouped into four major principles.
+
+
+
+## WCAG Principles
+
+1. Perceivable
+2. Operable
+3. Understandable
+4. Robust
+
+Notes:
+There are four principles. The first three question if a piece of content can be seen, used, and understood by a user. The fourth questions if it can can be reliably interpreted by assistive technologies.
+
+
+
+## Success criteria
+
+- **A**: Usable
+- **AA**: Good UX
+- **AAA**: Ideal
+
+Notes:
+Success criteria are ranked in three levels. Each level builds up on the other. Level AA requires A conformance. Level AAA requires both A and AA conformance.
+
+Some criteria can be automatically tested with scripts. Some criteria needs to be manually evaluated.
+
+Level A covers basic usability. You're likely achieving this without too much explicit effort. Level AA is what you should aim for. Some criteria may not be as obvious. Level AAA is practically out of reach. It is an ideal to push you forward, but it isn't realistic. The document says:
+
+"It is not recommended that Level AAA conformance be required as a general policy for entire sites because it is not possible to satisfy all Level AAA Success Criteria for some content."
+
+See: https://www.w3.org/WAI/WCAG21/Understanding/conformance
+
+
+
+## Criteria for designers
+
+- [*Accessibility for designers: WCAG criteria*](https://kb.iu.edu/d/azyc#wcag) (IU&nbsp;Knowledge&nbsp;Base)
+- [*Designing with Accessibility in Mind*](https://ux.iu.edu/writings/design-with-accessibility-part-1/) by&nbsp;Meagan&nbsp;Eller (IU UX Office)
+
+Notes:
+There are a couple of excellent places to start for designers at IU.
+
+First, this IU Knowledge Base article succinctly lists these 80% of criteria as quick reference. And if you need some prompting, there are a number of questions that you can ask to start addressing these criteria.
+
+Second, if you want more details and examples, Meagan Eller expanded on this topic in a three-part article posted on the IU User Experience Office blog.
+
+
+
+# Design decisions
+
+Notes:
+Let's look at some examples of what we can do or what we should keep in mind when designing, to meet these criteria.
+
+
+
+## Content order
+
+- Visual UI is 2D (or 3D).
+- HTML, reading, tab order is 1D.
+- Mobile first approach.
+
+Notes:
+A visual user interface is often thought of as a two-dimensional thing. Or with the advent of virtual reality, three-dimensions. However, the foundation of this content is all 1-dimensions. It is linear in nature. HTML, code, and text is written top to bottom. You read top to bottom. With a keyboard, you navigate top to bottom. It is important that before design in 2D, we design in 1D. That's the importance of the Mobile First practice. When you design for mobile, the limited viewport width is a constraint making you design linearly. It forces you to be intentional about what content order. Only then with a wider screen, the content can be enhanced in 2D.
+
+
+
+## Audience
+
+- Screen reader users<br>(`.sr-only`, `aria-label`, `alt`)
+- Visual users<br>(`aria-hidden="true"`)
+- Everyone
+
+Notes:
+You must decide the audience for any piece of content. Is it for screen readers only? Or visual users only? Or for everyone? If content is not for everyone, then equivalent content must be provided. Alt text is meant to be an equivalent for not seeing an image. An aria-label attribute could provide an equivalent for an icon.
+
+
+
+## Page title
+
+- Unique, succinct
+- Most specific first
+- Include page-level alert
+- Manually update in single-page apps
+
+> Error: Could not submit | Call for proposals | Some Conference
+
+Notes:
+Whenever you follow a link or change tabs, a screen reader first announces the title of the page. This title could be long. So, it is best if the most important information is placed first, so you don't have to wait long, to know if that's the page that is wanted. But this also helps visual users, as they can quickly scan a list of tabs and see which tab they should open, without clicking a bunch of them.
+
+If there is a page-level alert, such as an error, that could be included as the first part of the title.
+
+Lots of websites are built as single-page JavaScript applications. If the URL changes or if there is a sense of a major context switch, then the title should update as well.
+
+
+
+## Headings
+
+- Start with `<h1>`.
+- Don't skip heading levels.
+- Page-level alert could be the first `<h1>`.
+
+```html
+<h1>Error: Could not submit</h1>
+<h1>Call for proposals</h1>
+```
+
+Notes:
+Heading levels should be ordered, starting at 1. Don't skip levels, like having a level 3 immediately after a 1. In general, you should have only one heading level 1. An exception to this could be conditionally rendering a page-level alert. That could be placed just before the primary h1. Some may recommend this alert be a h2, but then that would force an exception to the don't-skip-heading-levels rule.
+
+
+
+## Landmarks
+
+- navigation, banner
+
+
+
+## Tab order
+
+- `tabindex="0"` almost always
+- `tabindex="-1"` if using changing focus with JavaScript.
+- Avoid other values
+- Tab order follows the content order.
+- Make note if this deviates.
+
+
+
+## Keyboard traps
+
+- Must explicitly Escape or complete an action to exit. Dialog.
+- Pressing Tab 50 times to leave a section is effectively a trap.
+- A widget has one tabbable area. Once entered, use arrow keys to navigate to sub content.
+
+
+
+## Context switching
+
+- Focus redirection
+- Open and focus on a modal.
+- Delete an item in a list. Where does focus go?
+- Following a link is a context switch. Window title gets announced first. Skip navigation is a quick way to jump back into the document.
+
+
+
+## Name things
+
+- Lists. Nav. Tables.
+- Helps SR users distinguish something.
+- Helps devs write code faster. Naming things is hard.
+- Especially important if there's more than one of that thing on the page. Or if the purpose of the thing is not obvious by the headings or landmarks.
+
+
+
+## States
+
+- Empty. 1. Many. Lots. Success. Pending. Error. Default.
+- How are these states communicated? `aria-live` or focus redirection? Alerts?
+
+
+
+## Content
+
+- Be concise. Be unambiguous. Lower the reading level. Avoid terms that disadvantage certain users (spatial awareness, color).
+
+
+
+## Design system
+
+- Use, improve Rivet
+- Colors. Patterns.
+- Link to specific components that are used in a wireframe.
+- Designers, devs, users all appreciate similarity. Build one implementation of a component and reuse it everywhere. Date picker. Different implementations of the same thing are difficult to maintain, odd to users. Don't make users have to relearn the same thing.
+- https://rivet.iu.edu/
+
+
+
+## Content system
+
+- https://rivet.iu.edu/content-guide/
+- The foundation is content.
+- This needs a lot of work.
+
+
+
+## Content first
+
+- Start with text. Visuals later.
+
+
+
+## Sketching with text
+
+- Should be as easy to work on as a pencil and paper.
+- HTML. Attributes (roles, aria). Text (all, SR, Vis). Focus. Focusable. Interactive. Landmarks. Headings. Reference to wireframe image. Components. Dev notes.
+- Markdown? Inline links, to simile focus redirection? Link to text sketch of a component?
+- Ensure your team can effectively interpret the sketch. Adapt as needed.
+- Techniques will change over time.
+- Reference ARIA, WCAG
+
+
+
+## Annotation
+
+- Don't overdue annotation in the wireframe itself.
+- May be difficult to change or for a SR user to use.
+- Better to start with text and reference from text to wireframes.
+- Text is easier to change and collaborate. This is the foundation.
+- Be less reliant on specialized tools (Figma, Sketch, Axure).
+- But how to keep the wireframes and annotations in sync?
+- Document should be the single source of truth.
+- Document can be collaborated on (non-designers, in and outside of team).
+
+
+
+## App feedback
+
+- SR announce when there's something new. Press a key. It announces.
+- Current state. Trigger. New state.
+- Micro interaction
+- Form controls
+
+
+
+## Getting feedback
+
+- Context. User journey. Intention. What is expected to happen.
+- Text is easy to share (including SR users)
+
+
+
+## Next steps
+
+- Start where you're at. Gradually build up.
+- Start with a single problem. Reference ARIA and other resources for that problem. Don't rathole and read the entire document.
+
+
+
+# Question to devs:
+
+What would you like a designer to provide you?
 
 
 
@@ -1263,170 +1523,6 @@ There are three pieces of information that needs to be communicated through a sc
     <label for="fig-agree-3" class="cursor">I agree</label>
   </div>
 </figure>
-
-
-
-# Besides the wireframe
-
-Responsibilities of the designer
-
-- Designers are most responsible for the accessibility of a product
-- They control the bulk of the work.
-
-
-
-## Text
-
-- Accessible text. Visual text.
-- SR only. Visual only. `<button aria-label="foo">bar</button>`
-- Image alt text. Decorative images.
-
-
-
-## Content order
-
-- Mobile first.
-- What comes before another thing.
-
-
-
-## Headings
-
-- `<h1>` should be the unique page title.
-- Page level error alert could be the first (conditional) `<h1>`.
-- Keep all heading levels in order.
-
-
-
-## Landmarks
-
-- navigation, banner
-
-
-
-## Tab order
-
-- `tabindex="0"` almost always
-- `tabindex="-1"` if using changing focus with JavaScript.
-- Avoid other values
-- Tab order follows the content order.
-- Make note if this deviates.
-
-
-
-## Keyboard traps
-
-- Must explicitly Escape or complete an action to exit. Dialog.
-- Pressing Tab 50 times to leave a section is effectively a trap.
-- A widget has one tabbable area. Once entered, use arrow keys to navigate to sub content.
-
-
-
-## Context switching
-
-- Focus redirection
-- Open and focus on a modal.
-- Delete an item in a list. Where does focus go?
-- Following a link is a context switch. Window title gets announced first. Skip navigation is a quick way to jump back into the document.
-
-
-
-## Name things
-
-- Lists. Nav. Tables.
-- Helps SR users distinguish something.
-- Helps devs write code faster. Naming things is hard.
-- Especially important if there's more than one of that thing on the page. Or if the purpose of the thing is not obvious by the headings or landmarks.
-
-
-
-## States
-
-- Empty. 1. Many. Lots. Success. Pending. Error. Default.
-- How are these states communicated? `aria-live` or focus redirection? Alerts?
-
-
-
-## Content
-
-- Be concise. Be unambiguous. Lower the reading level. Avoid terms that disadvantage certain users (spatial awareness, color).
-
-
-
-## Design system
-
-- Use, improve Rivet
-- Colors. Patterns.
-- Link to specific components that are used in a wireframe.
-- Designers, devs, users all appreciate similarity. Build one implementation of a component and reuse it everywhere. Date picker. Different implementations of the same thing are difficult to maintain, odd to users. Don't make users have to relearn the same thing.
-- https://rivet.iu.edu/
-
-
-
-## Content system
-
-- https://rivet.iu.edu/content-guide/
-- The foundation is content.
-- This needs a lot of work.
-
-
-
-## Content first
-
-- Start with text. Visuals later.
-
-
-
-## Sketching with text
-
-- Should be as easy to work on as a pencil and paper.
-- HTML. Attributes (roles, aria). Text (all, SR, Vis). Focus. Focusable. Interactive. Landmarks. Headings. Reference to wireframe image. Components. Dev notes.
-- Markdown? Inline links, to simile focus redirection? Link to text sketch of a component?
-- Ensure your team can effectively interpret the sketch. Adapt as needed.
-- Techniques will change over time.
-- Reference ARIA, WCAG
-
-
-
-## Annotation
-
-- Don't overdue annotation in the wireframe itself.
-- May be difficult to change or for a SR user to use.
-- Better to start with text and reference from text to wireframes.
-- Text is easier to change and collaborate. This is the foundation.
-- Be less reliant on specialized tools (Figma, Sketch, Axure).
-- But how to keep the wireframes and annotations in sync?
-- Document should be the single source of truth.
-- Document can be collaborated on (non-designers, in and outside of team).
-
-
-
-## App feedback
-
-- SR announce when there's something new. Press a key. It announces.
-- Current state. Trigger. New state.
-- Micro interaction
-- Form controls
-
-
-
-## Getting feedback
-
-- Context. User journey. Intention. What is expected to happen.
-- Text is easy to share (including SR users)
-
-
-
-## Next steps
-
-- Start where you're at. Gradually build up.
-- Start with a single problem. Reference ARIA and other resources for that problem. Don't rathole and read the entire document.
-
-
-
-# Question to devs:
-
-What would you like a designer to provide you?
 
 
 

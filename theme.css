@@ -124,6 +124,7 @@ html {
   display: block;
   margin: 1rem auto;
   padding-top: 0.5rem;
+  text-align: left;
   width: 80%;
 }
 

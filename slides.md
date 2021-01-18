@@ -845,7 +845,18 @@ Let's look at some examples of what we can do or what we should keep in mind whe
 - Mobile first approach.
 
 Notes:
-A visual user interface is often thought of as a two-dimensional thing. Or with the advent of virtual reality, three-dimensions. However, the foundation of this content is all 1-dimensions. It is linear in nature. HTML, code, and text is written top to bottom. You read top to bottom. With a keyboard, you navigate top to bottom. It is important that before design in 2D, we design in 1D. That's the importance of the Mobile First practice. When you design for mobile, the limited viewport width is a constraint making you design linearly. It forces you to be intentional about what content order. Only then with a wider screen, the content can be enhanced in 2D.
+A visual user interface is often thought of as a two-dimensional thing. Or with the advent of virtual reality, three-dimensions. However, the foundation of this content is all 1-dimensions. It is linear in nature. HTML, code, and text is written top to bottom. You read top to bottom. With a keyboard, you navigate top to bottom. It is important that before design in 2D, we design in 1D. That's the importance of the Mobile First practice. When you design for mobile, the limited viewport width is a constraint making you design linearly. It forces you to be intentional about what content order. Only then with a wider screen, the content can be enhanced in 2D with responsive design techniques.
+
+
+
+## Name everything
+
+- Especially if more than one of the same type
+- Helps users, team, devs, help guides
+- Pages. Headings. Landmarks. Links. Images. Tables. Form controls.
+
+Notes:
+Most every piece of content should have a name, especially if there is more than one of the same type of content in the page. This helps users distinguish content of the same type. This helps your team talk about certain aspects of the content. This helps your devs better organize code. This helps you write better help guides. Naming things is tough, but it is more difficult doing it retroactively.
 
 
 
@@ -896,43 +907,77 @@ Heading levels should be ordered, starting at 1. Don't skip levels, like having 
 
 ## Landmarks
 
-- navigation, banner
+| Role | HTML |
+| --- | --- |
+| banner | `<header>` |
+| navigation | `<nav>` |
+| main | `<main>` |
+| form | `<form>` |
+| search | `role="search"` |
+
+<footer>
+
+See: [*Landmarks*](https://kb.iu.edu/d/aryt) (IU Knowledge Base)
+
+</footer>
+
+Notes:
+In addition to headings, landmarks are another a major way that screen reader users navigate, also through the Rotor. Landmarks are defined either implicitly by the HTML element that's used or explicitly by a role attribute on the element. This table lists a subset of the available landmarks, but these are some of the major ones you'll use. If there is any landmark that is used more than once on the page, you should give it a name with aria-label, so it is distinct.
 
 
 
-## Tab order
+## Links
 
-- `tabindex="0"` almost always
-- `tabindex="-1"` if using changing focus with JavaScript.
-- Avoid other values
-- Tab order follows the content order.
-- Make note if this deviates.
+- Should be unique.
+- Avoid "read more" or "click here".
+- Include skip links ([Rivet Header](https://rivet.iu.edu/components/navigation/header/)).
 
+Notes:
+Like headings and landmarks, links are also listed in the Rotor. In order for a screen reader user to quickly know the purpose of the link, the link text should be unique for the page. Avoid mistakes like labeling it "read more" or "click here". Let's say you have a list of articles about accessibility. If the visual label for an article about landmarks is "read more", then consider making the accessible label something like "read more about landmarks".
 
-
-## Keyboard traps
-
-- Must explicitly Escape or complete an action to exit. Dialog.
-- Pressing Tab 50 times to leave a section is effectively a trap.
-- A widget has one tabbable area. Once entered, use arrow keys to navigate to sub content.
+Also, use skip links as a way to quickly skip repetitive content areas, like the banner and navigation. This makes it easy for a keyboard user to get to the main content area. If you use the Rivet Header, that includes a skip link.
 
 
 
 ## Context switching
 
-- Focus redirection
-- Open and focus on a modal.
-- Delete an item in a list. Where does focus go?
-- Following a link is a context switch. Window title gets announced first. Skip navigation is a quick way to jump back into the document.
+- Link to page, inline content.
+- Redirect focus to widget, button, message.
+- Use `aria-live` as alternative to context switch.
+
+Notes:
+A context switch is when the focus shifts to a new piece of content. A link to a new page switches the context to that new page, with the page title being read first. An internal link redirects focus to a different part of the same page, likely a heading. Clicking a button could redirect focus to a modal. If there's a list of items with delete actions, you need to determine where focus goes after it successfully deletes. Does it go to a success message? Does it go to the delete button on the next or previous line, assuming there are other items?
+
+You may use the aria-live attribute if all you want to do is announce a message or inform of some change of content while not changing context. This is what happens with alerts.
 
 
 
-## Name things
+## Tab order
 
-- Lists. Nav. Tables.
-- Helps SR users distinguish something.
-- Helps devs write code faster. Naming things is hard.
-- Especially important if there's more than one of that thing on the page. Or if the purpose of the thing is not obvious by the headings or landmarks.
+- Tab order should follow content order.
+- Use `tabindex="0"` for custom widgets.
+- Use `tabindex="-1"` to redirect focus.
+- Avoid other values.
+
+Notes:
+Tab order is the order in which you focus on interactive items when pressing the Tab key. It generally should follow the content order. If this deviates for whatever reason, you should make note of it. If you make a custom widget that will have its own complexity, like a date picker or tab component, you will likely make it tabbable by using the "tabindex=0" value. If you are wanting to redirect keyboard focus to something that is typically not interactive, such as a page-level alert, then use the "tabindex=-1" value. There are other valid values for the tabindex attribute, but it tends to confuse the interface. Avoid that if you can.
+
+
+
+## Keyboard traps
+
+- Explicit: modal, complex widget
+- Implicit: 50 links in a section
+
+Notes:
+A keyboard trap is when you make it difficult or impossible to navigate out of a piece of content with the keyboard alone. Sometimes, trapping is needed. When the user want to delete something, a dialog opens, and the user must confirm the action to proceed. Sometimes, trapping implicitly happens because there are a lot of links, buttons, or other interactive things in an area that must be encountered before exiting.
+
+
+
+## Replace tabbing with arrow keys
+
+- Grid, combobox, tables
+- A widget has one tabbable area. Once entered, use arrow keys to navigate to sub content.
 
 
 
@@ -945,7 +990,8 @@ Heading levels should be ordered, starting at 1. Don't skip levels, like having 
 
 ## Content
 
-- Be concise. Be unambiguous. Lower the reading level. Avoid terms that disadvantage certain users (spatial awareness, color).
+- Be concise. Be unambiguous. Be unique. Lower the reading level.
+- Avoid terms that disadvantage certain users (spatial awareness, color).
 
 
 
@@ -967,14 +1013,9 @@ Heading levels should be ordered, starting at 1. Don't skip levels, like having 
 
 
 
-## Content first
-
-- Start with text. Visuals later.
-
-
-
 ## Sketching with text
 
+- Start with text. Visuals later.
 - Should be as easy to work on as a pencil and paper.
 - HTML. Attributes (roles, aria). Text (all, SR, Vis). Focus. Focusable. Interactive. Landmarks. Headings. Reference to wireframe image. Components. Dev notes.
 - Markdown? Inline links, to simile focus redirection? Link to text sketch of a component?

@@ -180,9 +180,9 @@ The Enterprise Systems division, which I am part of, has been doing a lot to imp
 
 ## Workshop goals
 
-- Learn how a screen reader works, communicates.
-- Simulate the screen reader experience.
-- Examine, discuss, annotate wireframes.
+- Identify design responsibilities.
+- Learn how a screen reader works.
+- Annotate wireframes.
 
 Notes:
 For the remainder of this workshop, we will focus on a few core things. We will learn how a screen reader works and communicates. Then we will conduct a number of exercises to help you better understand the experience of those using screen readers. Then we will explore how we can enrich design deliverables like wireframes to better articulate accessibility expectations.
@@ -192,7 +192,7 @@ For the remainder of this workshop, we will focus on a few core things. We will 
 ## Out of scope
 
 - Practice using a screen reader.
-- Deep-dive into WCAG Success Criteria.
+- Deep-dive into documentation.
 
 Notes:
 Given time constraints, we won't devote time during this workshop to practice using a screen reader. Also, we won't dive into the details of accessibility documentation. Those are good things for you to do at your own pace.
@@ -355,12 +355,321 @@ And of course, there is assistive software. Shortcuts allows you to make a chang
 
 
 
-## Screen readers
+# Responsibility
+
+80% of [WCAG 2.0](https://www.w3.org/TR/WCAG20/) success criteria are design&nbsp;decisions.
+
+Notes:
+80% of the decisions that go into making content accessible occur during the design process. This means that designers are responsible for the bulk of this work.
+
+
+
+## WCAG
+
+"Web Content Accessibility Guidelines"
+
+Principles → Guidelines → Success Criteria
+
+Notes:
+WCAG stands for "Web Content Accessibility Guidelines". It is a document that defines dozens of success criteria, which helps you to test if a piece of content is accessible or not. These criteria are grouped into guidelines. Those guidelines are grouped into four major principles.
+
+
+
+## WCAG Principles
+
+1. Perceivable
+2. Operable
+3. Understandable
+4. Robust
+
+Notes:
+There are four principles. The first three question if a piece of content can be seen, used, and understood by a user. The fourth questions if it can can be reliably interpreted by assistive technologies.
+
+
+
+## Success criteria
+
+- **A**: Usable
+- **AA**: Good UX
+- **AAA**: Ideal
+
+Notes:
+Success criteria are ranked in three levels. Each level builds up on the other. Level AA requires A conformance. Level AAA requires both A and AA conformance.
+
+Some criteria can be automatically tested with scripts. Some criteria needs to be manually evaluated.
+
+Level A covers basic usability. You're likely achieving this without too much explicit effort. Level AA is what you should aim for. Some criteria may not be as obvious. Level AAA is practically out of reach. It is an ideal to push you forward, but it isn't realistic. The document says:
+
+"It is not recommended that Level AAA conformance be required as a general policy for entire sites because it is not possible to satisfy all Level AAA Success Criteria for some content."
+
+See: https://www.w3.org/WAI/WCAG21/Understanding/conformance
+
+
+
+## Criteria for designers
+
+- [*Accessibility for designers: WCAG criteria*](https://kb.iu.edu/d/azyc#wcag) (IU&nbsp;Knowledge&nbsp;Base)
+- [*Designing with Accessibility in Mind*](https://ux.iu.edu/writings/design-with-accessibility-part-1/) by&nbsp;Meagan&nbsp;Eller (IU UX Office)
+
+Notes:
+There are a couple of excellent places to start for designers at IU.
+
+First, this IU Knowledge Base article succinctly lists these 80% of criteria as quick reference. And if you need some prompting, there are a number of questions that you can ask to start addressing these criteria.
+
+Second, if you want more details and examples, Meagan Eller expanded on this topic in a three-part article posted on the IU User Experience Office blog.
+
+
+
+# Design decisions
+
+Notes:
+Let's look at some examples of what we can do or what we should keep in mind when designing, to meet these criteria.
+
+
+
+## Content order
+
+- Visual UI is 2D (or 3D).
+- HTML, reading, tab order is 1D.
+- Mobile first approach.
+
+Notes:
+A visual user interface is often thought of as a two-dimensional thing. Or with the advent of virtual reality, three-dimensions. However, the foundation of this content is all 1-dimension. It is linear in nature. HTML, code, and text is written top to bottom. You read top to bottom. With a keyboard, you navigate top to bottom. It is important that before design in 2D, we design in 1D. That's the importance of the Mobile First practice. When you design for mobile, the limited viewport width is a constraint making you design linearly. It forces you to be intentional about the content order. Only then with a wider screen, the content can be enhanced in 2D with responsive design techniques.
+
+
+
+## Name everything
+
+- Especially if more than one of the same type.
+- Helps users, team, devs, help guides.
+- Pages. Headings. Landmarks. Links. Images. Tables. Form controls.
+
+Notes:
+Most every piece of content should have a name, especially if there is more than one of the same type of content in the page. This helps users distinguish content of the same type. This helps your team talk about certain aspects of the content. This helps your devs better organize code. This helps you write better help guides. Naming things is tough, but it is more difficult doing it retroactively.
+
+
+
+## Audience
+
+- Screen reader users<br>(`.sr-only`, `aria-label`, `alt`)
+- Visual users<br>(`aria-hidden="true"`)
+- Everyone
+
+Notes:
+You must decide the audience for any piece of content. Is it for screen readers only? Or visual users only? Or for everyone? If content is not for everyone, then equivalent content must be provided. Alt text is meant to be an equivalent for not seeing an image. An aria-label attribute could provide an equivalent for an icon.
+
+
+
+## Page title
+
+- Be unique, succinct.
+- Most specific first.
+- Include page-level alert.
+- Manually update in single-page apps.
+
+> Error: Could not submit | Call for proposals | Some Conference
+
+Notes:
+Whenever you follow a link or change browser tabs, a screen reader first announces the title of the page. This title could be long. So, it is best if the most important information is placed first, so you don't have to wait long, to know if that's the page that is wanted. But this also helps visual users, as they can quickly scan a list of browser tabs and see which tab they should open, without clicking a bunch of them.
+
+If there is a page-level alert, such as an error, that could be included as the first part of the title.
+
+Lots of websites are built as single-page JavaScript applications. If the URL changes or if there is a sense of a major context switch, then the title should update as well.
+
+
+
+## Headings
+
+- Start with `<h1>`.
+- Don't skip heading levels.
+- Page-level alert could be the first `<h1>`.
+
+```html
+<h1>Error: Could not submit</h1>
+<h1>Call for proposals</h1>
+```
+
+Notes:
+Heading levels should be ordered, starting at 1. Don't skip levels, like having a level 3 immediately after a 1. In general, you should have only one heading level 1. An exception to this could be conditionally rendering a page-level alert. That could be placed just before the primary h1. Some may recommend this alert be a h2, but then that would force an exception to the don't-skip-heading-levels rule. Use your best judgement.
+
+
+
+## Landmarks
+
+| Role | HTML |
+| --- | --- |
+| banner | `<header>` |
+| navigation | `<nav>` |
+| main | `<main>` |
+| form | `<form>` |
+| search | `role="search"` |
+
+<footer>
+
+See: [*Landmarks*](https://kb.iu.edu/d/aryt) (IU Knowledge Base)
+
+</footer>
+
+Notes:
+In addition to headings, landmarks are another a major way that screen reader users navigate. Landmarks are defined either implicitly by the HTML element that's used or explicitly by a role attribute on the element. This table lists a subset of the available landmarks, but these are some of the major ones you'll use. If there is any landmark that is used more than once on the page, you should give it a name with aria-label, so it is distinct.
+
+
+
+## Links
+
+- Should be unique.
+- Avoid "read more" or "click here".
+- Include skip links ([Rivet Header](https://rivet.iu.edu/components/navigation/header/)).
+
+Notes:
+Like headings and landmarks, links are also a major way of navigating. In order for a screen reader user to quickly know the purpose of the link, the link text should be unique for the page. Avoid mistakes like labeling it "read more" or "click here". Let's say you have a list of articles about accessibility. If the visual label for an article about landmarks is "read more", then consider making the accessible label something like "read more about landmarks".
+
+Also, use skip links as a way to quickly skip repetitive content areas, like the banner and navigation. This makes it easy for a keyboard user to get to the main content area. If you use the Rivet Header, that includes a skip link.
+
+
+
+## Context switching
+
+- Link to page, inline content.
+- Redirect focus to widget, button, message.
+- Use `aria-live` as alternative to context switch.
+
+Notes:
+A context switch is when the focus shifts to a new piece of content. A link to a new page switches the context to that new page, with the page title being read first. An internal link redirects focus to a different part of the same page, likely a heading, if linking from a table of contents. Clicking a button could redirect focus to a modal. If there's a list of items with delete actions, you need to determine where focus goes after it successfully deletes. Does it go to a success message? Does it go to the delete button on the next or previous line, assuming there are other items?
+
+You may use the aria-live attribute if all you want to do is announce a message or inform of some change of content while not changing context. This is what happens with alerts.
+
+
+
+## Tab order
+
+- Tab order should follow content order.
+- Use `tabindex="0"` for custom widgets.
+- Use `tabindex="-1"` to redirect focus.
+- Avoid other values.
+
+Notes:
+Tab order is the order in which you focus on interactive items when pressing the Tab key. It generally should follow the content order. If this deviates for whatever reason, you should make note of it. If you make a custom widget that will have its own complexity, like a date picker or tab component, you will likely make it tabbable by using the "tabindex=0" value. If you are wanting to redirect keyboard focus to something that is typically not interactive, such as a page-level alert, then use the "tabindex=-1" value. There are other valid values for the tabindex attribute, but it tends to confuse the interface. Avoid that if you can.
+
+
+
+## Keyboard traps
+
+- Explicit: modal, complex widget
+- Implicit: 50 links in a section
+
+Notes:
+A keyboard trap is when you make it difficult or impossible to navigate out of a piece of content with the keyboard alone. Sometimes, trapping is needed. When the user want to delete something, a dialog opens, and the user must confirm the action to proceed. Sometimes, trapping implicitly happens because there are a lot of links, buttons, or other interactive things in an area that must be encountered before exiting.
+
+
+
+## Custom widgets
+
+- Control with: Space/Enter, Arrows, Escape
+- Tables
+- Grid ("spreadsheet")
+- Combobox ("autocomplete")
+
+Notes:
+If making a custom widget that would normally have a lot of tabbable areas, you could design it so the widget itself is a single tabbable area. Then once in it, you use arrows keys to navigate, Space and/or Enter to activate, and Escape to exit or cancel. There's a lot of other details needed, to ensure that what is happening is communicated to the user. But the point is, there are options to significantly reduce the number of Tab presses, if that becomes problematic.
+
+A screen reader natively provides this arrow navigation with tables. But you can build up this functionality manually for all users, to make something like an Excel spreadsheet or a search autocomplete.
+
+
+
+## States
+
+| | |
+| --- | --- |
+| **Count** | 0, 1, 5, 500 |
+| **Response** | idle, pending, success, error |
+| **Button** | default, hover, focus, active, pressed, disabled |
+
+Notes:
+Most every component has multiple states. When you design lists, don't only think of what it looks like when you have 5 items. But think about the extremes, when you have zero or many items. Maybe pagination will be needed, and that brings with it its own complexities. When you design a server request and response, think about the state before the request happens, the pending state, and how success and errors are handled. Buttons have hover and focus states. They're active when they're in the process of being pressed. Some buttons are toggles, so they stay pressed until pressed again. Some buttons are disabled. You need to think about how all these states are communicated to a range of users.
+
+
+
+## Writing
+
+- Be concise, unambiguous.
+- Lower the reading level.
+- Avoid spatial, size, shape, color terms.
+- Refer to the [Rivet Content Guide](https://rivet.iu.edu/content-guide/).
+
+Notes:
+When writing content, be concise, not verbose. Say just enough to get the point clearly across. Write in a way that lowers the reading level. Use more common and simpler words. Avoid long sentences and complex punctuation. And there are numerous terms that should be avoided as the only ways to identify something. Don't use terms like "left" or "right". Terms like "before", "after", "start", and "end" are better. Don't use size terms, like "large" or "small". Don't refer to shapes or color.
+
+All these things will help a variety of users. It helps those with cognitive issues. It helps those who English is not their primary language. It helps those who are low vision, color blind, or fully blind. It helps for responsive sites, that could be used on small and larger devices. Something that is to the right on desktop may be below on mobile.
+
+The Rivet Content Guide lists other recommendations and conventions to follow.
+
+
+
+## Design system
+
+- Use [Rivet](https://rivet.iu.edu/): styles, layout, components, patterns.
+- Similarity helps usability.
+- Test composition of components.
+- Link to documentation.
+
+Notes:
+When you use the Rivet design system, you solve a variety of problems as well. Apps developed by different teams share a look and feel, so they seem more similar to users. This makes it easier to use. It builds trust. It is easier to maintain.
+
+Rivet has been vetted, so the components are reliably accessible. Of course, even though the pieces may be fine on their own, it doesn't guarantee that the product is accessible. How the pieces are put together is a completely different factor to consider and to test. You still need to test that the Rivet colors used have sufficient contrast in the context that they're used. You still need to test that a Rivet modal still works as expected, in case there's some coding issue that happened during development.
+
+When you design something, include links to the appropriate Rivet documentation. Developers will appreciate it, as it includes lots of implementation and accessibility details.
+
+
+
+## Summary
+
+- Everyone experiences impairments.
+- Tech can help make a more inclusive world.
+- Designers can make the most impact.
+
+Notes:
+In summary, everyone experiences impairments. The severity of those impairments and surrounding context can exclude people from doing what they want to do. If properly designed, technology can intervene and make the world more inclusive. If empowered correctly, designers can be positioned to make the most impact on how inclusive something is. When we design something to be more inclusive for one population, that ends up benefiting everyone.
+
+
+
+## To designers:
+
+How is this perceived, understood, and used?
+
+Notes:
+To designers, when you design, you should ask how the thing they're making is perceived, understood, and used. This answer will be quite different, as you consider the variety of users and contexts. But this all helps make the design more inclusive.
+
+
+
+## To developers:
+
+How would you like a designer to help you?
+
+Notes:
+I've mentioned a number of things that a designer should do, to help their work be more accessible. This list is course but a sampling. Since there are some developers attending this workshop, I'd like to ask you a question: How would you like a designer to help you? What things that I haven't just mentioned would you like added to the list?
+
+
+
+
+# Break
+
+10 minutes
+
+Return at 10:10 AM
+
+
+
+# Questions
+
+
+
+# Screen readers
 
 Narrate, navigate, interact with content.
 
 Notes:
-A screen reader is a tool that gives you an alternative way to use a computer. A sighted user can experience a 2 or 3 dimensional visual interface, but a blind user cannot.
+We're going to now deep dive into the topic of screen readers. A screen reader is a tool that gives you an alternative way to use a computer. A sighted user can experience a 2 or 3 dimensional visual interface, but a blind user cannot.
 
 
 
@@ -751,295 +1060,14 @@ Let's see this in action. I'm going to open IU.edu and navigate around with Voic
 
 ## Summary
 
-- Everyone experiences impairments.
-- Tech can help make a more inclusive world.
-- Screen reader users navigate with <br> focus, cursors, rotor, shortcuts.
+Screen reader users navigate with<br>focus, cursors, rotor, shortcuts.
 
 Notes:
-In summary, everyone experiences impairments. The severity of those impairments and surrounding context can exclude people from doing what they want to do. If properly designed, technology can intervene and make the world more inclusive. When we design something to be more inclusive for one population, that ends up benefiting everyone.
-
-And in examining the screen reader, as one example of assistive software, we illustrate that there is no technical reason why anyone should be excluded from using the websites we build. We must be intentional about including others. That intention should manifest in how we think, how we work, and what we create.
+In summary, screen reader users just use a computer differently than others. There is no technical reason why anyone should be excluded from using the websites we build. We must be intentional about including others. That intention should manifest in how we think, how we work, and what we create.
 
 
 
 # Questions
-
-
-
-# Responsibility
-
-80% of [WCAG 2.0](https://www.w3.org/TR/WCAG20/) success criteria are design&nbsp;decisions.
-
-Notes:
-80% of the decisions that go into making content accessible occur during the design process. This means that designers are responsible for the bulk of this work.
-
-
-
-## WCAG
-
-"Web Content Accessibility Guidelines"
-
-Principles → Guidelines → Success Criteria
-
-Notes:
-WCAG stands for "Web Content Accessibility Guidelines". It is a document that defines dozens of success criteria, which helps you to test if a piece of content is accessible or not. These criteria are grouped into guidelines. Those guidelines are grouped into four major principles.
-
-
-
-## WCAG Principles
-
-1. Perceivable
-2. Operable
-3. Understandable
-4. Robust
-
-Notes:
-There are four principles. The first three question if a piece of content can be seen, used, and understood by a user. The fourth questions if it can can be reliably interpreted by assistive technologies.
-
-
-
-## Success criteria
-
-- **A**: Usable
-- **AA**: Good UX
-- **AAA**: Ideal
-
-Notes:
-Success criteria are ranked in three levels. Each level builds up on the other. Level AA requires A conformance. Level AAA requires both A and AA conformance.
-
-Some criteria can be automatically tested with scripts. Some criteria needs to be manually evaluated.
-
-Level A covers basic usability. You're likely achieving this without too much explicit effort. Level AA is what you should aim for. Some criteria may not be as obvious. Level AAA is practically out of reach. It is an ideal to push you forward, but it isn't realistic. The document says:
-
-"It is not recommended that Level AAA conformance be required as a general policy for entire sites because it is not possible to satisfy all Level AAA Success Criteria for some content."
-
-See: https://www.w3.org/WAI/WCAG21/Understanding/conformance
-
-
-
-## Criteria for designers
-
-- [*Accessibility for designers: WCAG criteria*](https://kb.iu.edu/d/azyc#wcag) (IU&nbsp;Knowledge&nbsp;Base)
-- [*Designing with Accessibility in Mind*](https://ux.iu.edu/writings/design-with-accessibility-part-1/) by&nbsp;Meagan&nbsp;Eller (IU UX Office)
-
-Notes:
-There are a couple of excellent places to start for designers at IU.
-
-First, this IU Knowledge Base article succinctly lists these 80% of criteria as quick reference. And if you need some prompting, there are a number of questions that you can ask to start addressing these criteria.
-
-Second, if you want more details and examples, Meagan Eller expanded on this topic in a three-part article posted on the IU User Experience Office blog.
-
-
-
-# Design decisions
-
-Notes:
-Let's look at some examples of what we can do or what we should keep in mind when designing, to meet these criteria.
-
-
-
-## Content order
-
-- Visual UI is 2D (or 3D).
-- HTML, reading, tab order is 1D.
-- Mobile first approach.
-
-Notes:
-A visual user interface is often thought of as a two-dimensional thing. Or with the advent of virtual reality, three-dimensions. However, the foundation of this content is all 1-dimension. It is linear in nature. HTML, code, and text is written top to bottom. You read top to bottom. With a keyboard, you navigate top to bottom. It is important that before design in 2D, we design in 1D. That's the importance of the Mobile First practice. When you design for mobile, the limited viewport width is a constraint making you design linearly. It forces you to be intentional about the content order. Only then with a wider screen, the content can be enhanced in 2D with responsive design techniques.
-
-
-
-## Name everything
-
-- Especially if more than one of the same type.
-- Helps users, team, devs, help guides.
-- Pages. Headings. Landmarks. Links. Images. Tables. Form controls.
-
-Notes:
-Most every piece of content should have a name, especially if there is more than one of the same type of content in the page. This helps users distinguish content of the same type. This helps your team talk about certain aspects of the content. This helps your devs better organize code. This helps you write better help guides. Naming things is tough, but it is more difficult doing it retroactively.
-
-
-
-## Audience
-
-- Screen reader users<br>(`.sr-only`, `aria-label`, `alt`)
-- Visual users<br>(`aria-hidden="true"`)
-- Everyone
-
-Notes:
-You must decide the audience for any piece of content. Is it for screen readers only? Or visual users only? Or for everyone? If content is not for everyone, then equivalent content must be provided. Alt text is meant to be an equivalent for not seeing an image. An aria-label attribute could provide an equivalent for an icon.
-
-
-
-## Page title
-
-- Be unique, succinct.
-- Most specific first.
-- Include page-level alert.
-- Manually update in single-page apps.
-
-> Error: Could not submit | Call for proposals | Some Conference
-
-Notes:
-Whenever you follow a link or change browser tabs, a screen reader first announces the title of the page. This title could be long. So, it is best if the most important information is placed first, so you don't have to wait long, to know if that's the page that is wanted. But this also helps visual users, as they can quickly scan a list of browser tabs and see which tab they should open, without clicking a bunch of them.
-
-If there is a page-level alert, such as an error, that could be included as the first part of the title.
-
-Lots of websites are built as single-page JavaScript applications. If the URL changes or if there is a sense of a major context switch, then the title should update as well.
-
-
-
-## Headings
-
-- Start with `<h1>`.
-- Don't skip heading levels.
-- Page-level alert could be the first `<h1>`.
-
-```html
-<h1>Error: Could not submit</h1>
-<h1>Call for proposals</h1>
-```
-
-Notes:
-Heading levels should be ordered, starting at 1. Don't skip levels, like having a level 3 immediately after a 1. In general, you should have only one heading level 1. An exception to this could be conditionally rendering a page-level alert. That could be placed just before the primary h1. Some may recommend this alert be a h2, but then that would force an exception to the don't-skip-heading-levels rule. Use your best judgement.
-
-
-
-## Landmarks
-
-| Role | HTML |
-| --- | --- |
-| banner | `<header>` |
-| navigation | `<nav>` |
-| main | `<main>` |
-| form | `<form>` |
-| search | `role="search"` |
-
-<footer>
-
-See: [*Landmarks*](https://kb.iu.edu/d/aryt) (IU Knowledge Base)
-
-</footer>
-
-Notes:
-In addition to headings, landmarks are another a major way that screen reader users navigate, also through the Rotor. Landmarks are defined either implicitly by the HTML element that's used or explicitly by a role attribute on the element. This table lists a subset of the available landmarks, but these are some of the major ones you'll use. If there is any landmark that is used more than once on the page, you should give it a name with aria-label, so it is distinct.
-
-
-
-## Links
-
-- Should be unique.
-- Avoid "read more" or "click here".
-- Include skip links ([Rivet Header](https://rivet.iu.edu/components/navigation/header/)).
-
-Notes:
-Like headings and landmarks, links are also listed in the Rotor. In order for a screen reader user to quickly know the purpose of the link, the link text should be unique for the page. Avoid mistakes like labeling it "read more" or "click here". Let's say you have a list of articles about accessibility. If the visual label for an article about landmarks is "read more", then consider making the accessible label something like "read more about landmarks".
-
-Also, use skip links as a way to quickly skip repetitive content areas, like the banner and navigation. This makes it easy for a keyboard user to get to the main content area. If you use the Rivet Header, that includes a skip link.
-
-
-
-## Context switching
-
-- Link to page, inline content.
-- Redirect focus to widget, button, message.
-- Use `aria-live` as alternative to context switch.
-
-Notes:
-A context switch is when the focus shifts to a new piece of content. A link to a new page switches the context to that new page, with the page title being read first. An internal link redirects focus to a different part of the same page, likely a heading, if linking from a table of contents. Clicking a button could redirect focus to a modal. If there's a list of items with delete actions, you need to determine where focus goes after it successfully deletes. Does it go to a success message? Does it go to the delete button on the next or previous line, assuming there are other items?
-
-You may use the aria-live attribute if all you want to do is announce a message or inform of some change of content while not changing context. This is what happens with alerts.
-
-
-
-## Tab order
-
-- Tab order should follow content order.
-- Use `tabindex="0"` for custom widgets.
-- Use `tabindex="-1"` to redirect focus.
-- Avoid other values.
-
-Notes:
-Tab order is the order in which you focus on interactive items when pressing the Tab key. It generally should follow the content order. If this deviates for whatever reason, you should make note of it. If you make a custom widget that will have its own complexity, like a date picker or tab component, you will likely make it tabbable by using the "tabindex=0" value. If you are wanting to redirect keyboard focus to something that is typically not interactive, such as a page-level alert, then use the "tabindex=-1" value. There are other valid values for the tabindex attribute, but it tends to confuse the interface. Avoid that if you can.
-
-
-
-## Keyboard traps
-
-- Explicit: modal, complex widget
-- Implicit: 50 links in a section
-
-Notes:
-A keyboard trap is when you make it difficult or impossible to navigate out of a piece of content with the keyboard alone. Sometimes, trapping is needed. When the user want to delete something, a dialog opens, and the user must confirm the action to proceed. Sometimes, trapping implicitly happens because there are a lot of links, buttons, or other interactive things in an area that must be encountered before exiting.
-
-
-
-## Custom widgets
-
-- Control with: Space/Enter, Arrows, Escape
-- Tables
-- Grid ("spreadsheet")
-- Combobox ("autocomplete")
-
-Notes:
-If making a custom widget that would normally have a lot of tabbable areas, you could design it so the widget itself is a single tabbable area. Then once in it, you use arrows keys to navigate, Space and/or Enter to activate, and Escape to exit or cancel. There's a lot of other details needed, to ensure that what is happening is communicated to the user. But the point is, there are options to significantly reduce the number of Tab presses, if that becomes problematic.
-
-A screen reader natively provides this arrow navigation with tables. But you can build up this functionality manually for all users, to make something like an Excel spreadsheet or a search autocomplete.
-
-
-
-## States
-
-| | |
-| --- | --- |
-| **Count** | 0, 1, 5, 500 |
-| **Response** | idle, pending, success, error |
-| **Button** | default, hover, focus, active, pressed, disabled |
-
-Notes:
-Most every component has multiple states. When you design lists, don't only think of what it looks like when you have 5 items. But think about the extremes, when you have zero or many items. Maybe pagination will be needed, and that brings with it its own complexities. When you design a server request and response, think about the state before the request happens, the pending state, and how success and errors are handled. Buttons have hover and focus states. They're active when they're in the process of being pressed. Some buttons are toggles, so they stay pressed until pressed again. Some buttons are disabled. You need to think about how all these states are communicated to a range of users.
-
-
-
-## Writing
-
-- Be concise, unambiguous.
-- Lower the reading level.
-- Avoid spatial, size, shape, color terms.
-- Refer to the [Rivet Content Guide](https://rivet.iu.edu/content-guide/).
-
-Notes:
-When writing content, be concise, not verbose. Say just enough to get the point clearly across. Write in a way that lowers the reading level. Use more common and simpler words. Avoid long sentences and complex punctuation. And there are numerous terms that should be avoided as the only ways to identify something. Don't use terms like "left" or "right". Terms like "before", "after", "start", and "end" are better. Don't use size terms, like "large" or "small". Don't refer to shapes or color.
-
-All these things will help a variety of users. It helps those with cognitive issues. It helps those who English is not their primary language. It helps those who are low vision, color blind, or fully blind. It helps for responsive sites, that could be used on small and larger devices. Something that is to the right on desktop may be below on mobile.
-
-The Rivet Content Guide lists other recommendations and conventions to follow.
-
-
-
-## Design system
-
-- Use [Rivet](https://rivet.iu.edu/): styles, layout, components, patterns.
-- Similarity helps usability.
-- Test composition of components.
-- Link to documentation.
-
-Notes:
-When you use the Rivet design system, you solve a variety of problems as well. Apps developed by different teams share a look and feel, so they seem more similar to users. This makes it easier to use. It builds trust. It is easier to maintain.
-
-Rivet has been vetted, so the components are reliably accessible. Of course, even though the pieces may be fine on their own, it doesn't guarantee that the product is accessible. How the pieces are put together is a completely different factor to consider and to test. You still need to test that the Rivet colors used have sufficient contrast in the context that they're used. You still need to test that a Rivet modal still works as expected, in case there's some coding issue that happened during development.
-
-When you design something, include links to the appropriate Rivet documentation. Developers will appreciate it, as it includes lots of implementation and accessibility details.
-
-
-
-# Question to devs:
-
-How would you like a designer to help you?
-
-Notes:
-Let's pause here a little bit. I've mentioned a number of things that a designer should do, to help their work be more accessible. This list is course but a sampling. Since there are some developers attending this workshop, I'd like to ask you a question: How would you like a designer to help you? What things that I haven't just mentioned would you like added to the list?
-
 
 
 

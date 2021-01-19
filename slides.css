@@ -235,6 +235,56 @@
 }
 
 /*
+ * Wireframe
+ */
+
+ .fig-wireframe {
+  background-color: var(--color-base-8);
+  color: var(--color-base-1);
+  display: grid;
+  grid-template-columns: repeat(6, 1rem);
+  grid-template-rows: repeat(4, 1rem);
+  grid-gap: 0.25rem;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.fig-wireframe > div {
+  background-color: var(--color-base-9);
+  border: 0.1rem solid var(--color-base-0);
+}
+
+.fig-wireframe .a {
+  grid-column: 1 / span 6;
+  grid-row: 1;
+}
+
+.fig-wireframe .b {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 3;
+}
+
+.fig-wireframe .c {
+  grid-column: 3 / span 4;
+  grid-row: 2 / span 3;
+}
+
+/*
+ * Annotations
+ */
+
+ .fig-annotations {
+  background-color: var(--color-base-8);
+  color: var(--color-base-1);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.fig-annotations :last-child {
+  margin-bottom: 0;
+}
+
+/*
  * List
  */
 
@@ -329,7 +379,6 @@
   color: var(--color-base-9);
 }
 
-
 /*
  * Cursor
  */
@@ -340,4 +389,47 @@
     0 0 0 6px var(--color-base-0),
     0 0 0 8px var(--color-base-9);
   position: relative;
+}
+
+/*
+ * Annotations
+ */
+
+.note {
+  --color-blue: deepskyblue;
+  --color-green: mediumseagreen;
+  --color-orange: darkorange;
+  --color-purple: mediumpurple;
+  --color-red: salmon;
+  background-color: var(--color-base-6);
+  border: 0.1rem solid var(--color-base-9);
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  color: var(--color-base-9);
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1rem;
+  min-width: 1.4rem;
+  padding: 0.1rem 0.2rem;
+  text-align: center;
+}
+
+.note--a {
+  background-color: var(--color-blue);
+}
+
+.note--c {
+  background-color: var(--color-green);
+}
+
+.note--h {
+  background-color: var(--color-red);
+}
+
+.note--l {
+  background-color: var(--color-purple);
+}
+
+.note--n {
+  background-color: var(--color-orange);
 }

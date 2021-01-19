@@ -1071,11 +1071,127 @@ In summary, screen reader users just use a computer differently than others. The
 
 
 
+# Accessibility in design
+
+Notes:
+For this next part, we're going to focus on how to incorporate design decisions regarding accessibility in to the work that designers do.
+
+
+
+## Design deliverables
+
+- Communicate design intention.
+- Audience: team, designers, stakeholders, users
+- Response: feedback, answers
+- Fidelity: low to high
+
+Notes:
+The output of designers is often called design deliverables or design artifacts. These are merely some means to communicate the intention of a design. You must understand who the audience is. Is it your team, other designers, stakeholders, users, or others? The fidelity, or amount of detail, depends on what is being communicated or what sort of response you're trying to illicit or what sort of questions you're trying to answer. It may take a lot of experimentation to understand the most efficient way to invest your energy.
+
+
+
+## Wireframes
+
+- Sketch → Wireframe → Mockup → Prototype
+- Structure, states
+- Axure, Figma, Sketch, paper
+
+<figure>
+  <div class="fig-wireframe">
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+  </div>
+  <figcaption>This website wireframe consists of three boxes, representing three content areas: banner, sidebar, and main.</figcaption>
+</figure>
+
+Notes:
+Wireframes are a common design deliverable. In terms of fidelity, they are more refined than a paper sketch, but they don't need to have the richness of color or spacing accuracy of a mockup, or the interactivity of a prototype. If your team is skilled in interpreting a wireframe, then you may not need anything more detailed than that. Wireframes communicate the overall structure and states of an interface. They can be built in design tools like Axure, Figma, and Sketch, or they may be done with paper with a careful hand.
+
+
+
+## Annotations
+
+<figure>
+  <div class="fig-annotations">
+    <p><span class="note">1</span> Header. This should be…</p>
+    <p><span class="note">1.1</span> Link to the homepage…</p>
+    <p><span class="note">1.1</span> The primary nav…</p>
+    <p><span class="note">2</span> Main</p>
+    <p><span class="note">2.1</span> H1</p>
+  </div>
+  <figcaption>Five notes are placed besides a wireframe, describing aspects of the design.</figcaption>
+</figure>
+
+Notes:
+Wireframes can be a great place to insert some notes or annotations, to better describe what's happening. You can look at piece of the interface, reference a note, and it tells you more information. Notes could be organized in a hierarchy by using numbers and dots.
+
+
+
+## Legend
+
+| | |
+| --- | --- |
+| <span class="note note--a">A</span> | Interactive |
+| <span class="note note--c">C</span> | Content |
+| <span class="note note--l">L</span> | Landmark |
+| <span class="note note--h">H</span> | Heading |
+| <span class="note note--n">N</span> | Note |
+
+Notes:
+These note markers could even be enhanced with an abbreviation and color to help call attention to a certain accessibility aspect. A blue "A" means interactive. These pertain to links, buttons, and form controls. A green "C" means content. This pertains to non-interactive text. A purple "L" means landmark. This pertains to navigation, sections, main, and footers. A red "H" means headings, like h1 and h2. And other notes not falling into those other categories could be marked as an orange "N".
+
+
+
+## Categorized
+
+<figure>
+  <div class="fig-annotations">
+    <p><span class="note note--l">L-1</span> Header. This should be…</p>
+    <p><span class="note note--a">A-1.1</span> Link to the homepage…</p>
+    <p><span class="note note--l">L-1.1</span> The primary nav…</p>
+    <p><span class="note note--l">L-2</span> Main</p>
+    <p><span class="note note--h">H-2.1</span> H1</p>
+  </div>
+  <figcaption>Five notes are placed besides a wireframe. These are marked with a color and letter, identifying the type of note it represents.</figcaption>
+</figure>
+
+Notes:
+The letters prefix a number, which identifies the note. In this case, "A-2.1" means it is an interactive piece of content, with a note identifier of "2.1".
+
+
+
+## Problems with inline annotation
+
+- Collaboration
+- Scale
+- 2D-first thinking
+
+Notes:
+These specialized notes helps enrich the wireframes by highlighting accessibility concerns. This is a start. But I think we can do better.
+
+First, we need a solution that encourages collaboration. When we use a design tool, we tend to exclude non-designers from engaging in the process. The designer has the exclusive power to change a wireframe or the notes in the wireframe. Granted, Figma is a step forward. But it is a design tool first.
+
+Second, we need a solution that can scale well. The more notes you write, the more you start to feel the difficulty of using the design tool for such purposes. You're always having to move things around the page, to make sure everything fits nicely on the page. It becomes a distraction to the real work.
+
+Third, when annotations are in the wireframe, it starts to feel like the notes are secondary. When we think first about the wireframe, we think first in two-dimensions. As we've already reviewed, the foundation of any content and the design work that we do is actually one-dimension. It is text.
+
+
+
+## Content first
+
+- Text 
+
+Notes:
+This leads us to 
+
+
+
 ## Sketching with text
 
 - Start with text. Visuals later.
 - Should be as easy to work on as a pencil and paper.
-- HTML. Attributes (roles, aria). Text (all, SR, Vis). Focus. Focusable. Interactive. Landmarks. Headings. Reference to wireframe image. Components. Dev notes.
+- HTML. Attributes (roles, aria). Text (all, SR, Vis). Reference to wireframe image. Components. Dev notes.
 - Markdown? Inline links, to simile focus redirection? Link to text sketch of a component?
 - Ensure your team can effectively interpret the sketch. Adapt as needed.
 - Techniques will change over time.

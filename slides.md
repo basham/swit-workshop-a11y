@@ -1163,8 +1163,8 @@ The letters prefix a number, which identifies the note. In this case, "A-2.1" me
 
 ## Problems with inline annotation
 
-- Collaboration
-- Scale
+- Poor collaboration
+- Difficult to scale
 - 2D-first thinking
 
 Notes:
@@ -1172,79 +1172,94 @@ These specialized notes helps enrich the wireframes by highlighting accessibilit
 
 First, we need a solution that encourages collaboration. When we use a design tool, we tend to exclude non-designers from engaging in the process. The designer has the exclusive power to change a wireframe or the notes in the wireframe. Granted, Figma is a step forward. But it is a design tool first.
 
-Second, we need a solution that can scale well. The more notes you write, the more you start to feel the difficulty of using the design tool for such purposes. You're always having to move things around the page, to make sure everything fits nicely on the page. It becomes a distraction to the real work.
+Second, we need a solution that can scale well. We've already identified a multitude of accessibility-related design decisions that need to be made. The more notes you write, the more you start to feel the difficulty of using the design tool for such purposes. You're always having to move things around the page, to make sure everything fits nicely on the page. It becomes a distraction to the real work.
 
 Third, when annotations are in the wireframe, it starts to feel like the notes are secondary. When we think first about the wireframe, we think first in two-dimensions. As we've already reviewed, the foundation of any content and the design work that we do is actually one-dimension. It is text.
 
 
 
-## Content first
+## Text before visuals
 
-- Text 
+- Collaborative text editor
+- Content-first design
 
 Notes:
-This leads us to 
+Instead of investing more time in a design tool, I suggest you spend more time in a text editor. Text is easy to change. A text document scales well. You can collaboratively edit a text document, using something like Google Docs. Non-designers and those outside of your team will be more likely to contribute.
+
+Annotations in a wireframe is a glorified image. This means you're already putting up barriers when trying to get early feedback from a non-sighted user. But a document is something that anyone can use.
+
+Similar to mobile-first design and responsive design, there's a design subfield concerning this topic, called content-first design.
+
+
+
+## Design document
+
+- Clarify context, intention, expectation.
+- Organize by user flow or component.
+- Link or embed graphics, wireframes.
+- Link to WCAG, ARIA, Rivet docs.
+- Link to other team docs.
+- Specify HTML, labels, behavior.
+
+Notes:
+This design document should be your first source of truth. It should clarify anything concerning the context of use, the intention behind the design, and any other expectations you may have. It could be organized by how a user may flow through an interaction or just by major components. Make the wireframe or other artifacts supplemental to this document. You can link to anything that your team needs to do the work. It could be to WCAG success criteria, ARIA specifications, Rivet components, or other documents that the team has made. List any particular ideas you may have about the markup, text, or behavior.
 
 
 
 ## Sketching with text
 
-- Start with text. Visuals later.
-- Should be as easy to work on as a pencil and paper.
-- HTML. Attributes (roles, aria). Text (all, SR, Vis). Reference to wireframe image. Components. Dev notes.
-- Markdown? Inline links, to simile focus redirection? Link to text sketch of a component?
-- Ensure your team can effectively interpret the sketch. Adapt as needed.
-- Techniques will change over time.
-- Reference ARIA, WCAG
-
-
-
-## Annotation
-
-- Don't overdue annotation in the wireframe itself.
-- May be difficult to change or for a SR user to use.
-- Better to start with text and reference from text to wireframes.
-- Text is easier to change and collaborate. This is the foundation.
-- Be less reliant on specialized tools (Figma, Sketch, Axure).
-- But how to keep the wireframes and annotations in sync?
-- Document should be the single source of truth.
-- Document can be collaborated on (non-designers, in and outside of team).
-
-
-
-## App feedback
-
-- SR announce when there's something new. Press a key. It announces.
-- Current state. Trigger. New state.
-- Micro interaction
-- Form controls
-
-
-
-## Getting feedback
-
-- Context. User journey. Intention. What is expected to happen.
-- Text is easy to share (including SR users)
-
-
-
-## Next steps
-
-- Start where you're at. Gradually build up.
-- Start with a single problem. Reference ARIA and other resources for that problem. Don't rathole and read the entire document.
-
-
-
-# Static content
+- Easy like pencil, paper.
+- Fill in details later.
+- Start with a small problem.
+- Use shorthand.
+- Adapt techniques as needed.
 
 Notes:
-Let's look at a some examples of how a screen reader reads content. We'll start with static content. Then we'll examine interactive content.
+The idea of a design document can seem overwhelming. Instead, I want you to think about this like sketching. Like when you sketch with a pencil, you start rough and fill in details later. Details like links and references to specific documentation can be a distraction early on. Don't try to read the entire ARIA specification upfront, but start with a small problem first. Gradually expand your learning. As your confidence grows, you can use shorthand and abbreviations to be faster. Just keep in mind the audience. You may find that some shorthands may work well just for you and other ones may be fine for your team. But they may be a barrier if getting external feedback. Just make sure the audience can correctly and effectively interpret your sketch. As you practice, your techniques will adapt.
 
 
 
-## List
+# List of fruit
+
+Sketch → HTML → Screen reader
+
+Notes:
+Let's start our first sketch with the idea of a list of fruit. We'll take this idea, show how it could be implemented with HTML, then see how a screen reader will read the content.
+
+
+
+## Sketch v1
+
+```
+bulleted list "Fruit"
+  list item "Apple"
+  list item "Banana"
+  list item "Blueberry"
+```
+
+Notes:
+In this sketch, we're identifying a list of three items. This list is bulleted, meaning the order that the fruit are in doesn't particularly matter. The name of the list is "Fruit". The three fruit seem to be in alphabetically order.
+
+
+
+## Sketch v2
+
+```
+ul "Fruit"
+  li "Apple"
+  li "Banana"
+  li "Blueberry"
+```
+
+Notes:
+The types of content could be abbreviated. "ul" for unordered list. "li" for list item. This corresponds with what a developer would use in HTML.
+
+
+
+## HTML v1
 
 ```html
+<div>Fruit</div>
 <ul>
   <li>Apple</li>
   <li>Banana</li>
@@ -1253,15 +1268,115 @@ Let's look at a some examples of how a screen reader reads content. We'll start 
 ```
 
 Notes:
-This is a list. It is static, with no interaction.
+So, this is how a developer could interpret the sketch in HTML. The list and the items seem fairly straightforward. However, a name for a list isn't as common. The developer decides to put the "Fruit" label before the list.
 
 
 
-"List. 3 items."
+## HTML v2
+
+```html
+<div id="fruit-label">Fruit</div>
+<ul aria-labelledby="fruit-label">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Blueberry</li>
+</ul>
+```
+
+Notes:
+Or maybe after thinking about, the developer realizes that the list has no accessible name. The "Fruit" text may precede the list, but the connection is not explicit. This solves that problem.
+
+
+
+## Sketch v3
+
+```
+ul "", "Fruit" (screen reader only)
+  li "Apple"
+  li "Banana"
+  li "Blueberry"
+```
+
+Notes:
+But actually, the designer wants the "Fruit" text to be for screen readers only. So, that is noted explicitly in the sketch. And it could be explicit that there shouldn't be any visible text.
+
+
+
+## Sketch v4
+
+```
+ul "Fruit" (SR)
+  li "Apple"
+  li "Banana"
+  li "Blueberry"
+```
+
+Notes:
+But this may happen often, so the designer abbreviates "screen reader" to "SR" and the absence of anything else could be interpreted without issue.
+
+
+
+## Sketch v5
+
+```
+ul ("Fruit")
+  li "Apple"
+  li "Banana"
+  li "Blueberry"
+```
+
+Notes:
+But maybe to the text for screen readers could simply be wrapped in parenthesis. Again, this is a shorthand that you can just experiment with and try.
+
+
+
+## HTML v3
+
+```html
+<div
+  class="sr-only"
+  id="fruit-label">
+  Fruit
+</div>
+<ul aria-labelledby="fruit-label">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Blueberry</li>
+</ul>
+```
+
+Notes:
+Since the div is already in place, maybe you can just add a class to it, to hide it for visual users.
+
+
+
+## HTML v4
+
+```html
+<ul aria-label="Fruit">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Blueberry</li>
+</ul>
+```
+
+Notes:
+But to simplify the code, the developer settles on another solution, which just uses the aria-label attribute. This seems satisfactory.
+
+
+
+## Screen reader test
+
+Notes:
+Now, let's test this HTML with a screen reader.
+
+
+
+"List, Fruit. 3 items."
 
 <figure>
   <div class="fig-list">
-    <ul class="cursor">
+    <ul aria-label="Fruit" class="cursor">
       <li>Apple</li>
       <li>Banana</li>
       <li>Blueberry</li>
@@ -1270,7 +1385,7 @@ This is a list. It is static, with no interaction.
 </figure>
 
 Notes:
-When you land on it, the screen reader announces the type of content. In this case, it is a "list". And it tells how many items there are in the list. Let's go to the first item.
+When you land on it, the screen reader announces the type of content and the name of the content, if it is there. In this case, it is a "list" and the name is "Fruit". And it tells how many items there are in the list. Let's go to the first item.
 
 
 
@@ -1278,7 +1393,7 @@ When you land on it, the screen reader announces the type of content. In this ca
 
 <figure>
   <div class="fig-list">
-    <ul>
+    <ul aria-label="Fruit">
       <li class="cursor">Apple</li>
       <li>Banana</li>
       <li>Blueberry</li>
@@ -1305,95 +1420,6 @@ Now, the cursor is on the first item. It says the name and the position of the i
 
 Notes:
 And you can continue as needed. In order to provide more clarity about the purpose of this list, we can give it a name, such as "fruit".
-
-
-
-## Explicit label
-
-"List Fruit. 3 items."
-
-```html
-<ul aria-label="Fruit">
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Blueberry</li>
-</ul>
-```
-
-Notes:
-The aria-label attribute is one way of doing this. Instead of saying "List", it will now say "List Fruit". But this label is not accessible to visual users.
-
-
-
-## Visible label
-
-```html
-<div>
-  Fruit
-</div>
-<ul aria-label="Fruit">
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Blueberry</li>
-</ul>
-```
-
-Notes:
-We could add a visual label. But now, we're maintaining two pieces of text for the same thing.
-
-
-
-## Linked label
-
-```html
-<div id="fruit-label">
-  Fruit
-</div>
-<ul aria-labelledby="fruit-label">
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Blueberry</li>
-</ul>
-```
-
-Notes:
-We could instead use aria-labelledby to make an explicit link between the list and the div.
-
-
-
-## Unlinked heading
-
-```html
-<h3>
-  Fruit
-</h3>
-<ul>
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Blueberry</li>
-</ul>
-```
-
-Notes:
-Another way to create a connection is with headings. It is still not explicit, but this is could be better than just a static piece of text.
-
-
-
-## Linked heading
-
-```html
-<h3 id="fruit-label">
-  Fruit
-</h3>
-<ul aria-labelledby="fruit-label">
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Blueberry</li>
-</ul>
-```
-
-Notes:
-But you could do both. The heading helps you to go to the section. And the heading acts as the explicit label for the list.
 
 
 
@@ -1735,7 +1761,11 @@ There are three pieces of information that needs to be communicated through a sc
 
 
 
-# Component exercises
+# Other
 
 - Card
 - Pagination
+- SR announce when there's something new. Press a key. It announces.
+- Current state. Trigger. New state.
+- Micro interaction
+- Form controls

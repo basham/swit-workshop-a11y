@@ -4,10 +4,9 @@ const messages = {
   '68-2': 'Headings menu.',
   '68-3': 'Heading level 1. Virtual Statewide IT Conference 2021.',
   '68-4': 'Heading level 3. Staff kudos form.',
-  '57x': 'List. 3 items.',
-  '58x': 'Bullet. Apple. 1 of 3.',
-  '59x': 'Bullet. Banana. 2 of 3.',
-  '60x': 'List fruit. 3 items.',
+  '101': 'List, Fruit. 3 items.',
+  '102': 'Bullet. Apple. 1 of 3.',
+  '103': 'Bullet. Banana. 2 of 3.',
   '62x': 'I agree. Unchecked checkbox. Press Space to select.',
   '63x': 'Check. I agree. Checkbox.',
   '64x': 'I agree. Checked checkbox. Press Space to deselect.'

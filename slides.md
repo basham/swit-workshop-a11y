@@ -845,14 +845,14 @@ Let's look at some examples of what we can do or what we should keep in mind whe
 - Mobile first approach.
 
 Notes:
-A visual user interface is often thought of as a two-dimensional thing. Or with the advent of virtual reality, three-dimensions. However, the foundation of this content is all 1-dimensions. It is linear in nature. HTML, code, and text is written top to bottom. You read top to bottom. With a keyboard, you navigate top to bottom. It is important that before design in 2D, we design in 1D. That's the importance of the Mobile First practice. When you design for mobile, the limited viewport width is a constraint making you design linearly. It forces you to be intentional about what content order. Only then with a wider screen, the content can be enhanced in 2D with responsive design techniques.
+A visual user interface is often thought of as a two-dimensional thing. Or with the advent of virtual reality, three-dimensions. However, the foundation of this content is all 1-dimension. It is linear in nature. HTML, code, and text is written top to bottom. You read top to bottom. With a keyboard, you navigate top to bottom. It is important that before design in 2D, we design in 1D. That's the importance of the Mobile First practice. When you design for mobile, the limited viewport width is a constraint making you design linearly. It forces you to be intentional about the content order. Only then with a wider screen, the content can be enhanced in 2D with responsive design techniques.
 
 
 
 ## Name everything
 
-- Especially if more than one of the same type
-- Helps users, team, devs, help guides
+- Especially if more than one of the same type.
+- Helps users, team, devs, help guides.
 - Pages. Headings. Landmarks. Links. Images. Tables. Form controls.
 
 Notes:
@@ -873,15 +873,15 @@ You must decide the audience for any piece of content. Is it for screen readers 
 
 ## Page title
 
-- Unique, succinct
-- Most specific first
-- Include page-level alert
-- Manually update in single-page apps
+- Be unique, succinct.
+- Most specific first.
+- Include page-level alert.
+- Manually update in single-page apps.
 
 > Error: Could not submit | Call for proposals | Some Conference
 
 Notes:
-Whenever you follow a link or change tabs, a screen reader first announces the title of the page. This title could be long. So, it is best if the most important information is placed first, so you don't have to wait long, to know if that's the page that is wanted. But this also helps visual users, as they can quickly scan a list of tabs and see which tab they should open, without clicking a bunch of them.
+Whenever you follow a link or change browser tabs, a screen reader first announces the title of the page. This title could be long. So, it is best if the most important information is placed first, so you don't have to wait long, to know if that's the page that is wanted. But this also helps visual users, as they can quickly scan a list of browser tabs and see which tab they should open, without clicking a bunch of them.
 
 If there is a page-level alert, such as an error, that could be included as the first part of the title.
 
@@ -901,7 +901,7 @@ Lots of websites are built as single-page JavaScript applications. If the URL ch
 ```
 
 Notes:
-Heading levels should be ordered, starting at 1. Don't skip levels, like having a level 3 immediately after a 1. In general, you should have only one heading level 1. An exception to this could be conditionally rendering a page-level alert. That could be placed just before the primary h1. Some may recommend this alert be a h2, but then that would force an exception to the don't-skip-heading-levels rule.
+Heading levels should be ordered, starting at 1. Don't skip levels, like having a level 3 immediately after a 1. In general, you should have only one heading level 1. An exception to this could be conditionally rendering a page-level alert. That could be placed just before the primary h1. Some may recommend this alert be a h2, but then that would force an exception to the don't-skip-heading-levels rule. Use your best judgement.
 
 
 
@@ -946,7 +946,7 @@ Also, use skip links as a way to quickly skip repetitive content areas, like the
 - Use `aria-live` as alternative to context switch.
 
 Notes:
-A context switch is when the focus shifts to a new piece of content. A link to a new page switches the context to that new page, with the page title being read first. An internal link redirects focus to a different part of the same page, likely a heading. Clicking a button could redirect focus to a modal. If there's a list of items with delete actions, you need to determine where focus goes after it successfully deletes. Does it go to a success message? Does it go to the delete button on the next or previous line, assuming there are other items?
+A context switch is when the focus shifts to a new piece of content. A link to a new page switches the context to that new page, with the page title being read first. An internal link redirects focus to a different part of the same page, likely a heading, if linking from a table of contents. Clicking a button could redirect focus to a modal. If there's a list of items with delete actions, you need to determine where focus goes after it successfully deletes. Does it go to a success message? Does it go to the delete button on the next or previous line, assuming there are other items?
 
 You may use the aria-live attribute if all you want to do is announce a message or inform of some change of content while not changing context. This is what happens with alerts.
 
@@ -982,9 +982,9 @@ A keyboard trap is when you make it difficult or impossible to navigate out of a
 - Combobox ("autocomplete")
 
 Notes:
-If making a custom widget that would normally have a lot of tabbable areas, you could design it so the widget itself is a single tabbable area. Then once in it, you use arrows keys to navigate, Space and/or Enter to activate, and Escape to exit or cancel. There's a lot of other details needed, to ensure that what is happening is communicated to the user.
+If making a custom widget that would normally have a lot of tabbable areas, you could design it so the widget itself is a single tabbable area. Then once in it, you use arrows keys to navigate, Space and/or Enter to activate, and Escape to exit or cancel. There's a lot of other details needed, to ensure that what is happening is communicated to the user. But the point is, there are options to significantly reduce the number of Tab presses, if that becomes problematic.
 
-A table natively provides this arrow navigation. But you can do it manually to build something like an Excel spreadsheet or a search autocomplete.
+A screen reader natively provides this arrow navigation with tables. But you can build up this functionality manually for all users, to make something like an Excel spreadsheet or a search autocomplete.
 
 
 
@@ -997,7 +997,7 @@ A table natively provides this arrow navigation. But you can do it manually to b
 | **Button** | default, hover, focus, active, pressed, disabled |
 
 Notes:
-Most every component has multiple states. When you design lists, don't think of what it looks like when you have 5 items. But think about the extremes, when you have zero or many items. When you design a server request and response, think about the state before the request happens, the pending state, and how success and errors are handled. Buttons have hover and focus states. They're active when they're in the process of being pressed. Some buttons are toggles, so they stay pressed in until pressed again. Some buttons are disabled. You need to think about how all these states are communicated to a range of users.
+Most every component has multiple states. When you design lists, don't only think of what it looks like when you have 5 items. But think about the extremes, when you have zero or many items. Maybe pagination will be needed, and that brings with it its own complexities. When you design a server request and response, think about the state before the request happens, the pending state, and how success and errors are handled. Buttons have hover and focus states. They're active when they're in the process of being pressed. Some buttons are toggles, so they stay pressed until pressed again. Some buttons are disabled. You need to think about how all these states are communicated to a range of users.
 
 
 
@@ -1011,7 +1011,7 @@ Most every component has multiple states. When you design lists, don't think of 
 Notes:
 When writing content, be concise, not verbose. Say just enough to get the point clearly across. Write in a way that lowers the reading level. Use more common and simpler words. Avoid long sentences and complex punctuation. And there are numerous terms that should be avoided as the only ways to identify something. Don't use terms like "left" or "right". Terms like "before", "after", "start", and "end" are better. Don't use size terms, like "large" or "small". Don't refer to shapes or color.
 
-All these things will help a variety of users. It helps those with cognitive issues. It helps those who English is not their primary language. It helps those who are low vision, color blind, or fully blind. It helps for when you use a responsive site, that could be used on small and larger devices.
+All these things will help a variety of users. It helps those with cognitive issues. It helps those who English is not their primary language. It helps those who are low vision, color blind, or fully blind. It helps for responsive sites, that could be used on small and larger devices. Something that is to the right on desktop may be below on mobile.
 
 The Rivet Content Guide lists other recommendations and conventions to follow.
 
@@ -1025,11 +1025,21 @@ The Rivet Content Guide lists other recommendations and conventions to follow.
 - Link to documentation.
 
 Notes:
-When you use the Rivet design system, you solve a variety of problems as well. Apps developed by different teams will have a similar look and feel, so they seem more similar to users. This makes it easier to use. It builds trust. It is easier to maintain.
+When you use the Rivet design system, you solve a variety of problems as well. Apps developed by different teams share a look and feel, so they seem more similar to users. This makes it easier to use. It builds trust. It is easier to maintain.
 
 Rivet has been vetted, so the components are reliably accessible. Of course, even though the pieces may be fine on their own, it doesn't guarantee that the product is accessible. How the pieces are put together is a completely different factor to consider and to test. You still need to test that the Rivet colors used have sufficient contrast in the context that they're used. You still need to test that a Rivet modal still works as expected, in case there's some coding issue that happened during development.
 
 When you design something, include links to the appropriate Rivet documentation. Developers will appreciate it, as it includes lots of implementation and accessibility details.
+
+
+
+# Question to devs:
+
+How would you like a designer to help you?
+
+Notes:
+Let's pause here a little bit. I've mentioned a number of things that a designer should do, to help their work be more accessible. This list is course but a sampling. Since there are some developers attending this workshop, I'd like to ask you a question: How would you like a designer to help you? What things that I haven't just mentioned would you like added to the list?
+
 
 
 
@@ -1078,12 +1088,6 @@ When you design something, include links to the appropriate Rivet documentation.
 
 - Start where you're at. Gradually build up.
 - Start with a single problem. Reference ARIA and other resources for that problem. Don't rathole and read the entire document.
-
-
-
-# Question to devs:
-
-What would you like a designer to provide you?
 
 
 

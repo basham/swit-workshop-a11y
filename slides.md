@@ -974,42 +974,62 @@ A keyboard trap is when you make it difficult or impossible to navigate out of a
 
 
 
-## Replace tabbing with arrow keys
+## Custom widgets
 
-- Grid, combobox, tables
-- A widget has one tabbable area. Once entered, use arrow keys to navigate to sub content.
+- Control with: Space/Enter, Arrows, Escape
+- Tables
+- Grid ("spreadsheet")
+- Combobox ("autocomplete")
+
+Notes:
+If making a custom widget that would normally have a lot of tabbable areas, you could design it so the widget itself is a single tabbable area. Then once in it, you use arrows keys to navigate, Space and/or Enter to activate, and Escape to exit or cancel. There's a lot of other details needed, to ensure that what is happening is communicated to the user.
+
+A table natively provides this arrow navigation. But you can do it manually to build something like an Excel spreadsheet or a search autocomplete.
 
 
 
 ## States
 
-- Empty. 1. Many. Lots. Success. Pending. Error. Default.
-- How are these states communicated? `aria-live` or focus redirection? Alerts?
+| | |
+| --- | --- |
+| **Count** | 0, 1, 5, 500 |
+| **Response** | idle, pending, success, error |
+| **Button** | default, hover, focus, active, pressed, disabled |
+
+Notes:
+Most every component has multiple states. When you design lists, don't think of what it looks like when you have 5 items. But think about the extremes, when you have zero or many items. When you design a server request and response, think about the state before the request happens, the pending state, and how success and errors are handled. Buttons have hover and focus states. They're active when they're in the process of being pressed. Some buttons are toggles, so they stay pressed in until pressed again. Some buttons are disabled. You need to think about how all these states are communicated to a range of users.
 
 
 
-## Content
+## Writing
 
-- Be concise. Be unambiguous. Be unique. Lower the reading level.
-- Avoid terms that disadvantage certain users (spatial awareness, color).
+- Be concise, unambiguous.
+- Lower the reading level.
+- Avoid spatial, size, shape, color terms.
+- Refer to the [Rivet Content Guide](https://rivet.iu.edu/content-guide/).
+
+Notes:
+When writing content, be concise, not verbose. Say just enough to get the point clearly across. Write in a way that lowers the reading level. Use more common and simpler words. Avoid long sentences and complex punctuation. And there are numerous terms that should be avoided as the only ways to identify something. Don't use terms like "left" or "right". Terms like "before", "after", "start", and "end" are better. Don't use size terms, like "large" or "small". Don't refer to shapes or color.
+
+All these things will help a variety of users. It helps those with cognitive issues. It helps those who English is not their primary language. It helps those who are low vision, color blind, or fully blind. It helps for when you use a responsive site, that could be used on small and larger devices.
+
+The Rivet Content Guide lists other recommendations and conventions to follow.
 
 
 
 ## Design system
 
-- Use, improve Rivet
-- Colors. Patterns.
-- Link to specific components that are used in a wireframe.
-- Designers, devs, users all appreciate similarity. Build one implementation of a component and reuse it everywhere. Date picker. Different implementations of the same thing are difficult to maintain, odd to users. Don't make users have to relearn the same thing.
-- https://rivet.iu.edu/
+- Use [Rivet](https://rivet.iu.edu/): styles, layout, components, patterns.
+- Similarity helps usability.
+- Test composition of components.
+- Link to documentation.
 
+Notes:
+When you use the Rivet design system, you solve a variety of problems as well. Apps developed by different teams will have a similar look and feel, so they seem more similar to users. This makes it easier to use. It builds trust. It is easier to maintain.
 
+Rivet has been vetted, so the components are reliably accessible. Of course, even though the pieces may be fine on their own, it doesn't guarantee that the product is accessible. How the pieces are put together is a completely different factor to consider and to test. You still need to test that the Rivet colors used have sufficient contrast in the context that they're used. You still need to test that a Rivet modal still works as expected, in case there's some coding issue that happened during development.
 
-## Content system
-
-- https://rivet.iu.edu/content-guide/
-- The foundation is content.
-- This needs a lot of work.
+When you design something, include links to the appropriate Rivet documentation. Developers will appreciate it, as it includes lots of implementation and accessibility details.
 
 
 

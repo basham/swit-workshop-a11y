@@ -36,7 +36,7 @@ I'm Chris Basham. I've worked at Indiana University since 2012, as a UX designer
 | 11:10 |      50m | Part 3       |
 
 Notes:
-The workshop today is split into 3 major sections, over the course of 3 hours. The first will be a lecture, followed later by exercises. Each section will be divided by 10 minute breaks.
+The workshop today is split into 3 major sections, over the course of 3 hours. Each section will be divided by 10 minute breaks.
 
 
 
@@ -56,7 +56,7 @@ All resources for this workshop, including slides, slide notes, exercises, and l
 - Mute when you're not talking.
 
 Notes:
-Because there's a lot to cover in this first section, I request you to submit any questions you have in the Zoom chat and keep yourself muted. I will then follow up with those questions periodically, between sections or after breaks.
+Because there's a lot to cover, I request you to submit any questions you have in the Zoom chat and keep yourself muted. I will then follow up with those questions periodically, between sections or after breaks.
 
 
 
@@ -78,7 +78,7 @@ See: [*Accessing and Using Annotation Tools in Zoom: Mac/Win*](https://help.lsit
 </footer>
 
 Notes:
-Throughout the workshop, we'll use Zoom's annotation tools. So, let's get familiar with it. Look for the toolbar, that hovers over the screen. Click on the "Annotate" button to bring up annotation tools.
+We may periodically use Zoom's annotation tools. So, let's get familiar with it. Look for the toolbar, that hovers over the screen. Click on the "Annotate" button to bring up annotation tools.
 
 
 
@@ -133,7 +133,7 @@ There are a lot of ways we address this problem. First, you can improve your kno
 - Test accessibility before, after development.
 
 Notes:
-Second, you can improve your process. Everyone needs to be involved, including management, product owners, business analysts, quality assurance, developers, and designers. Teams should discuss accessibility expectations early in the process. Document those expectations alongside acceptance criteria, testing notes, and design deliverables. Include accessibility notes in wireframes. Put aside the mouse and test your software using a keyboard only. Practice using a screen reader, on both desktop and mobile device. Evaluate the accessibility of a design direction before development, and then test it again once implemented. Make accessibility reviews part of your team's process.
+Second, you can improve your process. Everyone needs to be involved, including management, product owners, business analysts, quality assurance, developers, and designers. Teams should discuss accessibility expectations early in the process. Document those expectations alongside acceptance criteria, testing notes, and design deliverables. Include accessibility notes in wireframes. Put aside the mouse and test your software using a keyboard only. Practice using a screen reader, on both desktop and mobile devices. Evaluate the accessibility of a design direction before development, and then test it again once implemented. Make accessibility reviews part of your team's process.
 
 
 
@@ -244,7 +244,7 @@ The environment surely affects how we interact with the world. Being physical be
 Alone. Coworkers. Crowd. Friends. Family.
 
 Notes:
-Secondly, how you behave changes according to if you're alone or with others. And who those others are and how many of them will continue to affect your choices and behavior. An quiet setting with close friends is much different than a loud setting with strangers.
+Secondly, how you behave changes according to if you're alone or with others. And who those others are and how many of them will continue to affect your choices and behavior. A quiet setting with close friends is much different than a loud setting with strangers.
 
 
 
@@ -340,7 +340,7 @@ Usability expands on capability and answers the question, "How well can I use th
 - Hardware, software
 
 Notes:
-Technology that is purposefully designed to be highly accessible and usable is known as assistive technology. Depending on your needs, you may use various combinations of assistive tech. A crutch is a mobility aid. A sticky note is a cognitive aid. Closed captioning allows the deaf to experience movies and even those with hearing to confirm a phrase spoken softly. Ramps and wide doorways make it easy for those in wheelchairs and those with strollers to move it buildings.
+Technology that is purposefully designed to be highly accessible and usable is known as assistive technology. Depending on your needs, you may use various combinations of assistive tech. A crutch is a mobility aid. A sticky note is a cognitive aid. Closed captioning allows the deaf to experience movies and even those with hearing to confirm a phrase spoken softly. Ramps and wide doorways make it easy for those in wheelchairs and those with strollers to move in buildings.
 
 
 
@@ -362,7 +362,7 @@ And of course, there is assistive software. Shortcuts allows you to make a chang
 80% of [WCAG 2.0](https://www.w3.org/TR/WCAG20/) success criteria are design&nbsp;decisions.
 
 Notes:
-80% of the decisions that go into making content accessible occur during the design process. This means that designers are responsible for the bulk of this work.
+80% of the decisions that go into making content accessible, such as with a screen reader, occur during the design process. This means that designers are responsible for the bulk of this work.
 
 
 
@@ -385,7 +385,7 @@ WCAG stands for "Web Content Accessibility Guidelines". It is a document that de
 4. Robust
 
 Notes:
-There are four principles. The first three question if a piece of content can be seen, used, and understood by a user. The fourth questions if it can can be reliably interpreted by assistive technologies.
+The first three question if a piece of content can be seen, used, and understood by a user. The fourth questions if it can can be reliably interpreted by assistive technologies.
 
 
 
@@ -400,7 +400,7 @@ Success criteria are ranked in three levels. Each level builds up on the other. 
 
 Some criteria can be automatically tested with scripts. Some criteria needs to be manually evaluated.
 
-Level A covers basic usability. You're likely achieving this without too much explicit effort. Level AA is what you should aim for. Some criteria may not be as obvious. Level AAA is practically out of reach. It is an ideal to push you forward, but it isn't realistic. The document says:
+Level A covers basic usability. You're likely achieving this without too much explicit effort. Level AA is what you should aim for. Level AAA is practically out of reach. It is an ideal to push you forward, but it isn't realistic. The document says:
 
 "It is not recommended that Level AAA conformance be required as a general policy for entire sites because it is not possible to satisfy all Level AAA Success Criteria for some content."
 
@@ -436,7 +436,7 @@ Let's look at some examples of what we can do or what we should keep in mind whe
 - Mobile first approach.
 
 Notes:
-A visual user interface is often thought of as a two-dimensional thing. Or with the advent of virtual reality, three-dimensions. However, the foundation of this content is all 1-dimension. It is linear in nature. HTML, code, and text is written top to bottom. You read top to bottom. With a keyboard, you navigate top to bottom. It is important that before design in 2D, we design in 1D. That's the importance of the Mobile First practice. When you design for mobile, the limited viewport width is a constraint making you design linearly. It forces you to be intentional about the content order. Only then with a wider screen, the content can be enhanced in 2D with responsive design techniques.
+A visual user interface is often thought of as a two-dimensional thing. Or with the advent of virtual reality, three-dimensions. However, the foundation of this content is all 1-dimension. It is linear in nature. HTML, code, and text is written top to bottom. You read top to bottom. With a keyboard, you navigate top to bottom. It is important that before designing in 2D, we design in 1D. That's the importance of the Mobile First practice. When you design for mobile, the limited viewport width is a constraint making you design linearly. It forces you to be intentional about the content order. Only then with a wider screen, the content can be enhanced in 2D with responsive design techniques.
 
 
 
@@ -526,7 +526,7 @@ In addition to headings, landmarks are another a major way that screen reader us
 Notes:
 Like headings and landmarks, links are also a major way of navigating. In order for a screen reader user to quickly know the purpose of the link, the link text should be unique for the page. Avoid mistakes like labeling it "read more" or "click here". Let's say you have a list of articles about accessibility. If the visual label for an article about landmarks is "read more", then consider making the accessible label something like "read more about landmarks".
 
-Also, use skip links as a way to quickly skip repetitive content areas, like the banner and navigation. This makes it easy for a keyboard user to get to the main content area. If you use the Rivet Header, that includes a skip link.
+Also, use skip links as a way to quickly skip repetitive content areas, like the banner and navigation. This makes it easy for a keyboard user to get to the main content area. If you use the Rivet Header, that already includes a skip link.
 
 
 
@@ -640,7 +640,7 @@ In summary, everyone experiences impairments. The severity of those impairments 
 How is this perceived, understood, and used?
 
 Notes:
-To designers, when you design, you should ask how the thing they're making is perceived, understood, and used. This answer will be quite different, as you consider the variety of users and contexts. But this all helps make the design more inclusive.
+To designers, when you design, ask yourself this question. "How is this thing perceived, how is it understood, and how is it used?" This answer will be quite different, as you consider the variety of users and contexts. But this all helps make the design more inclusive.
 
 
 
@@ -649,7 +649,7 @@ To designers, when you design, you should ask how the thing they're making is pe
 How would you like a designer to help you?
 
 Notes:
-I've mentioned a number of things that a designer should do, to help their work be more accessible. This list is course but a sampling. Since there are some developers attending this workshop, I'd like to ask you a question: How would you like a designer to help you? What things that I haven't just mentioned would you like added to the list?
+I've mentioned a number of things that a designer should do, to help their work be more accessible. This list is course but a sampling. Since there are some developers attending this workshop, I'd like to ask you a question: How would you like a designer to help you? What things that I haven't just mentioned would you like added to the list? Please unmute if you wish to talk.
 
 
 
@@ -713,9 +713,9 @@ Instead of a mouse, you navigate with a keyboard. Instead of reading with your e
 </figure>
 
 Notes:
-Let's first look at the technology stack. When you build a website, the user interfaces with it through a browser. That browser interprets HTML, CSS, and JavaScript to render what the user sees, the visual user interface (UI). This interpretation is the DOM tree, short for Document Object Model. The user does not directly interact with the HTML. They interact with the DOM. This DOM can differ from browser to browser.
+Let's first look at the technology stack. When you build a website, the user interfaces with it through a browser. That browser interprets HTML, CSS, and JavaScript to render what the user sees, the visual user interface. This interpretation is the DOM tree, short for Document Object Model. The user does not directly interact with the HTML. They interact with the DOM. This DOM can differ from browser to browser.
 
-But the stack is more complicated than that for assistive technology. The accessibility tree prepares the DOM to be used outside of the browser. That gets passed to the operating system's accessibility API, which interfaces with screen reader software and other hardware.
+But the stack is more complicated than that for assistive technology. The accessibility tree prepares the DOM to be used outside of the browser. That gets passed to the operating system's accessibility API, which interfaces with screen reader software and other hardware, such as speakers, standard keyboards, and braille keyboards.
 
 See: [*The intersection of performance and accessibility*](https://noti.st/ericwbailey/Yfyaxa/the-intersection-of-performance-and-accessibility)
 
@@ -762,7 +762,7 @@ When testing websites, we tend to check the site in the major browsers and call 
 
 NVDA and Firefox will most quickly reveal issues with your markup. They pay the most attention to accessibility standards. Then use VoiceOver on macOS and iOS as a secondary quality check.
 
-Each screen reader has its own personality. The browser pairing will modify that personality. No need to force one screen reader to say what other says.
+Each screen reader has its own personality. The browser pairing will modify that personality. There is no need to force one screen reader to say what other says.
 
 
 
@@ -776,11 +776,11 @@ Each screen reader has its own personality. The browser pairing will modify that
 Notes:
 Now a few notes about the general usage of screen readers.
 
-In the general public, JAWS and NVDA are the most used by those with no or low vision. JAWS is the most robust screen reader, but don't bother with it, because of its cost, at $1,000 per license.
+In the general public, JAWS and NVDA are the most used by those with no or low vision. JAWS is the most robust screen reader, but don't bother with it, because of it costs $1,000 per license.
 
-iOS has 85% of market share of assistive tech users, in both the general public and Indiana University Bloomington students.
+iOS has 85% of market share of assistive tech users on mobile, in both the general public and Indiana University Bloomington students.
 
-Web developers love Chrome, but it is not the best paired with screen readers. Almost no one uses the ChromeVOX plugin, as it is browser only.
+Web developers love Chrome, but it is not the best paired with screen readers. Almost no one uses the ChromeVOX plugin, as it is for that browser only, not for the desktop.
 
 While quality assurance may test with multiple screen readers, users will tend to only use one screen reader per device.
 
@@ -829,7 +829,7 @@ A focus ring around an interactive object tells you where keyboard focus is. By 
 </figure>
 
 Notes:
-The blinking pipe in a text box is the keyboard cursor. It informs you where you are positioned within a piece of text.
+The blinking pipe in a text box is the keyboard cursor. It informs you where you are positioned within a piece of editable text.
 
 
 
@@ -933,7 +933,7 @@ Now that you know how to get oriented, there are a couple ways in which you can 
 </figure>
 
 Notes:
-First, the rotor is a tool that dynamically builds a table of contents for the website. Right now we're looking at a Landmarks menu for the Statewide IT conference website. You rotate through these different menus with the right and left arrow keys. Next is the Links menu. This demonstrates why it is important to ensure that the link name itself is sufficiently self-explanatory. If there are a bunch of "read more" or "click here" links in this menu, you have no idea where they would go, because there is no surrounding context. Lastly, we'll look at the Headings menu. The heading level is positioned before the heading name. This demonstrates why you should care about the order of headings. It can be confusing if headings skip. In this case, the level 2, 3, and 4 headings could use some clean up. Pressing the Down and Up arrow keys selects a heading. And pressing Enter will close the rotor; scroll so that the selected heading is visible within the viewport; and highlight the heading with the screen reader cursor.
+First, the rotor is a tool that dynamically builds a table of contents for the website. Right now we're looking at a Landmarks menu for the Statewide IT conference website. When you land on it, it announces the name of the menu. You rotate through these different menus with the right and left arrow keys. Next is the Links menu. This demonstrates why it is important to ensure that the link name itself is sufficiently self-explanatory. If there are a bunch of "read more" or "click here" links in this menu, you have no idea where they would go, because there is no surrounding context. Lastly, we'll look at the Headings menu. The heading level is positioned before the heading name. This demonstrates why you should care about the order of headings. It can be confusing if headings skip. In this case, the level 2, 3, and 4 headings could use some clean up. Pressing the Down and Up arrow keys selects a heading. And pressing Enter will do three things: 1) close the rotor; 2) scroll so that the selected heading is visible within the viewport; and 3) highlight the heading with the screen reader cursor.
 
 
 
@@ -1065,7 +1065,7 @@ Let's see this in action. I'm going to open IU.edu and navigate around with Voic
 Screen reader users navigate with<br>focus, cursors, rotor, shortcuts.
 
 Notes:
-In summary, screen reader users just use a computer differently than others. There is no technical reason why anyone should be excluded from using the websites we build. We must be intentional about including others. That intention should manifest in how we think, how we work, and what we create.
+In summary, screen reader users can use a computer, but it is just used differently than others. There is no technical reason why anyone should be excluded from using the websites we build. We must be intentional about including others. That intention should manifest in how we think, how we work, and what we create.
 
 
 
@@ -1088,7 +1088,7 @@ For this next part, we're going to focus on how to incorporate design decisions 
 - Fidelity: low to high
 
 Notes:
-The output of designers is often called design deliverables or design artifacts. These are merely some means to communicate the intention of a design. You must understand who the audience is. Is it your team, other designers, stakeholders, users, or others? The fidelity, or amount of detail, depends on what is being communicated or what sort of response you're trying to illicit or what sort of questions you're trying to answer. It may take a lot of experimentation to understand the most efficient way to invest your energy.
+The primary out of developers tends to be code. But the primary output of designers is often some kind of document or graphic. These are sometimes called design deliverables or design artifacts. These are merely some means to communicate the intention of a design. You must understand who the audience is. Is it your team, other designers, stakeholders, users, or others? The fidelity, or amount of detail, depends on what is being communicated or what sort of response you're trying to illicit or what sort of questions you're trying to answer. It may take a lot of experimentation to understand the most efficient way to invest your energy.
 
 
 
@@ -1118,7 +1118,7 @@ Wireframes are a common design deliverable. In terms of fidelity, they are more 
   <div class="fig-annotations">
     <p><span class="note">1</span> Header. This should be…</p>
     <p><span class="note">1.1</span> Link to the homepage…</p>
-    <p><span class="note">1.1</span> The primary nav…</p>
+    <p><span class="note">1.2</span> The primary nav…</p>
     <p><span class="note">2</span> Main</p>
     <p><span class="note">2.1</span> H1</p>
   </div>
@@ -1151,7 +1151,7 @@ These note markers could even be enhanced with an abbreviation and color to help
   <div class="fig-annotations">
     <p><span class="note note--l">L-1</span> Header. This should be…</p>
     <p><span class="note note--a">A-1.1</span> Link to the homepage…</p>
-    <p><span class="note note--l">L-1.1</span> The primary nav…</p>
+    <p><span class="note note--l">L-1.2</span> The primary nav…</p>
     <p><span class="note note--l">L-2</span> Main</p>
     <p><span class="note note--h">H-2.1</span> H1</p>
   </div>
@@ -1159,7 +1159,7 @@ These note markers could even be enhanced with an abbreviation and color to help
 </figure>
 
 Notes:
-The letters prefix a number, which identifies the note. In this case, "A-2.1" means it is an interactive piece of content, with a note identifier of "2.1".
+Now, this example updates the previous one with the colors and abbreviations. At a glance, you can start to get a feel for type of content and how they're organized relative to each other. The letters prefix a number, which identifies the note. In this case, "A-1.1" means it is an interactive piece of content, with a note identifier of "1.1".
 
 
 
@@ -1169,14 +1169,14 @@ The letters prefix a number, which identifies the note. In this case, "A-2.1" me
 - [Accessibility Bluelines](https://dribbble.com/shots/6269661-Accessibility-Bluelines) by Jeremy Elder
 
 Notes:
-If you don't want to mock up something on your own, you can download a couple of annotation toolkits. These include assets for design tools, like Figma, Sketch, and Adobe XD. Links to 
+If you don't want to mock up something on your own, you can download a couple of annotation toolkits. These include assets for design tools, like Figma, Sketch, and Adobe XD. We will now look into the first of these toolkits.
 
 
 
 <!-- .slide: data-background-image="assets/a11y-toolkit-assets.png" data-background-size="contain" data-background-color="var(--color-base-9)" -->
 
 Notes:
-Here's a sampling of assets than can be used.
+Here's a sampling of assets and markers than can be used in your wireframes.
 
 
 
@@ -1201,11 +1201,11 @@ In this second example, this same accordion is marked up to indicate the tab ord
 - 2D-first thinking
 
 Notes:
-These specialized notes helps enrich the wireframes by highlighting accessibility concerns. This is a start. But I think we can do better.
+These specialized notes enrich the wireframes by highlighting accessibility concerns. This is a start. But I think we can do better.
 
-First, we need a solution that encourages collaboration. When we use a design tool, we tend to exclude non-designers from engaging in the process. The designer has the exclusive power to change a wireframe or the notes in the wireframe. Granted, Figma is a step forward. But it is a design tool first.
+First, we need a solution that encourages collaboration. When we use a design tool, we tend to exclude non-designers from engaging in the process. The designer has the exclusive power to change a wireframe or the notes in the wireframe. Granted, Figma is a step forward. But it is a design tool first and that creates a barrier.
 
-Second, we need a solution that can scale well. We've already identified a multitude of accessibility-related design decisions that need to be made. The more notes you write, the more you start to feel the difficulty of using the design tool for such purposes. You're always having to move things around the page, to make sure everything fits nicely on the page. It becomes a distraction to the real work.
+Second, we need a solution that can scale well. We've already identified a multitude of accessibility-related design decisions that need to be made. The more notes you write, the more you start to feel the difficulty of using the design tool for such purposes. You're always having to move things around, to make sure everything fits nicely on the page. It becomes a distraction to the real work.
 
 Third, when annotations are in the wireframe, it starts to feel like the notes are secondary. When we think first about the wireframe, we think first in two-dimensions. As we've already reviewed, the foundation of any content and the design work that we do is actually one-dimension. It is text.
 
@@ -1219,7 +1219,7 @@ Third, when annotations are in the wireframe, it starts to feel like the notes a
 Notes:
 Instead of investing more time in a design tool, I suggest you spend more time in a text editor. Text is easy to change. A text document scales well. You can collaboratively edit a text document, using something like Google Docs. Non-designers and those outside of your team will be more likely to contribute.
 
-Annotations in a wireframe is a glorified image. This means you're already putting up barriers when trying to get early feedback from a non-sighted user. But a document is something that anyone can use.
+Annotations in a wireframe is a glorified image. This means you're already putting up barriers when trying to get early feedback from a non-sighted user. But a text document is something that anyone can use.
 
 Similar to mobile-first design and responsive design, there's a design subfield concerning this topic, called content-first design.
 
@@ -1235,7 +1235,7 @@ Similar to mobile-first design and responsive design, there's a design subfield 
 - Specify HTML, labels, behavior.
 
 Notes:
-This design document should be your first source of truth. It should clarify anything concerning the context of use, the intention behind the design, and any other expectations you may have. It could be organized by how a user may flow through an interaction or just by major components. Make the wireframe or other artifacts supplemental to this document. You can link to anything that your team needs to do the work. It could be to WCAG success criteria, ARIA specifications, Rivet components, or other documents that the team has made. List any particular ideas you may have about the markup, text, or behavior.
+This design document should be your first source of truth. It should clarify anything concerning the context of use, the intention behind the design, and any other expectations you may have. It could be organized by how a user may flow through an interaction or just by major components. Make the wireframe or other artifacts supplemental to this document. You can link to anything that your team needs to do the work. It could be to WCAG success criteria, ARIA specifications, Rivet components, or other documents that the team has made. List any particular ideas you may have about the markup, text, or behavior, as a way to provide more guidance for developers.
 
 
 
@@ -1452,7 +1452,7 @@ Now, the cursor is on the first item. It says the name and the position of the i
 </figure>
 
 Notes:
-And you can continue as needed. In order to provide more clarity about the purpose of this list, we can give it a name, such as "fruit".
+And you can continue as needed.
 
 
 
@@ -1556,7 +1556,7 @@ ARIA is a huge specification. There's a lot to learn. Just start where you are. 
 | — | alert |
 
 Notes:
-There are dozens HTML elements and dozens of roles. Some elements have implicit roles, some don't. Some roles, like alert, are not assigned to any native element, and they need to explicitly set to ever be used.
+There are dozens HTML elements and dozens of roles. Some elements have implicit roles, some don't. Some roles, like alert, are not assigned to any native element, and they need to be explicitly set to ever be used.
 
 
 
@@ -1586,7 +1586,7 @@ As we've already seen, certain attributes are paired with certain roles. Positio
 | status | `live="polite"`, `atomic="true"` |
 
 Notes:
-Many roles have default attributes. These can be overridden. Or, the behavior of the role could essentially be rebuilt by using the right attributes.
+Many roles have default attributes. These can be overridden. Or, the behavior of the role could essentially be rebuilt by using the right combinations of attributes.
 
 
 
@@ -1599,7 +1599,7 @@ Many roles have default attributes. These can be overridden. Or, the behavior of
 - `aria-live`
 
 Notes:
-Some attributes can be used on any element. We've already demonstrated aria-label and aria-labelled by. Described-by can be used to provide fuller information about a piece of content. This gets read out after the label. And aria-live can be used to announce something regardless of the cursor positions.
+Some attributes can be used on any element. We've already demonstrated aria-label and aria-labelled by. Described-by can be used to provide fuller information about a piece of content. This gets read out after the label. And aria-live can be used to announce something without needing to switch the context or redirect focus.
 
 
 
@@ -1616,7 +1616,7 @@ Some attributes can be used on any element. We've already demonstrated aria-labe
 ```
 
 Notes:
-When a screen reader finds an element, it maps the tag name to find its inherit role. The role is what defines the type of the content and how it should operate. You can explicitly set or override an element's role by using the role attribute. That means you could essentially write the same list of fruit using div or span elements or something completely different.
+When a screen reader finds an element, it maps the tag name to find its inherit role. The role is what defines the type of the content and how it should operate. You can explicitly set or override an element's role by using the role attribute. That means you could essentially write the same list of fruit using div or span elements. But even though you can do this, you shouldn't. Just rely on native HTML to do what it means to.
 
 
 
@@ -1633,7 +1633,7 @@ When a screen reader finds an element, it maps the tag name to find its inherit 
 ```
 
 Notes:
-Let's say you start with some HTML and you want to remove native semantics. You can use the "presentation" role to make it essentially a div or span. It now reads like a set of words. You rarely want to do something like this, but it's important to know that you can reverse a role if needed.
+Let's say you start with some HTML and you want to remove native semantics. You can use the "presentation" role to make it essentially a div or span. It now reads like a set of words. "Apple Banana Blueberry". You rarely want to do something like this, but it's important to know that you can reverse a role if needed.
 
 
 
@@ -1646,7 +1646,7 @@ Let's say you start with some HTML and you want to remove native semantics. You 
 ```
 
 Notes:
-But keep in mind, the presentation role does not remove the native functionality from an element. A button with this role is still focusable and clickable. But the screen reader will not communicate that it is a button, nor how to operate it. Depending on the element, you may have a lot of work to do.
+But keep in mind, the presentation role does not remove the native functionality from an element. A button with this role is still focusable and clickable. But the screen reader will not communicate that it is a button, nor how to operate it. Depending on the element, you may have a lot of work to undo. But again, this is not something you should likely be doing.
 
 
 
@@ -1673,7 +1673,7 @@ But keep in mind, the presentation role does not remove the native functionality
 ```
 
 Notes:
-Let's say the list of fruit is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. Apple is now item 1 of 8. Banana is 2 of 8. Blueberry is 3 of 8. If the size of the set is unknown, use -1 for that value. These attributes can be useful when you return a paginated list of search results.
+Let's say the list of fruit is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. Apple is now item 1 of 8. Banana is 2 of 8. Blueberry is 3 of 8. If the size of the set is unknown, use -1 for that value. These attributes could be useful when you return a paginated list of search results.
 
 See: https://www.w3.org/TR/wai-aria/#listitem
 
@@ -1704,7 +1704,7 @@ See: https://www.w3.org/TR/wai-aria/#listitem
 Notes:
 If we render a different subset of the list, now we reveal: Cherry, item 4 of 8. Mango, item 5 of 8. Strawberry, item 6 of 8.
 
-Keep in mind, this doesn't actually work in VoiceOver, even though it is declared in the spec. In this case, these attributes are simply ignored. I'm unsure how other screen readers would handle this, but that would need testing. And perhaps there would be better, more native ways to communicate this same information anyway.
+Keep in mind, this doesn't actually work in VoiceOver, even though it is declared in the spec. In this case, these attributes are simply ignored. I'm unsure how other screen readers would handle this, but that would need testing. And perhaps there would be better, more native ways to communicate this same information, without using these particular attributes.
 
 
 
@@ -1717,7 +1717,7 @@ Keep in mind, this doesn't actually work in VoiceOver, even though it is declare
 Sketch → HTML → Screen reader
 
 Notes:
-Now with a little more understanding of how interactive content works, let's work on another sketch.
+Now with a little more understanding of how interactive content works, let's review another sketch.
 
 
 
@@ -1768,7 +1768,7 @@ Now, let's test this HTML with a screen reader.
 </figure>
 
 Notes:
-When the keyboard or screen reader cursor lands on the checkbox, it announces the label ("I agree"). Then the state of the control ("unchecked checkbox"). Then how to operate the control ("press Space to select").
+When the keyboard or screen reader cursor lands on the checkbox, it announces the label ("I agree"). Then the state of the control ("unchecked checkbox"). Then how to operate the control ("press Space to select or deselect").
 
 
 
@@ -1833,6 +1833,9 @@ Notes:
 2. Everyone, sketch the wireframe in text.
 3. Is there anything surprising?
 
+Work on your sketches on Google Docs:
+https://docs.google.com/document/d/1H-prlMJJ_MsN1KUn1QMbSnhqERRXdTlbhoIChOAfrCk/edit?usp=sharing
+
 
 
 ## Sketch v1
@@ -1846,7 +1849,7 @@ nav ("Breadcrumbs")
 ```
 
 Notes:
-This sketch expands on some of the syntax we've used so far. Nested elements could be placed on the same line. Attributes are wrapped in brackets. Ordered lists are "ol". Links are "a".
+Here's my first attempt at the sketch. This sketch expands on some of the syntax we've used so far. Nested elements could be placed on the same line. Attributes are wrapped in brackets. Ordered lists are "ol". Links are "a".
 
 
 
@@ -1861,12 +1864,6 @@ This sketch expands on some of the syntax we've used so far. Nested elements cou
   </ol>
 </nav>
 ```
-
-<footer>
-
-See: [Rivet breadcrumbs](https://rivet.iu.edu/components/navigation/breadcrumb/)
-
-</footer>
 
 Notes:
 This implementation is mostly identical to the Rivet breadcrumbs component.
@@ -1891,8 +1888,8 @@ Once your team knows how to implement breadcrumbs navigation, the sketch could b
 
 ```
 breadcrumbs [1, 2]
-  "Conference"
-  "Workshop"
+  "Conference" [3]
+  "Workshop" [4]
   "Slides"
 
 [1]: Wireframe
@@ -1903,7 +1900,7 @@ https://rivet.iu.edu/components/navigation/breadcrumb/
 ```
 
 Notes:
-Then you could even add some link references. In this case, this one component links to both its wireframe and to the Rivet breadcrumbs documentation.
+Then you could even add some references, marked as a number within brackets. In this case, this one component links to both its wireframe and to the Rivet breadcrumbs documentation. And references 3 and 4 could fuller describe the destination of those links.
 
 
 

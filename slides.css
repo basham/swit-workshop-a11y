@@ -441,6 +441,54 @@
 }
 
 /*
+ * Log card
+ */
+
+.fig-log-card {
+  background-color: var(--color-base-9);
+  color: var(--color-base-1);
+  font-size: var(--fs-0);
+  padding: 0.5rem;
+}
+
+.fig-log-card .card {
+  border: 2px solid var(--color-base-0);
+  display: flex;
+  max-width: 18rem;
+  padding: 0.2rem;
+}
+
+.fig-log-card .card + .card {
+  margin-top: 0.4rem;
+}
+
+.fig-log-card .cover {
+  background-color: var(--color-base-7);
+  border: 2px solid var(--color-base-0);
+  flex-shrink: 0;
+  height: 3rem;
+  margin: 0.2rem;
+  width: 3rem;
+}
+
+.fig-log-card .content {
+  margin: 0.2rem;
+  text-align: left;
+}
+
+.fig-log-card .heading {
+  margin-bottom: 0.2rem;
+}
+
+.fig-log-card .link {
+  text-decoration: underline;
+}
+
+.fig-log-card .log {
+  font-size: calc(24rem/40);
+}
+
+/*
  * Cursor
  */
 

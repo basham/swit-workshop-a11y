@@ -1815,7 +1815,6 @@ Now, let's start with a wireframe. This time, I want you to provide a sketch. Th
 
 
 
-<!-- .slide: data-background-color="var(--color-base-8)" -->
 <figure>
   <div class="fig-breadcrumbs">
     <nav aria-label="Breadcrumbs">
@@ -1913,7 +1912,6 @@ For this exercise, we'll just deconstruct the wireframe into a sketch. We'll ski
 
 
 
-<!-- .slide: data-background-color="var(--color-base-8)" -->
 <figure>
   <div class="fig-sort">
     <form aria-label="Sort results">
@@ -1928,6 +1926,7 @@ For this exercise, we'll just deconstruct the wireframe into a sketch. We'll ski
       <button type="submit" class="sr-only">Go</button>
     </form>
   </div>
+  <figcaption>This sort by control would be placed before a list of games. You can sort by "Last played", "Most played", "Purchased date", "Created time", and "Title".</figcaption>
 </figure>
 
 Notes:
@@ -1955,13 +1954,71 @@ This sort by control updates the results automatically after a change. A ">" den
 
 
 
-# Other
+# Game log card
 
-- Card
-- Pagination
-- SR announce when there's something new. Press a key. It announces.
-- Current state. Trigger. New state.
-- Micro interaction
+Wireframe → Sketch
+
+
+
+<figure>
+  <div class="fig-log-card">
+    <div class="card">
+      <div class="cover"></div>
+      <div class="content">
+        <div class="heading">
+          <span class="link">Jan 5, 2021</span>
+          &middot;
+          <span class="link">Wingspan</span>
+        </div>
+        <div class="log">Got good cards, and figured out a good strategy. Won 88–78, hard mode.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cover"></div>
+      <div class="content">
+        <div class="heading">
+          <span class="link">Dec 10, 2020</span>
+          &middot;
+          <span class="link">Wingspan</span>
+        </div>
+        <div class="log">Big loss. 68–93, playing as the Anatomist.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cover"></div>
+      <div class="content">
+        <div class="heading">
+          <span class="link">Nov 26, 2020</span>
+          &middot;
+          <span class="link">Palm Island</span>
+        </div>
+        <div class="log">Scored 38 points! I don't think the two villager cards (-4, -6) did much, given the resources weren't spread well around the deck. Should try with different villagers, next time.</div>
+      </div>
+    </div>
+  </div>
+  <figcaption>Three cards are listed. Each card represents a log of time that a game was played. It includes the date, the game title, the game cover image, and the log text. The date and game title are separate links, but are positioned next to each other.</figcaption>
+</figure>
+
+Notes:
+Work on your sketches in the Google Doc.
+
+
+
+## Sketch
+
+```
+ul "Game logs"
+  li
+    h3
+      link to game log "<Game log date>"
+      " · "
+      link to game page "<Game title>"
+    image of game cover ""
+    p "<Game log text>"
+```
+
+Notes:
+The image is decorative and has no alt text, since it is redundant with the title of the game. Data-driven text is wrapped in angle brackets.
 
 
 

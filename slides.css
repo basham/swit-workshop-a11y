@@ -419,6 +419,28 @@
 }
 
 /*
+ * Sort
+ */
+
+.fig-sort {
+  background-color: var(--color-base-9);
+  color: var(--color-base-1);
+  font-size: var(--fs-0);
+  padding: 0.5rem;
+}
+
+.fig-sort label {
+  font-weight: bold;
+  margin-right: 0.25rem;
+}
+
+.fig-sort select {
+  border: 2px solid var(--color-base-6);
+  border-radius: 0.2rem;
+  font-size: inherit;
+}
+
+/*
  * Cursor
  */
 

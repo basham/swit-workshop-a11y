@@ -1808,10 +1808,10 @@ If you leave and return focus to this checkbox, then you can see it now says it 
 
 # Breadcrumbs
 
-Wireframe → Sketch → HTML → Screen reader
+Wireframe → Sketch → HTML
 
 Notes:
-Now, let's start with a wireframe. This time, I want you to provide a sketch. Then I'll show you my answer. We'll look at the HTML. And then test it with a screen reader.
+Now, let's start with a wireframe. This time, I want you to provide a sketch. Then I'll show you my answer. We'll look at the HTML. I can leave it to you to test with a screen reader.
 
 
 
@@ -1904,6 +1904,57 @@ Then you could even add some references, marked as a number within brackets. In 
 
 
 
+# Sorting
+
+Wireframe → Sketch
+
+Notes:
+For this exercise, we'll just deconstruct the wireframe into a sketch. We'll skip examining the HTML and the screen reader test.
+
+
+
+<!-- .slide: data-background-color="var(--color-base-8)" -->
+<figure>
+  <div class="fig-sort">
+    <form aria-label="Sort results">
+      <label for="sort-control">Sort by</label>
+      <select id="sort-control">
+        <option>Last played</option>
+        <option>Most played</option>
+        <option>Purchased date</option>
+        <option>Created time</option>
+        <option>Title</option>
+      </select>
+      <button type="submit" class="sr-only">Go</button>
+    </form>
+  </div>
+</figure>
+
+Notes:
+Work on your sketches in the Google Doc.
+
+
+
+## Sketch
+
+```
+form ("Sort results")
+  select "Sort by"
+    option "Last played"
+    option "Most played"
+    option "Purchased date"
+    option "Created time"
+    option "Title"
+    > Automatically submit on change.
+  button[submit] "Go"
+    > Hide if JS is enabled.
+```
+
+Notes:
+This sort by control updates the results automatically after a change. A ">" denotes a comment. In this case, the form will work if JavaScript is not enabled. But if it is, then the control will update upon change, instead of on submit.
+
+
+
 # Other
 
 - Card
@@ -1911,7 +1962,6 @@ Then you could even add some references, marked as a number within brackets. In 
 - SR announce when there's something new. Press a key. It announces.
 - Current state. Trigger. New state.
 - Micro interaction
-- Form controls
 
 
 

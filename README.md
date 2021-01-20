@@ -55,8 +55,10 @@ live-server
 
 ### Training
 
-- [Disability Sensitivity Training Video](https://www.youtube.com/watch?v=Gv1aDEFlXq8) (YouTube)
 - [Accessibility Bootcamp](https://iu.mediaspace.kaltura.com/channel/Accessibility%2Bbootcamp/165180531) by Deque University (IU login required)
+- [Disability Sensitivity Training](https://www.youtube.com/watch?v=Gv1aDEFlXq8) (YouTube)
+- [Accessibility on Apple devices](https://www.youtube.com/playlist?list=PLIl2EzNYri0cLtSlZowttih25VnSvWITu) (YouTube)
+- [Accessible to all](https://web.dev/accessible/)
 
 ### Code examples
 
@@ -69,9 +71,11 @@ live-server
 
 - [Deque](https://www.deque.com/), [Deque University](https://dequeuniversity.com/)
 - [WebAIM](https://webaim.org/)
-- [Level Access](https://www.levelaccess.com/)
+- [Level Access](https://www.levelaccess.com/resources/)
 - [The A11y Project](https://www.a11yproject.com/)
 - [Microsoft Inclusive Design](https://www.microsoft.com/design/inclusive/)
+- [Accessibility for teams](https://accessibility-for-teams.com/)
+- [AppleVis](https://www.applevis.com/)
 
 ### Standards and guidelines
 
@@ -81,12 +85,9 @@ live-server
 - [ARIA 1.2 specification](https://www.w3.org/TR/wai-aria-1.2/)
 - [HTML 5.2 specification](https://www.w3.org/TR/html52/)
 
-### Annotation toolkits
+### Tools
 
 - [Accessibility Toolkit](https://www.dropbox.com/sh/bccfyu41rq5hydw/AADRaM4DtvPpRAPNkMuQBVila?dl=0) by Jack Nicolai, [webinar](https://www.3playmedia.com/resources/recorded-webinars/wbn-07-26-2018-adobe/)
 - [Accessibility Bluelines](https://dribbble.com/shots/6269661-Accessibility-Bluelines) by Jeremy Elder, [*Life Time Accessibility*](https://jeremyelder.com/work/lt-accessibility.html)
-
-### Tools
-
 - [Apple Accessibility Inspector](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html) (macOS apps)
 - [Figma A11y Focus Orderer plugin](https://www.figma.com/community/plugin/731310036968334777/A11y---Focus-Orderer)

@@ -4,12 +4,12 @@ const messages = {
   '68-2': 'Headings menu.',
   '68-3': 'Heading level 1. Virtual Statewide IT Conference 2021.',
   '68-4': 'Heading level 3. Staff kudos form.',
-  '101': 'List, Fruit. 3 items.',
-  '102': 'Bullet. Apple. 1 of 3.',
-  '103': 'Bullet. Banana. 2 of 3.',
-  '125': 'I agree. Unchecked checkbox. Press Space to select or deselect.',
-  '126': 'Check. I agree. Checkbox.',
-  '127': 'I agree. Checked checkbox. Press Space to select or deselect.'
+  '105': 'List, Fruit. 3 items.',
+  '106': 'Bullet. Apple. 1 of 3.',
+  '107': 'Bullet. Banana. 2 of 3.',
+  '129': 'I agree. Unchecked checkbox. Press Space to select or deselect.',
+  '130': 'Check. I agree. Checkbox.',
+  '131': 'I agree. Checked checkbox. Press Space to select or deselect.'
 }
 
 Reveal.on('slidechanged', (event) => {

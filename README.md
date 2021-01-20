@@ -81,6 +81,11 @@ live-server
 - [ARIA 1.2 specification](https://www.w3.org/TR/wai-aria-1.2/)
 - [HTML 5.2 specification](https://www.w3.org/TR/html52/)
 
+### Annotation toolkits
+
+- [Accessibility Toolkit](https://www.dropbox.com/sh/bccfyu41rq5hydw/AADRaM4DtvPpRAPNkMuQBVila?dl=0) by Jack Nicolai, [webinar](https://www.3playmedia.com/resources/recorded-webinars/wbn-07-26-2018-adobe/)
+- [Accessibility Bluelines](https://dribbble.com/shots/6269661-Accessibility-Bluelines) by Jeremy Elder, [*Life Time Accessibility*](https://jeremyelder.com/work/lt-accessibility.html)
+
 ### Tools
 
 - [Apple Accessibility Inspector](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html) (macOS apps)

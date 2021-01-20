@@ -1163,6 +1163,37 @@ The letters prefix a number, which identifies the note. In this case, "A-2.1" me
 
 
 
+## Annotation toolkits
+
+- [Accessibility Toolkit](https://www.dropbox.com/sh/bccfyu41rq5hydw/AADRaM4DtvPpRAPNkMuQBVila?dl=0) by Jack Nicolai
+- [Accessibility Bluelines](https://dribbble.com/shots/6269661-Accessibility-Bluelines) by Jeremy Elder
+
+Notes:
+If you don't want to mock up something on your own, you can download a couple of annotation toolkits. These include assets for design tools, like Figma, Sketch, and Adobe XD. Links to 
+
+
+
+<!-- .slide: data-background-image="assets/a11y-toolkit-assets.png" data-background-size="contain" data-background-color="var(--color-base-9)" -->
+
+Notes:
+Here's a sampling of assets than can be used.
+
+
+
+<!-- .slide: data-background-image="assets/a11y-toolkit-accordion-at.png" data-background-size="contain" data-background-color="var(--color-base-9)" -->
+
+Notes:
+In this example, green markers point out parts on an accordion. And text on the side elaborate on the expected accessibility details.
+
+
+
+<!-- .slide: data-background-image="assets/a11y-toolkit-accordion-focus.png" data-background-size="contain" data-background-color="var(--color-base-9)" -->
+
+Notes:
+In this second example, this same accordion is marked up to indicate the tab order and expected tab behavior.
+
+
+
 ## Problems with inline annotation
 
 - Poor collaboration

@@ -1425,108 +1425,91 @@ And you can continue as needed. In order to provide more clarity about the purpo
 
 
 
-## 1–3 of 8
+## Summary
 
-```html
-<ul>
-  <li
-    aria-posinset="1"
-    aria-setsize="8">
-    Apple
-  </li>
-  <li
-    aria-posinset="2"
-    aria-setsize="8">
-    Banana
-  </li>
-  <li
-    aria-posinset="3"
-    aria-setsize="8">
-    Blueberry
-  </li>
-</ul>
-```
+Sketch in text first.
 
 Notes:
-Let's say this is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. The apple is now item 1 of 8. Banana is 2 of 8. Blueberry is 3 of 8. If the size of the set is unknown, use -1 for that value. These attributes can be useful when you return a paginated list of search results.
-
-See: https://www.w3.org/TR/wai-aria/#listitem
+In summary, we can make our design deliverables richer and more collaborative if we first design in text and second design visually. We can use text to sketch ideas, and these sketches could even act as the handoff to developers.
 
 
 
-## 4–6 of 8
+# Break
 
-```html
-<ul>
-  <li
-    aria-posinset="4"
-    aria-setsize="8">
-    Cherry
-  </li>
-  <li
-    aria-posinset="5"
-    aria-setsize="8">
-    Mango
-  </li>
-  <li
-    aria-posinset="6"
-    aria-setsize="8">
-    Strawberry
-  </li>
-</ul>
-```
+10 minutes
+
+Return at 11:10 AM
+
+
+
+# Questions
+
+
+
+# Interactive content
 
 Notes:
-If we render a different subset of the list, now we reveal: Cherry, item 4 of 8. Mango, item 5 of 8. Strawberry, item 6 of 8.
-
-Keep in mind, this doesn't actually work in VoiceOver, even though it is declared in the spec. These attributes are simply ignored.
+In our last example, we looked at a list of fruit. This is a simple piece of static content. Now, let's look at how to design for interactive content.
 
 
 
-## Div to list
+## "ISO"
 
-"List. 3 items."
+|               |                                           |
+| ------------- | ----------------------------------------- |
+| **Identity**  | What am I interacting with?               |
+| **State**     | What is the current status of this thing? |
+| **Operation** | How do I use this thing?                  |
 
-```html
-<div role="list">
-  <div role="listitem">Apple</div>
-  <div role="listitem">Banana</div>
-  <div role="listitem">Blueberry</div>
-</div>
-```
+<footer>
 
-Notes:
-When a screen reader finds an element, it maps the tag name to find its inherit role. The role is what defines the type of the content and how it should operate. You can explicitly set or override an element's role by using the role attribute. That means you could essentially write the same list using div or span elements or something completely different.
+See: [*How to Describe Complex Designs for Users with Disabilities*](https://medium.com/salesforce-ux/how-to-describe-complex-designs-for-users-with-disabilities-ba05f5224130)
 
-
-
-## List to div
-
-"Apple Banana Blueberry"
-
-```html
-<ul role="presentation">
-  <li role="presentation">Apple</li>
-  <li role="presentation">Banana</li>
-  <li role="presentation">Blueberry</li>
-</ul>
-```
+</footer>
 
 Notes:
-Let's say you start with some HTML and you want to remove native semantics. You can use the "presentation" role to make it essentially a div or span. It now reads like a set of words. You rarely want to do something like this, but it's important to know that you can reverse a role if needed.
+There are three pieces of information that needs to be communicated through a screen reader: identity, state, and operation. Or, ISO, for short. Identity answers, "What am I interacting with?" This is the name or label of the thing. State answers, "What is the current status of this thing?" Is it active, current, pressed, checked, or selected? What is the placement of the thing within its context. What are other details about the thing that would be helpful to know? Operation answers, "How do I use this thing?" What keys do I press to change its state?
 
 
 
-## Still operational
+## ISO with ARIA
 
-```html
-<button role="presentation">
-  Save
-</button>
-```
+|               |                |
+| ------------- | -------------- |
+| **Identity**  | `role` + label |
+| **State**     | `aria-*`       |
+| **Operation** | `role`         |
 
 Notes:
-But keep in mind, the presentation role does not remove the native functionality from an element. A button with this role is still focusable and clickable. But the screen reader will not communicate that it is a button, nor how to operate it. Depending on the element, you may have a lot of work to do.
+When we use native HTML or HTML with ARIA, a screen reader can announce this information in a standard and predictable way. The identity and operation of a piece of content is informed by the role. The identity is also informed by an explicit label or the text within the element. Additional information pertaining to the content can be described in various ARIA attributes. If no role is suitable for what you want to do, then you'll have more work to do, to ensure these three pieces of information (identity, state, and operation) are communicated.
+
+
+
+# ARIA
+
+*Accessible Rich Internet Applications*
+
+- Enhances HTML.
+- Use attributes as CSS selectors.
+- Prefer native semantics over ARIA.
+- Screen readers have different levels of support.
+
+<footer>
+
+See: https://www.w3.org/TR/html-aria/
+
+</footer>
+
+Notes:
+ARIA stands for "Accessible Rich Internet Applications". By these roles and other attributes, we can enhance native HTML, so it provides more information than it would otherwise.
+
+Because this is implemented as attributes, you can use them to style the markup. Just use attribute selectors. No need to manually add or remove class names. Just update the attribute value to see a style change.
+
+But in general, don't overuse ARIA. If there is a way to accomplish what you need to do without using ARIA and with just native HTML, then do that. That will make the solution more robust.
+
+Just like how not every browser conforms perfectly to the HTML, CSS, or JavaScript specifications, not every browser or screen reader conforms perfectly to the ARIA specification.
+
+ARIA is a huge specification. There's a lot to learn. Just start where you are. If you have a small component that you're working on, start there. Gradually build up your knowledge, as you're problem solving.
 
 
 
@@ -1589,32 +1572,108 @@ Some attributes can be used on any element. We've already demonstrated aria-labe
 
 
 
-## ARIA
+## Div to list
 
-*Accessible Rich Internet Applications*
+"List. 3 items."
 
-- Enhances HTML.
-- Use attributes as CSS selectors.
-- Prefer native semantics over ARIA.
-- Screen readers have different levels of support.
-- Start small.
-
-<footer>
-
-See: https://www.w3.org/TR/html-aria/
-
-</footer>
+```html
+<div role="list">
+  <div role="listitem">Apple</div>
+  <div role="listitem">Banana</div>
+  <div role="listitem">Blueberry</div>
+</div>
+```
 
 Notes:
-We've talked a lot about ARIA. It stands for "Accessible Rich Internet Applications". By these roles and other attributes, we can enhance native HTML, so it provides more information than it would otherwise.
+When a screen reader finds an element, it maps the tag name to find its inherit role. The role is what defines the type of the content and how it should operate. You can explicitly set or override an element's role by using the role attribute. That means you could essentially write the same list of fruit using div or span elements or something completely different.
 
-Because this is implemented as attributes, you can use them to style the markup. Just use attribute selectors. No need to manually add or remove class names. Just update the attribute value to see a style change.
 
-But in general, don't overuse ARIA. If there is a way to accomplish what you need to do without using ARIA and with just native HTML, then do that. That will make the solution more robust.
 
-Just like how not every browser conforms perfectly to the HTML, CSS, or JavaScript specifications, not every browser or screen reader conforms perfectly to the ARIA specification. The position-in-set and set-size attributes in VoiceOver are just one such example. The lower level solution, the more of a chance it will work for everyone.
+## List to div
 
-ARIA is a huge specification. There's a lot to learn. Just start where you are. If you have a small component that you're working on, start there. Gradually build up your knowledge, as you're problem solving.
+"Apple Banana Blueberry"
+
+```html
+<ul role="presentation">
+  <li role="presentation">Apple</li>
+  <li role="presentation">Banana</li>
+  <li role="presentation">Blueberry</li>
+</ul>
+```
+
+Notes:
+Let's say you start with some HTML and you want to remove native semantics. You can use the "presentation" role to make it essentially a div or span. It now reads like a set of words. You rarely want to do something like this, but it's important to know that you can reverse a role if needed.
+
+
+
+## Still operational
+
+```html
+<button role="presentation">
+  Save
+</button>
+```
+
+Notes:
+But keep in mind, the presentation role does not remove the native functionality from an element. A button with this role is still focusable and clickable. But the screen reader will not communicate that it is a button, nor how to operate it. Depending on the element, you may have a lot of work to do.
+
+
+
+## 1–3 of 8
+
+```html
+<ul>
+  <li
+    aria-posinset="1"
+    aria-setsize="8">
+    Apple
+  </li>
+  <li
+    aria-posinset="2"
+    aria-setsize="8">
+    Banana
+  </li>
+  <li
+    aria-posinset="3"
+    aria-setsize="8">
+    Blueberry
+  </li>
+</ul>
+```
+
+Notes:
+Let's say the list of fruit is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. Apple is now item 1 of 8. Banana is 2 of 8. Blueberry is 3 of 8. If the size of the set is unknown, use -1 for that value. These attributes can be useful when you return a paginated list of search results.
+
+See: https://www.w3.org/TR/wai-aria/#listitem
+
+
+
+## 4–6 of 8
+
+```html
+<ul>
+  <li
+    aria-posinset="4"
+    aria-setsize="8">
+    Cherry
+  </li>
+  <li
+    aria-posinset="5"
+    aria-setsize="8">
+    Mango
+  </li>
+  <li
+    aria-posinset="6"
+    aria-setsize="8">
+    Strawberry
+  </li>
+</ul>
+```
+
+Notes:
+If we render a different subset of the list, now we reveal: Cherry, item 4 of 8. Mango, item 5 of 8. Strawberry, item 6 of 8.
+
+Keep in mind, this doesn't actually work in VoiceOver, even though it is declared in the spec. In this case, these attributes are simply ignored. I'm unsure how other screen readers would handle this, but that would need testing. And perhaps there would be better, more native ways to communicate this same information anyway.
 
 
 
@@ -1622,21 +1681,16 @@ ARIA is a huge specification. There's a lot to learn. Just start where you are. 
 
 
 
-## After the break
+# Special thanks
 
-- What screen readers communicate
-- Exercises
+Tara&nbsp;Bazler. Josh&nbsp;LaMar. Lane&nbsp;Bowman. Greg&nbsp;Thomas. UX&nbsp;CoP.
+
+Greg&nbsp;Hanek. Jason&nbsp;Holliday. Christopher&nbsp;Meyer. Meagan&nbsp;Eller. Digital&nbsp;Accessibility&nbsp;Office.
+
+Matt&nbsp;Leslie. Team&nbsp;Qube.
 
 Notes:
-After the break, we'll transition into some exercises. As a reminder, please submit any questions you have so far in the chat. I'll address them once we return. Thank you, and see you in 10 minutes.
-
-
-
-# Break
-
-10 minutes
-
-Return at 10:10 AM
+Thanks to everyone who gave me feedback while working on this workshop, from the UX Community of Practice, the Digital Accessibility Office, and my team, Team Qube.
 
 
 
@@ -1685,29 +1739,6 @@ How does the description change, if we include markup?
 # Pagination
 
 Exercise
-
-
-
-# Interactive content
-
-
-
-## ISO
-
-|               |                                           |
-| ------------- | ----------------------------------------- |
-| **Identity**  | What am I interacting with?               |
-| **State**     | What is the current status of this thing? |
-| **Operation** | How do I use this thing?                  |
-
-<footer>
-
-See: [*How to Describe Complex Designs for Users with Disabilities*](https://medium.com/salesforce-ux/how-to-describe-complex-designs-for-users-with-disabilities-ba05f5224130)
-
-</footer>
-
-Notes:
-There are three pieces of information that needs to be communicated through a screen reader: identity, state, and operation. Or, ISO, for short. Identity answers, "What am I interacting with?" This is the name or label of the thing. State answers, "What is the current status of this thing?" Is it active, current, pressed, checked, or selected? What is the placement of the thing within its context. What are other details about the thing that would be helpful to know? Operation answers, "How do I use this thing?" What keys do I press to change its state?
 
 
 

@@ -182,12 +182,12 @@ The Enterprise Systems division, which I am part of, has been doing a lot to imp
 
 ## Workshop goals
 
-- Identify design responsibilities.
+- Define accessibility, design concerns.
 - Learn how a screen reader works.
 - Annotate wireframes.
 
 Notes:
-For the remainder of this workshop, we will focus on a few core things. We will learn how a screen reader works and communicates. Then we will conduct a number of exercises to help you better understand the experience of those using screen readers. Then we will explore how we can enrich design deliverables like wireframes to better articulate accessibility expectations.
+For the remainder of this workshop, we will focus on a few core things. We will get an overview of accessibility and the types of accessibility concerns designers should focus on. We will learn how a screen reader works and communicates. We will explore how to enrich wireframes to better articulate accessibility expectations. Finally, we will conduct a number of exercises to bring it all together.
 
 
 
@@ -1681,22 +1681,106 @@ Keep in mind, this doesn't actually work in VoiceOver, even though it is declare
 
 
 
-# Special thanks
+# Agreement checkbox
 
-Tara&nbsp;Bazler. Josh&nbsp;LaMar. Lane&nbsp;Bowman. Greg&nbsp;Thomas. UX&nbsp;CoP.
-
-Greg&nbsp;Hanek. Jason&nbsp;Holliday. Christopher&nbsp;Meyer. Meagan&nbsp;Eller. Digital&nbsp;Accessibility&nbsp;Office.
-
-Matt&nbsp;Leslie. Team&nbsp;Qube.
+Sketch → HTML → Screen reader
 
 Notes:
-Thanks to everyone who gave me feedback while working on this workshop, from the UX Community of Practice, the Digital Accessibility Office, and my team, Team Qube.
+Now with a little more understanding of how interactive content works, let's work on another sketch.
+
+
+
+## Sketch
+
+```
+checkbox "I agree"
+```
+
+Notes:
+This sketch is simple. It is just a checkbox with the label "I agree".
+
+
+
+## HTML
+
+```html
+<input
+  id="agreement"
+  type="checkbox">
+<label for="agreement">
+  I agree
+</label>
+```
+
+Notes:
+And this sketch is also straightforward for a developer.
+
+
+
+## Screen reader test
+
+Notes:
+Now, let's test this HTML with a screen reader.
+
+
+
+"I agree. Unchecked checkbox."
+
+"Press Space to select or deselect."
+
+<figure>
+  <div class="fig-checkbox">
+    <input id="fig-agree-1" type="checkbox" class="sr-only">
+    <label for="fig-agree-1" class="cursor">I agree</label>
+  </div>
+  <figcaption>The "I agree" checkbox has keyboard focus.</figcaption>
+</figure>
+
+Notes:
+When the keyboard or screen reader cursor lands on the checkbox, it announces the label ("I agree"). Then the state of the control ("unchecked checkbox"). Then how to operate the control ("press Space to select").
+
+
+
+"Check. I agree. Checkbox."
+
+&nbsp;
+
+<figure>
+  <div class="fig-checkbox">
+    <input id="fig-agree-2" type="checkbox" class="sr-only" checked>
+    <label for="fig-agree-2" class="cursor">I agree</label>
+  </div>
+  <figcaption>The checkbox is checked.</figcaption>
+</figure>
+
+Notes:
+When the Space key is pressed, the checkbox get selected. It immediately confirms the new state ("check"). Then the identity of the control ("I agree, checkbox"). Since the cursor didn't change positions, the screen reader doesn't bother reiterating how to operate the control.
+
+
+
+"I agree. Checked checkbox."
+
+"Press Space to select or deselect."
+
+<figure>
+  <div class="fig-checkbox">
+    <input id="fig-agree-3" type="checkbox" class="sr-only" checked>
+    <label for="fig-agree-3" class="cursor">I agree</label>
+  </div>
+  <figcaption>Focus is on the checked "I agree" checkbox.</figcaption>
+</figure>
+
+Notes:
+If you leave and return focus to this checkbox, then you can see it now says it is checked.
 
 
 
 # Breadcrumbs
 
-Exercise
+Wireframe → Sketch → HTML → Screen reader
+
+Notes:
+Now, let's start with a wireframe. This time, I want you to provide a sketch. Then I'll show you my answer. We'll look at the HTML. And then test it with a screen reader.
 
 
 
@@ -1715,11 +1799,27 @@ Exercise
 
 Notes:
 1. Ask for a volunteer. Have them describe the mockup.
-2. Everyone, use annotations to write down things you think are important.
-3. Ask the volunteer to describe it again.
-4. Is there a difference?
+2. Everyone, sketch the wireframe in text.
+3. Is there anything surprising?
 
 
+
+## Sketch v1
+
+```
+nav ("Breadcrumbs")
+  ol
+    li a "Conference"
+    li a "Workshop"
+    li[current=page] "Slides"
+```
+
+Notes:
+This sketch expands on some of the syntax we've used so far. Nested elements could be placed on the same line. Attributes are wrapped in brackets. Ordered lists are "ol". Links are "a".
+
+
+
+## HTML v1
 
 ```html
 <nav aria-label="Breadcrumbs">
@@ -1731,66 +1831,32 @@ Notes:
 </nav>
 ```
 
+<footer>
+
+See: [Rivet breadcrumbs](https://rivet.iu.edu/components/navigation/breadcrumb/)
+
+</footer>
+
 Notes:
-How does the description change, if we include markup?
+This implementation is mostly identical to the Rivet breadcrumbs component.
 
 
 
-# Pagination
+## Sketch v2
 
-Exercise
+```
+breadcrumbs
+  "Conference"
+  "Workshop"
+  "Slides"
 
+See: Rivet breadcrumbs [1]
 
-
-## Checkbox
-
-```html
-<input
-  id="agreement"
-  type="checkbox">
-<label for="agreement">
-  I agree
-</label>
+[1]: https://rivet.iu.edu/components/navigation/breadcrumb/)
 ```
 
-
-
-"I agree. Unchecked checkbox."
-
-"Press Space to select."
-
-<figure>
-  <div class="fig-checkbox">
-    <input id="fig-agree-1" type="checkbox" class="sr-only">
-    <label for="fig-agree-1" class="cursor">I agree</label>
-  </div>
-</figure>
-
-
-
-"Check. I agree. Checkbox."
-
-&nbsp;
-
-<figure>
-  <div class="fig-checkbox">
-    <input id="fig-agree-2" type="checkbox" class="sr-only" checked>
-    <label for="fig-agree-2" class="cursor">I agree</label>
-  </div>
-</figure>
-
-
-
-"I agree. Checked checkbox."
-
-"Press Space to deselect."
-
-<figure>
-  <div class="fig-checkbox">
-    <input id="fig-agree-3" type="checkbox" class="sr-only" checked>
-    <label for="fig-agree-3" class="cursor">I agree</label>
-  </div>
-</figure>
+Notes:
+Once your team knows how to implement breadcrumbs navigation, the sketch could be simplified further. By default, the label is "Breadcrumbs". By default, the last item does not have a link, but it is marked as the current page. This sketch even includes a link to the Rivet breadcrumbs as a reference.
 
 
 
@@ -1802,3 +1868,16 @@ Exercise
 - Current state. Trigger. New state.
 - Micro interaction
 - Form controls
+
+
+
+# Special thanks
+
+Tara&nbsp;Bazler. Josh&nbsp;LaMar. Lane&nbsp;Bowman. Greg&nbsp;Thomas. UX&nbsp;CoP.
+
+Greg&nbsp;Hanek. Jason&nbsp;Holliday. Christopher&nbsp;Meyer. Meagan&nbsp;Eller. Digital&nbsp;Accessibility&nbsp;Office.
+
+Matt&nbsp;Leslie. Team&nbsp;Qube.
+
+Notes:
+Thanks to everyone who gave me feedback while working on this workshop, from the UX Community of Practice, the Digital Accessibility Office, and my team, Team Qube.

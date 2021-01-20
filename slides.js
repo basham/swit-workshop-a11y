@@ -7,9 +7,9 @@ const messages = {
   '101': 'List, Fruit. 3 items.',
   '102': 'Bullet. Apple. 1 of 3.',
   '103': 'Bullet. Banana. 2 of 3.',
-  '62x': 'I agree. Unchecked checkbox. Press Space to select.',
-  '63x': 'Check. I agree. Checkbox.',
-  '64x': 'I agree. Checked checkbox. Press Space to deselect.'
+  '125': 'I agree. Unchecked checkbox. Press Space to select or deselect.',
+  '126': 'Check. I agree. Checkbox.',
+  '127': 'I agree. Checked checkbox. Press Space to select or deselect.'
 }
 
 Reveal.on('slidechanged', (event) => {

@@ -1880,14 +1880,30 @@ breadcrumbs
   "Conference"
   "Workshop"
   "Slides"
-
-See: Rivet breadcrumbs [1]
-
-[1]: https://rivet.iu.edu/components/navigation/breadcrumb/)
 ```
 
 Notes:
-Once your team knows how to implement breadcrumbs navigation, the sketch could be simplified further. By default, the label is "Breadcrumbs". By default, the last item does not have a link, but it is marked as the current page. This sketch even includes a link to the Rivet breadcrumbs as a reference.
+Once your team knows how to implement breadcrumbs navigation, the sketch could be simplified further. By default, the label is "Breadcrumbs". By default, the last item does not have a link, but it is marked as the current page.
+
+
+
+## Sketch v3
+
+```
+breadcrumbs [1, 2]
+  "Conference"
+  "Workshop"
+  "Slides"
+
+[1]: Wireframe
+https://www.figma.com/…
+
+[2]: Rivet breadcrumbs
+https://rivet.iu.edu/components/navigation/breadcrumb/
+```
+
+Notes:
+Then you could even add some link references. In this case, this one component links to both its wireframe and to the Rivet breadcrumbs documentation.
 
 
 
@@ -1912,3 +1928,12 @@ Matt&nbsp;Leslie. Team&nbsp;Qube.
 
 Notes:
 Thanks to everyone who gave me feedback while working on this workshop, from the UX Community of Practice, the Digital Accessibility Office, and my team, Team Qube.
+
+
+
+# Thank you
+
+https://github.com/basham/swit-workshop-a11y
+
+Notes:
+Once again, the slides and additional resources are on GitHub. Feel free to follow up with me as you need. Thank you for joining me today.

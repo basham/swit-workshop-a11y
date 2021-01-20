@@ -1308,8 +1308,8 @@ So, this is how a developer could interpret the sketch in HTML. The list and the
 ## HTML v2
 
 ```html
-<div id="list-label">Games</div>
-<ul aria-labelledby="list-label">
+<div id="games-label">Games</div>
+<ul aria-labelledby="games-label">
   <li>Sushi Go!</li>
   <li>Wingspan</li>
   <li>Catan</li>
@@ -1368,10 +1368,10 @@ But maybe to the text for screen readers could simply be wrapped in parenthesis.
 ```html
 <div
   class="sr-only"
-  id="list-label">
+  id="games-label">
   Games
 </div>
-<ul aria-labelledby="list-label">
+<ul aria-labelledby="games-label">
   <li>Sushi Go!</li>
   <li>Wingspan</li>
   <li>Catan</li>
@@ -1641,7 +1641,7 @@ Let's say you start with some HTML and you want to remove native semantics. You 
 
 ```html
 <button role="presentation">
-  Save
+  Play
 </button>
 ```
 
@@ -1820,9 +1820,9 @@ Now, let's start with a wireframe. This time, I want you to provide a sketch. Th
   <div class="fig-breadcrumbs">
     <nav aria-label="Breadcrumbs">
       <ol>
-        <li><a>Conference</a></li>
-        <li><a>Workshop</a></li>
-        <li aria-current="page">Slides</li>
+        <li><a>Home</a></li>
+        <li><a>Games</a></li>
+        <li aria-current="page">Villagers</li>
       </ol>
     </nav>
   </div>
@@ -1843,9 +1843,9 @@ https://docs.google.com/document/d/1H-prlMJJ_MsN1KUn1QMbSnhqERRXdTlbhoIChOAfrCk/
 ```
 nav ("Breadcrumbs")
   ol
-    li a "Conference"
-    li a "Workshop"
-    li[current=page] "Slides"
+    li a "Home"
+    li a "Games"
+    li[current=page] "Villagers"
 ```
 
 Notes:
@@ -1858,9 +1858,9 @@ Here's my first attempt at the sketch. This sketch expands on some of the syntax
 ```html
 <nav aria-label="Breadcrumbs">
   <ol>
-    <li><a href="#">Conference</a></li>
-    <li><a href="#">Workshop</a></li>
-    <li aria-current="page">Slides</li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Games</a></li>
+    <li aria-current="page">Villagers</li>
   </ol>
 </nav>
 ```
@@ -1874,9 +1874,9 @@ This implementation is mostly identical to the Rivet breadcrumbs component.
 
 ```
 breadcrumbs
-  "Conference"
-  "Workshop"
-  "Slides"
+  "Home"
+  "Games"
+  "Villagers"
 ```
 
 Notes:
@@ -1888,9 +1888,9 @@ Once your team knows how to implement breadcrumbs navigation, the sketch could b
 
 ```
 breadcrumbs [1, 2]
-  "Conference" [3]
-  "Workshop" [4]
-  "Slides"
+  "Home" [3]
+  "Games" [4]
+  "Villagers"
 
 [1]: Wireframe
 https://www.figma.com/…

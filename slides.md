@@ -1252,36 +1252,36 @@ The idea of a design document can seem overwhelming. Instead, I want you to thin
 
 
 
-# List of fruit
+# List of games
 
 Sketch → HTML → Screen reader
 
 Notes:
-Let's start our first sketch with the idea of a list of fruit. We'll take this idea, show how it could be implemented with HTML, then see how a screen reader will read the content.
+Let's start our first sketch with the idea of a list of board games. We'll take this idea, show how it could be implemented with HTML, then see how a screen reader will read the content.
 
 
 
 ## Sketch v1
 
 ```
-bulleted list "Fruit"
-  list item "Apple"
-  list item "Banana"
-  list item "Blueberry"
+bulleted list "Games"
+  list item "Sushi Go!"
+  list item "Wingspan"
+  list item "Catan"
 ```
 
 Notes:
-In this sketch, we're identifying a list of three items. This list is bulleted, meaning the order that the fruit are in doesn't particularly matter. The name of the list is "Fruit". The three fruit seem to be in alphabetically order.
+In this sketch, we're identifying a list of three items. This list is bulleted, meaning the order that the games are in doesn't particularly matter. The name of the list is "Games".
 
 
 
 ## Sketch v2
 
 ```
-ul "Fruit"
-  li "Apple"
-  li "Banana"
-  li "Blueberry"
+ul "Games"
+  li "Sushi Go!"
+  li "Wingspan"
+  li "Catan"
 ```
 
 Notes:
@@ -1292,11 +1292,11 @@ The types of content could be abbreviated. "ul" for unordered list. "li" for lis
 ## HTML v1
 
 ```html
-<div>Fruit</div>
+<div>Games</div>
 <ul>
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Blueberry</li>
+  <li>Sushi Go!</li>
+  <li>Wingspan</li>
+  <li>Catan</li>
 </ul>
 ```
 
@@ -1308,40 +1308,40 @@ So, this is how a developer could interpret the sketch in HTML. The list and the
 ## HTML v2
 
 ```html
-<div id="fruit-label">Fruit</div>
-<ul aria-labelledby="fruit-label">
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Blueberry</li>
+<div id="list-label">Games</div>
+<ul aria-labelledby="list-label">
+  <li>Sushi Go!</li>
+  <li>Wingspan</li>
+  <li>Catan</li>
 </ul>
 ```
 
 Notes:
-Or maybe after thinking about, the developer realizes that the list has no accessible name. The "Fruit" text may precede the list, but the connection is not explicit. This solves that problem.
+Or maybe after thinking about, the developer realizes that the list has no accessible name. The "Games" text may precede the list, but the connection is not explicit. This solves that problem.
 
 
 
 ## Sketch v3
 
 ```
-ul "", "Fruit" (screen reader only)
-  li "Apple"
-  li "Banana"
-  li "Blueberry"
+ul "", "Games" (screen reader only)
+  li "Sushi Go!"
+  li "Wingspan"
+  li "Catan"
 ```
 
 Notes:
-But actually, the designer wants the "Fruit" text to be for screen readers only. So, that is noted explicitly in the sketch. And it could be explicit that there shouldn't be any visible text.
+But actually, the designer wants the "Games" text to be for screen readers only. So, that is noted explicitly in the sketch. And it could be explicit that there shouldn't be any visible text.
 
 
 
 ## Sketch v4
 
 ```
-ul "Fruit" (SR)
-  li "Apple"
-  li "Banana"
-  li "Blueberry"
+ul "Games" (SR)
+  li "Sushi Go!"
+  li "Wingspan"
+  li "Catan"
 ```
 
 Notes:
@@ -1352,10 +1352,10 @@ But this may happen often, so the designer abbreviates "screen reader" to "SR" a
 ## Sketch v5
 
 ```
-ul ("Fruit")
-  li "Apple"
-  li "Banana"
-  li "Blueberry"
+ul ("Games")
+  li "Sushi Go!"
+  li "Wingspan"
+  li "Catan"
 ```
 
 Notes:
@@ -1368,13 +1368,13 @@ But maybe to the text for screen readers could simply be wrapped in parenthesis.
 ```html
 <div
   class="sr-only"
-  id="fruit-label">
-  Fruit
+  id="list-label">
+  Games
 </div>
-<ul aria-labelledby="fruit-label">
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Blueberry</li>
+<ul aria-labelledby="list-label">
+  <li>Sushi Go!</li>
+  <li>Wingspan</li>
+  <li>Catan</li>
 </ul>
 ```
 
@@ -1386,10 +1386,10 @@ Since the div is already in place, maybe you can just add a class to it, to hide
 ## HTML v4
 
 ```html
-<ul aria-label="Fruit">
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Blueberry</li>
+<ul aria-label="Games">
+  <li>Sushi Go!</li>
+  <li>Wingspan</li>
+  <li>Catan</li>
 </ul>
 ```
 
@@ -1405,31 +1405,31 @@ Now, let's test this HTML with a screen reader.
 
 
 
-"List, Fruit. 3 items."
+"List, Games. 3 items."
 
 <figure>
   <div class="fig-list">
-    <ul aria-label="Fruit" class="cursor">
-      <li>Apple</li>
-      <li>Banana</li>
-      <li>Blueberry</li>
+    <ul aria-label="Games" class="cursor">
+      <li>Sushi Go!</li>
+      <li>Wingspan</li>
+      <li>Catan</li>
     </ul>
   </div>
 </figure>
 
 Notes:
-When you land on it, the screen reader announces the type of content and the name of the content, if it is there. In this case, it is a "list" and the name is "Fruit". And it tells how many items there are in the list. Let's go to the first item.
+When you land on it, the screen reader announces the type of content and the name of the content, if it is there. In this case, it is a "list" and the name is "Games". And it tells how many items there are in the list. Let's go to the first item.
 
 
 
-"Bullet. Apple. 1 of 3."
+"Bullet. Sushi Go!. 1 of 3."
 
 <figure>
   <div class="fig-list">
-    <ul aria-label="Fruit">
-      <li class="cursor">Apple</li>
-      <li>Banana</li>
-      <li>Blueberry</li>
+    <ul aria-label="Games">
+      <li class="cursor">Sushi Go!</li>
+      <li>Wingspan</li>
+      <li>Catan</li>
     </ul>
   </div>
 </figure>
@@ -1439,14 +1439,14 @@ Now, the cursor is on the first item. It says the name and the position of the i
 
 
 
-"Bullet. Banana. 2 of 3."
+"Bullet. Wingspan. 2 of 3."
 
 <figure>
   <div class="fig-list">
-    <ul>
-      <li>Apple</li>
-      <li class="cursor">Banana</li>
-      <li>Blueberry</li>
+    <ul aria-label="Games">
+      <li>Sushi Go!</li>
+      <li class="cursor">Wingspan</li>
+      <li>Catan</li>
     </ul>
   </div>
 </figure>
@@ -1480,7 +1480,7 @@ Return at 11:10 AM
 # Interactive content
 
 Notes:
-In our last example, we looked at a list of fruit. This is a simple piece of static content. Now, let's look at how to design for interactive content.
+In our last example, we looked at a list of games. This is a simple piece of static content. Now, let's look at how to design for interactive content.
 
 
 
@@ -1609,31 +1609,31 @@ Some attributes can be used on any element. We've already demonstrated aria-labe
 
 ```html
 <div role="list">
-  <div role="listitem">Apple</div>
-  <div role="listitem">Banana</div>
-  <div role="listitem">Blueberry</div>
+  <div role="listitem">Sushi Go!</div>
+  <div role="listitem">Wingspan</div>
+  <div role="listitem">Catan</div>
 </div>
 ```
 
 Notes:
-When a screen reader finds an element, it maps the tag name to find its inherit role. The role is what defines the type of the content and how it should operate. You can explicitly set or override an element's role by using the role attribute. That means you could essentially write the same list of fruit using div or span elements. But even though you can do this, you shouldn't. Just rely on native HTML to do what it means to.
+When a screen reader finds an element, it maps the tag name to find its inherit role. The role is what defines the type of the content and how it should operate. You can explicitly set or override an element's role by using the role attribute. That means you could essentially write the same list of games using div or span elements. But even though you can do this, you shouldn't. Just rely on native HTML to do what it means to.
 
 
 
 ## List to div
 
-"Apple Banana Blueberry"
+"Sushi Go! Wingspan Catan"
 
 ```html
 <ul role="presentation">
-  <li role="presentation">Apple</li>
-  <li role="presentation">Banana</li>
-  <li role="presentation">Blueberry</li>
+  <li role="presentation">Sushi Go!</li>
+  <li role="presentation">Wingspan</li>
+  <li role="presentation">Catan</li>
 </ul>
 ```
 
 Notes:
-Let's say you start with some HTML and you want to remove native semantics. You can use the "presentation" role to make it essentially a div or span. It now reads like a set of words. "Apple Banana Blueberry". You rarely want to do something like this, but it's important to know that you can reverse a role if needed.
+Let's say you start with some HTML and you want to remove native semantics. You can use the "presentation" role to make it essentially a div or span. It now reads like a set of words. "Sushi Go! Wingspan Catan". You rarely want to do something like this, but it's important to know that you can reverse a role if needed.
 
 
 
@@ -1657,23 +1657,23 @@ But keep in mind, the presentation role does not remove the native functionality
   <li
     aria-posinset="1"
     aria-setsize="8">
-    Apple
+    Sushi Go!
   </li>
   <li
     aria-posinset="2"
     aria-setsize="8">
-    Banana
+    Wingspan
   </li>
   <li
     aria-posinset="3"
     aria-setsize="8">
-    Blueberry
+    Catan
   </li>
 </ul>
 ```
 
 Notes:
-Let's say the list of fruit is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. Apple is now item 1 of 8. Banana is 2 of 8. Blueberry is 3 of 8. If the size of the set is unknown, use -1 for that value. These attributes could be useful when you return a paginated list of search results.
+Let's say the list of fruit is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. Sushi Go! is now item 1 of 8. Wingspan is 2 of 8. Catan is 3 of 8. If the size of the set is unknown, use -1 for that value. These attributes could be useful when you return a paginated list of search results.
 
 See: https://www.w3.org/TR/wai-aria/#listitem
 
@@ -1686,23 +1686,23 @@ See: https://www.w3.org/TR/wai-aria/#listitem
   <li
     aria-posinset="4"
     aria-setsize="8">
-    Cherry
+    Tiny Epic Zombies
   </li>
   <li
     aria-posinset="5"
     aria-setsize="8">
-    Mango
+    Dominion
   </li>
   <li
     aria-posinset="6"
     aria-setsize="8">
-    Strawberry
+    Puns of Anarchy
   </li>
 </ul>
 ```
 
 Notes:
-If we render a different subset of the list, now we reveal: Cherry, item 4 of 8. Mango, item 5 of 8. Strawberry, item 6 of 8.
+If we render a different subset of the list, now we reveal: Tiny Epic Zombies, item 4 of 8. Dominion, item 5 of 8. Puns of Anarchy, item 6 of 8.
 
 Keep in mind, this doesn't actually work in VoiceOver, even though it is declared in the spec. In this case, these attributes are simply ignored. I'm unsure how other screen readers would handle this, but that would need testing. And perhaps there would be better, more native ways to communicate this same information, without using these particular attributes.
 

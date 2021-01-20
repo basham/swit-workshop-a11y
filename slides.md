@@ -4,6 +4,8 @@ Statewide IT 2021 Workshop
 
 Chris Basham
 
+<img src="assets/swit-logo-225.png" alt="Conference logo" width="150" height="150">
+
 Notes:
 Welcome everyone to this workshop. Today, we'll learn how to incorporate accessibility in the design process. First, let's start with some background and logistics.
 

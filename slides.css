@@ -416,6 +416,7 @@
 .fig-breadcrumbs a {
   cursor: pointer;
   text-decoration: underline;
+  text-decoration-color: inherit;
 }
 
 /*

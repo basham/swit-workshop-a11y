@@ -1301,7 +1301,7 @@ The types of content could be abbreviated. "ul" for unordered list. "li" for lis
 ```
 
 Notes:
-So, this is how a developer could interpret the sketch in HTML. The list and the items seem fairly straightforward. However, a name for a list isn't as common. The developer decides to put the "Fruit" label before the list.
+So, this is how a developer could interpret the sketch in HTML. The list and the items seem fairly straightforward. However, a name for a list isn't as common. The developer decides to put the "Games" label before the list.
 
 
 
@@ -1673,7 +1673,7 @@ But keep in mind, the presentation role does not remove the native functionality
 ```
 
 Notes:
-Let's say the list of fruit is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. Sushi Go! is now item 1 of 8. Wingspan is 2 of 8. Catan is 3 of 8. If the size of the set is unknown, use -1 for that value. These attributes could be useful when you return a paginated list of search results.
+Let's say the list of games is a big list, and we're only rendering a subset of the list at once. We can use other ARIA attributes to change some values. You can pair the position-in-set and set-size attributes with list items. Sushi Go! is now item 1 of 8. Wingspan is 2 of 8. Catan is 3 of 8. If the size of the set is unknown, use -1 for that value. These attributes could be useful when you return a paginated list of search results.
 
 See: https://www.w3.org/TR/wai-aria/#listitem
 
@@ -1852,6 +1852,18 @@ Here's my first attempt at the sketch. This sketch expands on some of the syntax
 
 
 
+## Sketch v2
+
+```
+nav ("Breadcrumbs")
+  ol
+    li a "Home"
+    li a "Games"
+    li "Villagers" ("Villagers, current page")
+```
+
+
+
 ## HTML v1
 
 ```html
@@ -1869,7 +1881,7 @@ This implementation is mostly identical to the Rivet breadcrumbs component.
 
 
 
-## Sketch v2
+## Sketch v3
 
 ```
 breadcrumbs
@@ -1883,7 +1895,7 @@ Once your team knows how to implement breadcrumbs navigation, the sketch could b
 
 
 
-## Sketch v3
+## Sketch v4
 
 ```
 breadcrumbs [1, 2]

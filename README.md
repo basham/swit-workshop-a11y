@@ -4,6 +4,8 @@ Workshop for [Statewide IT Conference](https://statewideit.iu.edu/) at Indiana U
 
 January 21, 2021
 
+[View recording](https://iu.mediaspace.kaltura.com/media/t/1_ski8rjt1) (requires IU login)
+
 [View slides](https://basham.github.io/swit-workshop-a11y/)
 
 - Press `s` for speaker notes.
